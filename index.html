@@ -385,15 +385,15 @@
        7. TOOLS FOR TRANSFORMATION
     ══════════════════════════════ */
     #tools {
-      padding: 60px 60px 80px;
+      padding: 70px 60px 90px;
+      margin: 20px 60px;
       border-top: 2px solid var(--coral);
       border-bottom: 2px solid var(--coral);
-      margin: 20px 60px;
     }
 
     .tools-title-wrap {
       text-align: center;
-      margin-bottom: 70px;
+      margin-bottom: 64px;
       position: relative;
       display: inline-block;
       width: 100%;
@@ -404,7 +404,7 @@
       font-weight: 700;
       font-size: clamp(24px, 3vw, 40px);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       color: var(--black);
       display: inline-block;
       position: relative;
@@ -420,57 +420,96 @@
       pointer-events: none;
     }
 
-    .tools-grid {
+    /* ── Card Grid ── */
+    .tools-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 48px 60px;
+      gap: 20px;
     }
 
-    .tool-category {}
+    .tool-card {
+      border: 1.5px solid rgba(207,123,114,0.25);
+      padding: 36px 32px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .tool-card:hover {
+      border-color: var(--coral);
+      box-shadow: 0 8px 32px rgba(207,123,114,0.12);
+    }
 
-    .tool-cat-title {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-style: italic;
-      font-size: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--black);
+    /* Coral top accent bar on hover */
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--coral);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .tool-card:hover::before { transform: scaleX(1); }
+
+    .tool-card-icon {
+      width: 36px;
+      height: 36px;
       margin-bottom: 20px;
-      line-height: 1.3;
+      color: var(--coral);
+      opacity: 0.85;
     }
 
-    .tool-intro {
-      font-family: var(--font-body);
-      font-weight: 300;
-      font-size: 13.5px;
-      line-height: 1.7;
+    .tool-card-name {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-style: italic;
+      font-size: 19px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: var(--black);
+      line-height: 1.25;
       margin-bottom: 12px;
     }
 
-    .tool-list li {
+    .tool-card-desc {
       font-family: var(--font-body);
       font-weight: 300;
-      font-size: 13.5px;
-      line-height: 2;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(26,26,26,0.65);
+      margin-bottom: 20px;
+    }
+
+    /* Hidden detail list — revealed on hover */
+    .tool-card-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .tool-card:hover .tool-card-details {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    .tool-card-details li {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 12.5px;
+      line-height: 1.9;
       color: var(--black);
-      padding-left: 18px;
+      padding-left: 16px;
       position: relative;
     }
-    .tool-list li::before {
-      content: '·';
+    .tool-card-details li::before {
+      content: '—';
       position: absolute;
       left: 0;
-    }
-    .tool-list.numbered { list-style: none; counter-reset: steps; }
-    .tool-list.numbered li { counter-increment: steps; }
-    .tool-list.numbered li::before {
-      content: counter(steps) '.';
-      left: 0;
-      font-family: var(--font-body);
-      font-weight: 300;
-      font-size: 13.5px;
+      color: var(--coral);
+      font-size: 10px;
+      top: 5px;
     }
 
     /* ══════════════════════════════
@@ -666,7 +705,8 @@
       .provider-photo img { height: 400px; }
 
       #tools { margin: 20px 24px; padding: 50px 32px 60px; }
-      .tools-grid { grid-template-columns: 1fr 1fr; gap: 36px 32px; }
+      .tools-cards { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .tool-card-details { max-height: 200px; opacity: 1; }
 
       #contact { padding: 60px 32px 80px; }
       .form-row { grid-template-columns: 1fr; }
@@ -677,7 +717,7 @@
 
     @media (max-width: 600px) {
       .services-grid { grid-template-columns: 1fr; }
-      .tools-grid { grid-template-columns: 1fr; }
+      .tools-cards { grid-template-columns: 1fr; }
       .nav-right { gap: 16px; }
     }
   </style>
@@ -830,75 +870,109 @@
   ═══════════════════════════ -->
   <section id="tools">
     <div class="tools-title-wrap">
-      <!-- Hand-drawn SVG oval behind the heading -->
       <svg class="tools-oval" width="680" height="90" viewBox="0 0 680 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M 24 48 C 40 18, 120 4, 200 6 C 280 8, 360 2, 440 8 C 520 14, 620 18, 650 38 C 672 52, 660 72, 600 78 C 520 86, 360 88, 240 86 C 140 84, 40 76, 24 58 C 14 50, 18 44, 24 48 Z" stroke="#CF7B72" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
       <h2 class="tools-heading">The Tools For Transformation</h2>
     </div>
 
-    <div class="tools-grid">
-      <!-- Row 1 -->
-      <div class="tool-category">
-        <h3 class="tool-cat-title">Diagnostic Tools</h3>
-        <ul class="tool-list">
+    <div class="tools-cards">
+
+      <!-- 1. Diagnostics -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="18" r="14"/>
+          <path d="M18 10v8l5 3"/>
+        </svg>
+        <p class="tool-card-name">Diagnostic Tools</p>
+        <p class="tool-card-desc">Advanced lab testing that goes beyond standard bloodwork to uncover root-cause drivers.</p>
+        <ul class="tool-card-details">
           <li>Hormonal &amp; Thyroid Assessment</li>
           <li>Cardiometabolic &amp; Inflammatory Markers</li>
-          <li>Gastrointestinal &amp; Immune Function Testing</li>
-          <li>Micronutrient, Genetic &amp; Detoxification Analysis</li>
+          <li>GI &amp; Immune Function Testing</li>
+          <li>Micronutrient, Genetic &amp; Detox Analysis</li>
         </ul>
       </div>
 
-      <div class="tool-category">
-        <h3 class="tool-cat-title">Diet and Nutrition Support</h3>
-        <ul class="tool-list">
-          <li>Elimination and reintroduction diets</li>
+      <!-- 2. Diet & Nutrition -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 28 C10 20 14 14 18 10 C22 14 26 20 26 28"/>
+          <path d="M18 10 V6"/>
+          <path d="M12 22 H24"/>
+        </svg>
+        <p class="tool-card-name">Diet &amp; Nutrition</p>
+        <p class="tool-card-desc">Targeted food strategies and therapeutic nutrition to support healing from the inside out.</p>
+        <ul class="tool-card-details">
+          <li>Elimination &amp; reintroduction diets</li>
           <li>Therapeutic food-based supplements</li>
-          <li>Nutritional coaching and habit support</li>
+          <li>Nutritional coaching &amp; habit support</li>
         </ul>
       </div>
 
-      <div class="tool-category">
-        <h3 class="tool-cat-title">Supplement and Botanical Support</h3>
-        <ul class="tool-list">
-          <li>Targeted vitamins and minerals</li>
-          <li>Herbal and botanical therapeutics</li>
+      <!-- 3. Supplements -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="12" y="8" width="12" height="20" rx="6"/>
+          <line x1="12" y1="18" x2="24" y2="18"/>
+        </svg>
+        <p class="tool-card-name">Supplement &amp; Botanical Support</p>
+        <p class="tool-card-desc">Evidence-based nutraceuticals and herbal medicine precisely matched to your physiology.</p>
+        <ul class="tool-card-details">
+          <li>Targeted vitamins &amp; minerals</li>
+          <li>Herbal &amp; botanical therapeutics</li>
           <li>Neurotransmitter support formulas</li>
         </ul>
       </div>
 
-      <!-- Row 2 -->
-      <div class="tool-category">
-        <h3 class="tool-cat-title">Lifestyle &amp; Exercise</h3>
-        <p class="tool-intro">Sleep hygiene protocols</p>
-        <ul class="tool-list numbered">
-          <li>Stress management techniques (breathwork, meditation, mindfulness)</li>
-          <li>Movement and exercise prescriptions</li>
+      <!-- 4. Lifestyle -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 26 Q14 18 18 14 Q22 10 28 12"/>
+          <circle cx="28" cy="10" r="2" fill="currentColor"/>
+          <path d="M8 30 Q14 24 20 22"/>
+        </svg>
+        <p class="tool-card-name">Lifestyle &amp; Exercise</p>
+        <p class="tool-card-desc">Personalised movement, sleep, and circadian rhythm protocols to rebuild energy and resilience.</p>
+        <ul class="tool-card-details">
+          <li>Sleep hygiene protocols</li>
+          <li>Movement &amp; exercise prescriptions</li>
           <li>Circadian rhythm support</li>
-          <li>Habit change frameworks and coaching</li>
+          <li>Habit change frameworks</li>
         </ul>
       </div>
 
-      <div class="tool-category">
-        <h3 class="tool-cat-title">Mindfulness &amp; Stress Resilience</h3>
-        <ul class="tool-list">
-          <li>Mindfulness and relaxation training</li>
-          <li>Somatic therapies or Emotional regulation tools</li>
-          <li>Breath work and meditation techniques</li>
+      <!-- 5. Mindfulness -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8 C12 8 8 13 8 18 C8 24 12 28 18 28 C24 28 28 24 28 18"/>
+          <path d="M22 8 C26 10 28 14 28 18"/>
+          <path d="M18 14 V18 L21 21"/>
+        </svg>
+        <p class="tool-card-name">Mindfulness &amp; Stress Resilience</p>
+        <p class="tool-card-desc">Somatic and mind-body practices to regulate your nervous system and reduce the burden of chronic stress.</p>
+        <ul class="tool-card-details">
+          <li>Mindfulness &amp; relaxation training</li>
+          <li>Somatic &amp; emotional regulation tools</li>
+          <li>Breathwork &amp; meditation techniques</li>
         </ul>
       </div>
 
-      <div class="tool-category">
-        <h3 class="tool-cat-title">Gut and Detox Support</h3>
-        <p class="tool-intro">Focused on restoring barrier function and reducing toxic burden.</p>
-        <ul class="tool-list">
-          <li>Gut-healing protocols (glutamine, polyphenols, targeted microbes)</li>
-          <li>Detoxification support (liver, lymph, kidney pathways)</li>
-          <li>Hydration and fiber strategies</li>
-          <li>Saunas, Epsom salt baths, gentle cleansing supports</li>
-          <li>Environmental exposure reduction plans</li>
+      <!-- 6. Gut & Detox -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 8 C10 10 8 14 10 18 C12 22 16 22 18 26 C20 30 24 30 26 26 C28 22 26 16 22 14 C20 12 18 8 14 8Z"/>
+        </svg>
+        <p class="tool-card-name">Gut &amp; Detox Support</p>
+        <p class="tool-card-desc">Restoring barrier function and clearing toxic burden through the gut, liver, and lymphatic system.</p>
+        <ul class="tool-card-details">
+          <li>Gut-healing protocols</li>
+          <li>Liver, lymph &amp; kidney detox pathways</li>
+          <li>Hydration &amp; fiber strategies</li>
+          <li>Environmental exposure reduction</li>
         </ul>
       </div>
+
     </div>
   </section>
 
