@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pearl Precision Wellness</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ══════════════════════════════
+       2. HERO SECTION (index only)
+    ══════════════════════════════ */
+    #hero {
+      background: var(--cream);
+      padding-top: 80px; /* nav offset */
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      align-items: center;
+      padding-left: 80px;
+      padding-right: 80px;
+      gap: 60px;
+    }
+
+    .hero-image-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-width: 480px;
+      height: 640px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-content {}
+
+    .hero-heading {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(36px, 4.5vw, 64px);
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--coral);
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+    }
+
+    .hero-sub {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--coral-dark);
+      margin-bottom: 20px;
+      max-width: 480px;
+    }
+
+    .hero-body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--coral-dark);
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1.5px solid var(--coral);
+      border-radius: 50px;
+      padding: 16px 40px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--coral);
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-outline:hover {
+      background: var(--coral);
+      color: var(--white);
+    }
+
+    /* ══════════════════════════════
+       3. BRAND STATEMENT SECTION
+    ══════════════════════════════ */
+    #brand-statement {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 80px;
+      gap: 60px;
+    }
+
+    .brand-display {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(52px, 6.5vw, 96px);
+      line-height: 0.9;
+      text-transform: uppercase;
+      color: var(--black);
+      letter-spacing: -0.01em;
+      margin-bottom: 40px;
+    }
+
+    .brand-subhead {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--black);
+      margin-bottom: 28px;
+    }
+
+    .brand-body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: var(--black);
+    }
+
+    .brand-image img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+    }
+
+    /* ══════════════════════════════
+       4. OUR FOCUS SECTION
+    ══════════════════════════════ */
+    #our-focus {
+      padding: 20px 60px;
+    }
+
+    .focus-frame {
+      border: 2px solid var(--coral);
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+    }
+
+    .focus-left {
+      padding: 60px 50px;
+    }
+
+    .focus-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(42px, 5vw, 72px);
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 32px;
+    }
+
+    .focus-list li {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 2.1;
+      color: var(--black);
+      padding-left: 18px;
+      position: relative;
+    }
+    .focus-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--black);
+    }
+
+    .focus-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ══════════════════════════════
+       5. OUR SERVICES SECTION
+    ══════════════════════════════ */
+    #our-services {
+      padding: 20px 60px;
+    }
+
+    .services-frame {
+      border-top: 2px solid var(--coral);
+      border-bottom: 2px solid var(--coral);
+      padding: 60px 50px 80px;
+    }
+
+    .services-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(42px, 5.5vw, 80px);
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .service-item {}
+
+    .service-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--black);
+      line-height: 1.4;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .service-body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 13.5px;
+      line-height: 1.8;
+      color: var(--black);
+      text-align: center;
+    }
+
+    /* ══════════════════════════════
+       6. MEET YOUR PROVIDER
+    ══════════════════════════════ */
+    #provider {
+      background: var(--salmon-bg);
+      padding: 80px 80px;
+    }
+
+    .provider-eyebrow {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .provider-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .provider-name {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(20px, 2.5vw, 28px);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .provider-title {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 12.5px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .provider-bio {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--white);
+    }
+    .provider-bio p + p { margin-top: 16px; }
+
+    .provider-photo img {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* ══════════════════════════════
+       7. TOOLS FOR TRANSFORMATION
+    ══════════════════════════════ */
+    #tools {
+      padding: 70px 60px 90px;
+      margin: 20px 60px;
+      border-top: 2px solid var(--coral);
+      border-bottom: 2px solid var(--coral);
+    }
+
+    .tools-title-wrap {
+      text-align: center;
+      margin-bottom: 64px;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .tools-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(24px, 3vw, 40px);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--black);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* SVG oval hand-drawn circle around heading */
+    .tools-oval {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    /* ── Card Grid ── */
+    .tools-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tool-card {
+      border: 1.5px solid rgba(207,123,114,0.25);
+      padding: 36px 32px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .tool-card:hover {
+      border-color: var(--coral);
+      box-shadow: 0 8px 32px rgba(207,123,114,0.12);
+    }
+
+    /* Coral top accent bar on hover */
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--coral);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .tool-card:hover::before { transform: scaleX(1); }
+
+    .tool-card-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 20px;
+      color: var(--coral);
+      opacity: 0.85;
+    }
+
+    .tool-card-name {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-style: italic;
+      font-size: 19px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--black);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .tool-card-desc {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(26,26,26,0.65);
+      margin-bottom: 20px;
+    }
+
+    /* Hidden detail list — revealed on hover */
+    .tool-card-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .tool-card:hover .tool-card-details {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    .tool-card-details li {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 12.5px;
+      line-height: 1.9;
+      color: var(--black);
+      padding-left: 16px;
+      position: relative;
+    }
+    .tool-card-details li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--coral);
+      font-size: 10px;
+      top: 5px;
+    }
+
+    /* ══════════════════════════════
+       8. CONTACT SECTION
+    ══════════════════════════════ */
+    #contact {
+      background: var(--salmon-bg);
+      padding: 80px 60px 100px;
+      text-align: center;
+    }
+
+    .contact-heading {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(72px, 12vw, 160px);
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 0.95;
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-sub {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--white);
+      max-width: 520px;
+      margin: 0 auto 60px;
+      line-height: 1.7;
+    }
+
+    .contact-form {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--white);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .form-label .req {
+      font-size: 11px;
+      opacity: 0.7;
+      margin-left: 4px;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      border-bottom: none;
+      padding: 14px 16px;
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--white);
+      outline: none;
+      transition: background 0.2s;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.5); }
+    .form-input:focus, .form-textarea:focus { background: rgba(255,255,255,0.28); }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .form-check input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      accent-color: var(--white);
+    }
+    .form-check label {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 12.5px;
+      color: var(--white);
+    }
+
+    .btn-submit {
+      border: 1.5px solid var(--white);
+      border-radius: 50px;
+      padding: 16px 44px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-submit:hover {
+      background: var(--white);
+      color: var(--salmon-bg);
+    }
+
+    /* ══════════════════════════════
+       MOBILE RESPONSIVENESS
+    ══════════════════════════════ */
+    @media (max-width: 900px) {
+      #hero {
+        grid-template-columns: 1fr;
+        padding: 120px 32px 60px;
+        text-align: center;
+        min-height: auto;
+      }
+      .hero-image-wrap img { max-width: 340px; height: 420px; margin: 0 auto; }
+      .hero-sub, .hero-body { max-width: 100%; }
+      .btn-outline { margin: 0 auto; display: block; width: fit-content; }
+
+      #brand-statement { grid-template-columns: 1fr; padding: 60px 32px; }
+      .brand-display { font-size: clamp(48px, 12vw, 80px); }
+      .brand-image { order: -1; }
+
+      #our-focus { padding: 20px 24px; }
+      .focus-frame { grid-template-columns: 1fr; }
+      .focus-right { height: 300px; }
+
+      #our-services { padding: 20px 24px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+
+      #provider { padding: 60px 32px; }
+      .provider-inner { grid-template-columns: 1fr; }
+      .provider-photo img { height: 400px; }
+
+      #tools { margin: 20px 24px; padding: 50px 32px 60px; }
+      .tools-cards { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .tool-card-details { max-height: 200px; opacity: 1; }
+
+      #contact { padding: 60px 32px 80px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .tools-cards { grid-template-columns: 1fr; }
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .site-footer {
+      background: var(--salmon-bg);
+    }
+
+    /* — CTA Banner — */
+    .footer-cta {
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding: 64px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-cta__text {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(22px, 2.8vw, 36px);
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .footer-cta__btn {
+      display: inline-block;
+      border: 1.5px solid var(--white);
+      border-radius: 50px;
+      padding: 14px 36px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.25s, color 0.25s;
+    }
+    .footer-cta__btn:hover { background: var(--white); color: var(--salmon-bg); }
+
+    /* — Main footer grid — */
+    .footer-main {
+      padding: 60px 80px 48px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 64px;
+    }
+
+    /* Brand col */
+    .footer-brand {}
+    .footer-brand__logo {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      display: block;
+      margin-bottom: 14px;
+    }
+    .footer-brand__tagline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-style: italic;
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 240px;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-social {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: background 0.25s, border-color 0.25s, transform 0.2s;
+    }
+    .footer-social:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* Nav cols */
+    .footer-col__label {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 22px;
+    }
+    .footer-col__list li + li { margin-top: 11px; }
+    .footer-col__list a {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.03em;
+      transition: color 0.2s, padding-left 0.2s;
+      display: inline-block;
+    }
+    .footer-col__list a:hover { color: var(--white); padding-left: 4px; }
+
+    /* — Bottom bar — */
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 20px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-bottom__copy {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-bottom__legal {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom__legal a {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.2s;
+    }
+    .footer-bottom__legal a:hover { color: rgba(255,255,255,0.8); }
+
+    /* Footer responsive */
+    @media (max-width: 900px) {
+      .footer-cta { padding: 44px 32px; flex-direction: column; align-items: flex-start; gap: 22px; }
+      .footer-main { padding: 48px 32px 40px; grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-bottom { padding: 18px 32px; flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+    @media (max-width: 600px) {
+      .footer-main { grid-template-columns: 1fr; gap: 32px; }
+      .footer-cta { padding: 36px 24px; }
+      .footer-bottom { padding: 16px 24px; }
+    }
+  </style>
+  <style>
+    /* ── NAV (inline, no external dependency) ── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 80px;
+      border-bottom: 1px solid rgba(207,123,114,0.18);
+    }
+    .site-nav__logo {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--coral-dark);
+    }
+    .site-nav__links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .site-nav__link {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--coral-dark);
+      position: relative;
+      transition: color 0.2s;
+    }
+    .site-nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 1px;
+      background: var(--coral);
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
+    .site-nav__link:hover::after { transform: scaleX(1); }
+    .site-nav__cta {
+      border: 1.5px solid var(--coral);
+      border-radius: 50px;
+      padding: 10px 22px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--coral);
+      transition: background 0.25s, color 0.25s;
+    }
+    .site-nav__cta:hover { background: var(--coral); color: var(--white); }
+    .site-nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .site-nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--coral);
+    }
+    .site-nav__mobile {
+      display: none;
+      position: fixed;
+      top: 80px; left: 0; right: 0;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(207,123,114,0.18);
+      padding: 24px 32px 32px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .site-nav__mobile.open { display: flex; }
+    .site-nav__mobile .site-nav__link { font-size: 14px; padding: 6px 0; border-bottom: 1px solid rgba(207,123,114,0.12); }
+    .site-nav__mobile .site-nav__cta { align-self: flex-start; margin-top: 4px; }
+
+    @media (max-width: 900px) {
+      .site-nav { padding: 0 24px; }
+      .site-nav__links { display: none; }
+      .site-nav__hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════
+       NAVIGATION
+  ═══════════════════════════ -->
+  <nav class="site-nav">
+    <a href="index.html" class="site-nav__logo">Pearl Precision Wellness</a>
+    <div class="site-nav__links">
+      <a href="about.html" class="site-nav__link">About</a>
+      <a href="#our-services" class="site-nav__link">Services</a>
+      <a href="#tools" class="site-nav__link">Tools</a>
+      <a href="faq.html" class="site-nav__link">FAQ</a>
+      <a href="contact.html" class="site-nav__link">Contact</a>
+      <a href="contact.html" class="site-nav__cta">Free Consultation</a>
+    </div>
+    <button class="site-nav__hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="site-nav__mobile" id="mobileNav">
+    <a href="about.html" class="site-nav__link">About</a>
+    <a href="#our-services" class="site-nav__link">Services</a>
+    <a href="#tools" class="site-nav__link">Tools</a>
+    <a href="faq.html" class="site-nav__link">FAQ</a>
+    <a href="contact.html" class="site-nav__link">Contact</a>
+    <a href="contact.html" class="site-nav__cta">Free Consultation</a>
+  </div>
+
+  <!-- ═══════════════════════════
+       HERO
+  ═══════════════════════════ -->
+  <section id="hero">
+    <div class="hero-image-wrap">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/68fc373770cbcd56d7ec487b/8756894c-a661-496e-82f6-0977fac958ea/_KHT5279.jpeg"
+        alt="Megan Pattee, PA-C"
+        onerror="this.src='https://placehold.co/480x640/FAF0E6/CF7B72?text=Megan+Pattee+PA-C'"
+      />
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-heading">Functional Medicine for Skin, Hormones, and Whole-Body Health</h1>
+      <p class="hero-sub">Pearl Precision Wellness blends conventional and functional medicine to uncover what your body is actually signaling and restore balance at the source.</p>
+      <p class="hero-body">Whether you're navigating hair loss, acne, hormone shifts, inflammation, or digestive issues, your care is personalized, data-driven, and designed to help you feel clear, confident, and better from the inside out.</p>
+      <a href="#contact" class="btn-outline">Book a<br>Discovery Call</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       BRAND STATEMENT
+  ═══════════════════════════ -->
+  <section id="brand-statement">
+    <div class="brand-left">
+      <div class="brand-display">Pearl<br>Precision<br>Wellness</div>
+      <p class="brand-subhead">Functional medicine looks at why symptoms are happening, not just how to suppress them.</p>
+      <p class="brand-body">
+        You've tried the prescription.<br>
+        You've changed the skincare.<br>
+        You've been told your labs are "normal."<br><br>
+        But your hair is thinning.<br>
+        Your skin is breaking out.<br>
+        Your sleep or cycles are off.<br>
+        You feel inflamed, exhausted, or defeated.<br><br>
+        At Pearl Precision Wellness, our goal is to decode the symptoms instead of cover them.
+      </p>
+    </div>
+    <div class="brand-image">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/68fc373770cbcd56d7ec487b/1b764a1f-c55e-42c3-a160-444a2ca99bf3/the-tonik-5Lbyao5bzbc-unsplash.jpg"
+        alt="Supplements on botanical leaves"
+        onerror="this.src='https://placehold.co/560x520/F5F5F5/888?text='"
+      />
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       OUR FOCUS
+  ═══════════════════════════ -->
+  <section id="our-focus">
+    <div class="focus-frame">
+      <div class="focus-left">
+        <h2 class="focus-heading">Our Focus</h2>
+        <ul class="focus-list">
+          <li>Gut &amp; Digestive Health</li>
+          <li>Thyroid Optimization</li>
+          <li>Nervous System &amp; Brain Health</li>
+          <li>Immune System Balance</li>
+          <li>Energy &amp; Cellular Health</li>
+          <li>Detoxification &amp; Metabolic Support</li>
+          <li>Hormonal Health</li>
+          <li>Inflammatory Conditions</li>
+          <li>Anti-aging and Regenerative Medicine</li>
+        </ul>
+      </div>
+      <div class="focus-right">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/68fc373770cbcd56d7ec487b/e1d58b6e-5bd5-45c9-bf10-447ef807ac78/_KHT5235.jpeg"
+          alt="Provider consultation"
+          onerror="this.src='https://placehold.co/700x500/EAEAEA/999?text='"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       OUR SERVICES
+  ═══════════════════════════ -->
+  <section id="our-services">
+    <div class="services-frame">
+      <h2 class="services-heading">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <h3 class="service-title">1. Comprehensive<br>Assessment</h3>
+          <p class="service-body">Comprehensive discovery consultation documenting detailed medical history, prior interventions, laboratory data, and more.</p>
+        </div>
+        <div class="service-item">
+          <h3 class="service-title">2. Advanced<br>Diagnostics</h3>
+          <p class="service-body">Targeted functional testing that goes beyond standard labs to uncover root causes and the physiologic drivers behind your symptoms.</p>
+        </div>
+        <div class="service-item">
+          <h3 class="service-title">3. Personalized<br>Protocol</h3>
+          <p class="service-body">Evidence-based, stepwise therapeutic protocol incorporating nutraceuticals, dietary intervention, mind-body modalities, and follow-up testing to measure progress.</p>
+        </div>
+        <div class="service-item">
+          <h3 class="service-title">4. On Going<br>Optimization</h3>
+          <p class="service-body">Our approach combines natural, research-driven treatments with mind-body work to support your whole self — building long-term wellness, not temporary symptom relief.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       MEET YOUR PROVIDER
+  ═══════════════════════════ -->
+  <section id="provider">
+    <p class="provider-eyebrow">Meet Your Provider</p>
+    <div class="provider-inner">
+      <div class="provider-text">
+        <h2 class="provider-name">Megan Pattee, PA-C</h2>
+        <p class="provider-title">Physician Assistant | Functional Medicine &amp; Dermatology</p>
+        <div class="provider-bio">
+          <p>Megan is a board-certified Physician Assistant with a clinical foundation in dermatology and advanced training in functional medicine. Early in her dermatology career, she developed a deep appreciation for the visible manifestations of internal health, from hair loss and acne to inflammatory and autoimmune skin conditions.</p>
+          <p>While she valued the effectiveness of conventional treatments, she found herself wanting deeper answers. She recognized that many patients were managing symptoms, yet still asking the same underlying question: Why is this happening? That question ultimately led her to pursue advanced training in functional medicine.</p>
+          <p>Through this lens, Megan expanded her approach beyond symptom control to systems-based investigation, examining hormonal signaling, metabolic health, gut function, inflammation, stress physiology, and nutritional status as interconnected contributors to both internal and external health.</p>
+          <p>Her care integrates evidence-based medicine with comprehensive functional assessment, allowing her to identify underlying drivers rather than simply suppressing symptoms. She develops personalized, data-informed treatment strategies designed for sustainable improvement and long-term health.</p>
+          <p>Megan believes that when internal physiology is supported appropriately, external health benefits. Her work is centered on identifying what is driving the pattern, and addressing it with intention and precision.</p>
+        </div>
+      </div>
+      <div class="provider-photo">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/68fc373770cbcd56d7ec487b/4e7d59eb-1af0-4592-acca-4a6e4899f4cf/_KHT5246-5-2.JPEG"
+          alt="Megan Pattee in consultation"
+          onerror="this.src='https://placehold.co/560x580/D07B73/fff?text='"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       TOOLS FOR TRANSFORMATION
+  ═══════════════════════════ -->
+  <section id="tools">
+    <div class="tools-title-wrap">
+      <svg class="tools-oval" width="680" height="90" viewBox="0 0 680 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 24 48 C 40 18, 120 4, 200 6 C 280 8, 360 2, 440 8 C 520 14, 620 18, 650 38 C 672 52, 660 72, 600 78 C 520 86, 360 88, 240 86 C 140 84, 40 76, 24 58 C 14 50, 18 44, 24 48 Z" stroke="#CF7B72" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <h2 class="tools-heading">The Tools For Transformation</h2>
+    </div>
+
+    <div class="tools-cards">
+
+      <!-- 1. Diagnostics -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="18" r="14"/>
+          <path d="M18 10v8l5 3"/>
+        </svg>
+        <p class="tool-card-name">Diagnostic Tools</p>
+        <p class="tool-card-desc">Advanced lab testing that goes beyond standard bloodwork to uncover root-cause drivers.</p>
+        <ul class="tool-card-details">
+          <li>Hormonal &amp; Thyroid Assessment</li>
+          <li>Cardiometabolic &amp; Inflammatory Markers</li>
+          <li>GI &amp; Immune Function Testing</li>
+          <li>Micronutrient, Genetic &amp; Detox Analysis</li>
+        </ul>
+      </div>
+
+      <!-- 2. Diet & Nutrition -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 28 C10 20 14 14 18 10 C22 14 26 20 26 28"/>
+          <path d="M18 10 V6"/>
+          <path d="M12 22 H24"/>
+        </svg>
+        <p class="tool-card-name">Diet &amp; Nutrition</p>
+        <p class="tool-card-desc">Targeted food strategies and therapeutic nutrition to support healing from the inside out.</p>
+        <ul class="tool-card-details">
+          <li>Elimination &amp; reintroduction diets</li>
+          <li>Therapeutic food-based supplements</li>
+          <li>Nutritional coaching &amp; habit support</li>
+        </ul>
+      </div>
+
+      <!-- 3. Supplements -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="12" y="8" width="12" height="20" rx="6"/>
+          <line x1="12" y1="18" x2="24" y2="18"/>
+        </svg>
+        <p class="tool-card-name">Supplement &amp; Botanical Support</p>
+        <p class="tool-card-desc">Evidence-based nutraceuticals and herbal medicine precisely matched to your physiology.</p>
+        <ul class="tool-card-details">
+          <li>Targeted vitamins &amp; minerals</li>
+          <li>Herbal &amp; botanical therapeutics</li>
+          <li>Neurotransmitter support formulas</li>
+        </ul>
+      </div>
+
+      <!-- 4. Lifestyle -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 26 Q14 18 18 14 Q22 10 28 12"/>
+          <circle cx="28" cy="10" r="2" fill="currentColor"/>
+          <path d="M8 30 Q14 24 20 22"/>
+        </svg>
+        <p class="tool-card-name">Lifestyle &amp; Exercise</p>
+        <p class="tool-card-desc">Personalised movement, sleep, and circadian rhythm protocols to rebuild energy and resilience.</p>
+        <ul class="tool-card-details">
+          <li>Sleep hygiene protocols</li>
+          <li>Movement &amp; exercise prescriptions</li>
+          <li>Circadian rhythm support</li>
+          <li>Habit change frameworks</li>
+        </ul>
+      </div>
+
+      <!-- 5. Mindfulness -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8 C12 8 8 13 8 18 C8 24 12 28 18 28 C24 28 28 24 28 18"/>
+          <path d="M22 8 C26 10 28 14 28 18"/>
+          <path d="M18 14 V18 L21 21"/>
+        </svg>
+        <p class="tool-card-name">Mindfulness &amp; Stress Resilience</p>
+        <p class="tool-card-desc">Somatic and mind-body practices to regulate your nervous system and reduce the burden of chronic stress.</p>
+        <ul class="tool-card-details">
+          <li>Mindfulness &amp; relaxation training</li>
+          <li>Somatic &amp; emotional regulation tools</li>
+          <li>Breathwork &amp; meditation techniques</li>
+        </ul>
+      </div>
+
+      <!-- 6. Gut & Detox -->
+      <div class="tool-card">
+        <svg class="tool-card-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 8 C10 10 8 14 10 18 C12 22 16 22 18 26 C20 30 24 30 26 26 C28 22 26 16 22 14 C20 12 18 8 14 8Z"/>
+        </svg>
+        <p class="tool-card-name">Gut &amp; Detox Support</p>
+        <p class="tool-card-desc">Restoring barrier function and clearing toxic burden through the gut, liver, and lymphatic system.</p>
+        <ul class="tool-card-details">
+          <li>Gut-healing protocols</li>
+          <li>Liver, lymph &amp; kidney detox pathways</li>
+          <li>Hydration &amp; fiber strategies</li>
+          <li>Environmental exposure reduction</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       CONTACT
+  ═══════════════════════════ -->
+  <section id="contact">
+    <h2 class="contact-heading">Contact</h2>
+    <p class="contact-sub">Interested in working together? Fill out some info and we will be in touch shortly! We can't wait to hear from you!</p>
+
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-group">
+        <label class="form-label">Name</label>
+        <div class="form-row">
+          <div>
+            <label class="form-label" for="first-name">First Name <span class="req">(required)</span></label>
+            <input class="form-input" id="first-name" type="text" required placeholder="" />
+          </div>
+          <div>
+            <label class="form-label" for="last-name">Last Name <span class="req">(required)</span></label>
+            <input class="form-input" id="last-name" type="text" required placeholder="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email <span class="req">(required)</span></label>
+        <input class="form-input" id="email" type="email" required />
+        <div class="form-check" style="margin-top:10px;">
+          <input type="checkbox" id="newsletter" />
+          <label for="newsletter">Sign up for news and updates</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="phone">Phone</label>
+        <input class="form-input" id="phone" type="tel" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">Message <span class="req">(required)</span></label>
+        <textarea class="form-input form-textarea" id="message" rows="5" required></textarea>
+      </div>
+
+      <button class="btn-submit" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- ═══════════════════════════
+       FOOTER
+  ═══════════════════════════ -->
+  <footer class="site-footer">
+
+    <!-- CTA Banner -->
+    <div class="footer-cta">
+      <p class="footer-cta__text">Ready to feel better<br>from the inside out?</p>
+      <a href="contact.html" class="footer-cta__btn">Book a Free Consultation</a>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="footer-main">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-brand__logo">Pearl Precision Wellness</a>
+        <p class="footer-brand__tagline">Functional medicine for skin, hormones, and whole-body health.</p>
+        <div class="footer-socials">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/pearlprecisionwellness/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/company/pearl-precision-wellness/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.986V9h3.103v1.561h.044c.432-.82 1.487-1.686 3.061-1.686 3.271 0 3.873 2.153 3.873 4.952v6.625zM5.337 7.433a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zm1.552 13.019H3.785V9h3.104v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Nav col 1 -->
+      <div class="footer-col">
+        <p class="footer-col__label">Navigate</p>
+        <ul class="footer-col__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#our-services">Services</a></li>
+          <li><a href="index.html#tools">Tools</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Nav col 2 -->
+      <div class="footer-col">
+        <p class="footer-col__label">We Address</p>
+        <ul class="footer-col__list">
+          <li><a href="index.html#our-focus">Hormonal Health</a></li>
+          <li><a href="index.html#our-focus">Skin &amp; Hair Loss</a></li>
+          <li><a href="index.html#our-focus">Gut Health</a></li>
+          <li><a href="index.html#our-focus">Thyroid</a></li>
+          <li><a href="index.html#our-focus">Inflammation</a></li>
+          <li><a href="index.html#our-focus">Anti-aging</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="footer-bottom__copy">© 2026 Pearl Precision Wellness. All Rights Reserved.</p>
+      <div class="footer-bottom__legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html#terms">Terms of Use</a>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>
