@@ -303,43 +303,44 @@
       </div>
     </div>
 
-    <!-- Iceberg SVG -->
-    <div class="iceberg__visual">
-      <div class="iceberg-svg-wrap">
-        <svg viewBox="0 0 440 560" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
-          <!-- Water line -->
-          <line x1="0" y1="175" x2="440" y2="175" stroke="#CF7B72" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
-          <text x="340" y="168" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" letter-spacing="2" fill="#CF7B72" opacity="0.6" text-anchor="middle">SURFACE</text>
+<!-- Iceberg SVG -->
+<div class="iceberg__visual">
+  <div class="iceberg-svg-wrap">
+    <svg viewBox="0 0 480 580" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
 
-          <!-- Tip above water -->
-          <polygon points="220,20 280,175 160,175" fill="#CF7B72" opacity="0.25"/>
-          <polygon points="220,20 280,175 160,175" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
+      <!-- Tip above water — shorter, centered -->
+      <polygon points="240,18 306,148 174,148" fill="#CF7B72" opacity="0.22"/>
+      <polygon points="240,18 306,148 174,148" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
 
-          <!-- Above water label -->
-          <text x="220" y="108" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="13" letter-spacing="1.5" fill="#C8756C" text-anchor="middle" text-transform="uppercase">SYMPTOMS</text>
-          <text x="220" y="126" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" fill="#C8756C" opacity="0.7" text-anchor="middle">Treated by</text>
-          <text x="220" y="140" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" fill="#C8756C" opacity="0.7" text-anchor="middle">conventional medicine</text>
+      <!-- Labels inside tip -->
+      <text x="240" y="90" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#C8756C" text-anchor="middle">SYMPTOMS</text>
+      <text x="240" y="108" font-family="'Raleway', sans-serif" font-weight="300" font-size="9.5" fill="#C8756C" opacity="0.65" text-anchor="middle">Treated by conventional medicine</text>
 
-          <!-- Big mass below water -->
-          <polygon points="160,175 90,540 350,540 280,175" fill="#CF7B72" opacity="0.08"/>
-          <polygon points="160,175 90,540 350,540 280,175" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
+      <!-- Water line -->
+      <line x1="20" y1="148" x2="460" y2="148" stroke="#CF7B72" stroke-width="1" stroke-dasharray="5 4" opacity="0.45"/>
+      <text x="422" y="143" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="2" fill="#CF7B72" opacity="0.55" text-anchor="middle">SURFACE</text>
 
-          <!-- Below water labels -->
-          <text x="220" y="215" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">GUT DYSFUNCTION</text>
-          <text x="220" y="256" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">HORMONAL IMBALANCE</text>
-          <text x="220" y="297" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">CHRONIC INFLAMMATION</text>
-          <text x="220" y="338" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">NERVOUS SYSTEM BURDEN</text>
-          <text x="220" y="379" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">NUTRIENT DEPLETION</text>
-          <text x="220" y="420" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">TOXIC BURDEN</text>
-          <text x="220" y="461" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">SLEEP DISRUPTION</text>
-          <text x="220" y="502" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">METABOLIC DYSREGULATION</text>
+      <!-- Wide mass below water -->
+      <polygon points="174,148 52,558 428,558 306,148" fill="#CF7B72" opacity="0.07"/>
+      <polygon points="174,148 52,558 428,558 306,148" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
 
-          <!-- Below water label -->
-          <text x="358" y="228" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="1.5" fill="#CF7B72" opacity="0.6">ROOT</text>
-          <text x="358" y="241" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="1.5" fill="#CF7B72" opacity="0.6">CAUSES</text>
-        </svg>
-      </div>
-    </div>
+      <!-- 8 root cause labels — evenly spaced, centered -->
+      <text x="240" y="192" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">GUT DYSFUNCTION</text>
+      <text x="240" y="237" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">HORMONAL IMBALANCE</text>
+      <text x="240" y="282" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">CHRONIC INFLAMMATION</text>
+      <text x="240" y="327" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">NERVOUS SYSTEM BURDEN</text>
+      <text x="240" y="372" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">NUTRIENT DEPLETION</text>
+      <text x="240" y="417" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">TOXIC BURDEN</text>
+      <text x="240" y="462" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">SLEEP DISRUPTION</text>
+      <text x="240" y="507" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">METABOLIC DYSREGULATION</text>
+
+      <!-- Root causes label — bottom right -->
+      <text x="436" y="196" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="2" fill="#CF7B72" opacity="0.55" text-anchor="end">ROOT</text>
+      <text x="436" y="210" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="2" fill="#CF7B72" opacity="0.55" text-anchor="end">CAUSES</text>
+
+    </svg>
+  </div>
+</div>
   </section>
 
   <!-- QUOTE -->
