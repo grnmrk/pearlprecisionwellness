@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anti-aging & Regenerative Medicine — Pearl Precision Wellness</title>
+  <meta name="description" content="Functional medicine for longevity, cellular health, metabolic optimization, and regenerative aging. Pearl Precision Wellness, Denver CO." />
+  <link rel="icon" type="image/png" href="ppw-logo-icon.png" />
+  <link rel="apple-touch-icon" href="ppw-logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --coral:      #CF7B72;
+      --coral-dark: #C8756C;
+      --salmon-bg:  #D07B73;
+      --cream:      #FAF0E6;
+      --white:      #FFFFFF;
+      --black:      #1A1A1A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Raleway', sans-serif; color: var(--black); background: var(--white); overflow-x: hidden; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+    ul   { list-style: none; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--cream); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 80px; border-bottom: 1px solid rgba(207,123,114,0.15); }
+    .nav-logo { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral-dark); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral-dark); position: relative; transition: color 0.2s; }
+    .nav-link::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--coral); transform: scaleX(0); transition: transform 0.25s ease; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .nav-cta { border: 1.5px solid var(--coral); border-radius: 50px; padding: 10px 24px; font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); transition: background 0.25s, color 0.25s; }
+    .nav-cta:hover { background: var(--coral); color: var(--white); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--coral); }
+    .nav-mobile { display: none; position: fixed; top: 80px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid rgba(207,123,114,0.18); padding: 24px 32px 32px; z-index: 99; flex-direction: column; gap: 18px; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile .nav-link { font-size: 14px; padding: 6px 0; border-bottom: 1px solid rgba(207,123,114,0.12); }
+    .nav-mobile .nav-cta { align-self: flex-start; margin-top: 4px; }
+
+    /* ── HERO ── */
+    .condition-hero {
+      background: var(--black);
+      padding: 140px 80px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 80px;
+      border-bottom: 2px solid var(--coral);
+    }
+    .condition-hero__left { padding-bottom: 72px; }
+    .condition-hero__breadcrumb { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--coral); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .condition-hero__breadcrumb span { color: rgba(255,255,255,0.3); }
+    .condition-hero__breadcrumb a { color: var(--coral); }
+    .condition-hero__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(44px, 6vw, 86px); text-transform: uppercase; color: var(--white); line-height: 0.88; letter-spacing: 0.01em; margin-bottom: 32px; }
+    .condition-hero__lead { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 480px; margin-bottom: 40px; }
+    .btn-coral { display: inline-block; background: var(--coral); border-radius: 50px; padding: 16px 40px; font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); transition: opacity 0.25s, transform 0.2s; }
+    .btn-coral:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-outline-coral { display: inline-block; border: 1.5px solid var(--coral); border-radius: 50px; padding: 16px 40px; font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--coral); transition: background 0.25s, color 0.25s; }
+    .btn-outline-coral:hover { background: var(--coral); color: var(--white); }
+
+    /* Hero right — goal list rather than symptom list */
+    .condition-hero__right { background: rgba(255,255,255,0.04); border-left: 1px solid rgba(207,123,114,0.25); padding: 60px 48px 72px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+    .condition-hero__right-label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+    .condition-hero__right-heading { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: clamp(20px, 2.5vw, 28px); color: var(--white); line-height: 1.35; margin-bottom: 32px; }
+    .goal-list li { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13.5px; line-height: 1; color: rgba(255,255,255,0.8); padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 14px; }
+    .goal-list li:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+    .goal-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--coral); opacity: 0.7; flex-shrink: 0; }
+
+    /* ── REDEFINING AGING ── */
+    .redefining {
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      border-bottom: 1px solid rgba(207,123,114,0.15);
+    }
+    .redefining__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; }
+    .redefining__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4vw, 54px); text-transform: uppercase; color: var(--black); line-height: 0.95; letter-spacing: 0.01em; }
+    .redefining__accent { width: 40px; height: 2px; background: var(--coral); margin: 24px 0 32px; }
+    .redefining__body p { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.9; color: rgba(26,26,26,0.75); }
+    .redefining__body p + p { margin-top: 20px; }
+    .redefining__body strong { font-weight: 500; color: var(--black); }
+
+    /* Healthspan vs Lifespan stat cards */
+    .span-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--coral); }
+    .span-card { background: var(--cream); padding: 40px 32px; }
+    .span-card__number { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 64px; line-height: 1; color: var(--coral); margin-bottom: 8px; letter-spacing: -0.02em; }
+    .span-card__label { font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); margin-bottom: 12px; }
+    .span-card__desc { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.7; color: rgba(26,26,26,0.6); }
+    .span-card.dark { background: var(--black); }
+    .span-card.dark .span-card__number { color: var(--coral); }
+    .span-card.dark .span-card__label { color: var(--white); }
+    .span-card.dark .span-card__desc { color: rgba(255,255,255,0.5); }
+
+    /* ── HALLMARKS OF AGING ── */
+    .hallmarks {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+    .hallmarks__header { margin-bottom: 56px; }
+    .hallmarks__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .hallmarks__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; color: var(--black); line-height: 0.92; letter-spacing: 0.01em; margin-bottom: 20px; }
+    .hallmarks__sub { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.75; color: rgba(26,26,26,0.65); max-width: 680px; }
+    .hallmarks-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .hallmark-card { background: var(--white); border: 1.5px solid rgba(207,123,114,0.2); padding: 32px 28px 28px; position: relative; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s; }
+    .hallmark-card:hover { border-color: var(--coral); box-shadow: 0 8px 32px rgba(207,123,114,0.1); }
+    .hallmark-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--coral); transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease; }
+    .hallmark-card:hover::before { transform: scaleX(1); }
+    .hallmark-card__icon { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 40px; line-height: 1; color: var(--coral); opacity: 0.18; margin-bottom: 14px; }
+    .hallmark-card__name { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--black); margin-bottom: 10px; line-height: 1.2; }
+    .hallmark-card__desc { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 12.5px; line-height: 1.7; color: rgba(26,26,26,0.58); }
+
+    /* ── WHAT WE OPTIMIZE ── */
+    .optimize-section {
+      padding: 100px 80px;
+      background: var(--white);
+    }
+    .optimize-section__header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; gap: 40px; }
+    .optimize-section__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .optimize-section__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; color: var(--black); line-height: 0.92; }
+    .optimize-section__subtitle { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.7; color: rgba(26,26,26,0.6); max-width: 340px; text-align: right; }
+
+    .optimize-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .optimize-card {
+      border: 1.5px solid rgba(207,123,114,0.2);
+      padding: 36px 32px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .optimize-card:hover { border-color: var(--coral); background: var(--cream); }
+    .optimize-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--coral); transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease; }
+    .optimize-card:hover::before { transform: scaleX(1); }
+    .optimize-card__ghost { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 80px; line-height: 1; color: var(--coral); opacity: 0.08; position: absolute; top: 8px; right: 16px; user-select: none; }
+    .optimize-card__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--black); margin-bottom: 14px; line-height: 1.15; position: relative; }
+    .optimize-card__accent { width: 28px; height: 2px; background: var(--coral); margin-bottom: 14px; }
+    .optimize-card__desc { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.8; color: rgba(26,26,26,0.65); margin-bottom: 16px; position: relative; }
+    .optimize-card__examples { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 11.5px; line-height: 1.7; color: var(--coral); position: relative; }
+
+    /* ── NOT JUST VANITY ── */
+    .not-vanity {
+      background: var(--black);
+      padding: 90px 80px;
+    }
+    .not-vanity__inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .not-vanity__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; }
+    .not-vanity__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(30px, 3.5vw, 48px); text-transform: uppercase; color: var(--white); line-height: 1; letter-spacing: 0.02em; margin-bottom: 28px; }
+    .not-vanity__body { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.9; color: rgba(255,255,255,0.65); }
+    .not-vanity__body p + p { margin-top: 16px; }
+    .not-vanity__quote { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(22px, 2.8vw, 32px); color: var(--white); line-height: 1.4; border-left: 2px solid var(--coral); padding-left: 28px; }
+
+    /* ── OUR APPROACH ── */
+    .our-approach { padding: 100px 80px; background: var(--white); }
+    .our-approach__header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; gap: 40px; }
+    .our-approach__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .our-approach__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; color: var(--black); line-height: 0.92; }
+    .our-approach__subtitle { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.7; color: rgba(26,26,26,0.6); max-width: 340px; text-align: right; }
+    .approach-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--coral); }
+    .approach-step { background: var(--white); padding: 44px 32px 40px; position: relative; overflow: hidden; transition: background 0.25s; }
+    .approach-step:hover { background: var(--cream); }
+    .approach-step__number { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 80px; line-height: 1; color: var(--coral); opacity: 0.1; position: absolute; top: 12px; right: 20px; letter-spacing: -0.04em; user-select: none; }
+    .approach-step__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--black); margin-bottom: 16px; line-height: 1.2; position: relative; }
+    .approach-step__accent { width: 28px; height: 2px; background: var(--coral); margin-bottom: 16px; }
+    .approach-step__body { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.8; color: rgba(26,26,26,0.65); position: relative; }
+
+    /* ── TESTING ── */
+    .testing-section { padding: 20px 60px; }
+    .testing-frame { border: 2px solid var(--coral); padding: 72px 60px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+    .testing-section__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .testing-section__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4vw, 52px); text-transform: uppercase; color: var(--black); line-height: 0.95; letter-spacing: 0.01em; margin-bottom: 20px; }
+    .testing-section__body { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.85; color: rgba(26,26,26,0.7); margin-bottom: 36px; }
+    .testing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .test-item { border: 1px solid rgba(207,123,114,0.2); padding: 20px 22px; transition: border-color 0.25s, background 0.25s; }
+    .test-item:hover { border-color: var(--coral); background: var(--cream); }
+    .test-item__name { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--black); margin-bottom: 6px; }
+    .test-item__desc { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 12px; line-height: 1.65; color: rgba(26,26,26,0.55); }
+
+    /* ── FAQ ── */
+    .condition-faq { padding: 100px 80px; background: var(--cream); }
+    .condition-faq__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .condition-faq__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4.5vw, 56px); text-transform: uppercase; color: var(--black); line-height: 0.92; margin-bottom: 56px; }
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid rgba(207,123,114,0.2); }
+    .faq-item:first-child { border-top: 1px solid rgba(207,123,114,0.2); }
+    .faq-btn { width: 100%; background: none; border: none; padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; text-align: left; }
+    .faq-q { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 14.5px; color: var(--black); line-height: 1.5; }
+    .faq-icon { width: 26px; height: 26px; border: 1px solid var(--coral); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--coral); transition: background 0.2s, transform 0.3s; }
+    .faq-icon svg { width: 12px; height: 12px; }
+    .faq-item.open .faq-icon { background: var(--coral); color: var(--white); transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 22px; }
+    .faq-a { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.85; color: rgba(26,26,26,0.7); }
+
+    /* ── BOTTOM CTA ── */
+    .condition-cta { background: var(--salmon-bg); padding: 90px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .condition-cta__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(40px, 5.5vw, 72px); text-transform: uppercase; color: var(--white); line-height: 0.92; letter-spacing: 0.01em; }
+    .condition-cta__body { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 36px; }
+    .btn-white { display: inline-block; background: var(--white); border-radius: 50px; padding: 16px 40px; font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--salmon-bg); transition: opacity 0.25s; }
+    .btn-white:hover { opacity: 0.88; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--salmon-bg); }
+    .footer-cta { border-top: 1px solid rgba(255,255,255,0.15); border-bottom: 1px solid rgba(255,255,255,0.15); padding: 64px 80px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .footer-cta__text { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(22px, 2.8vw, 36px); color: var(--white); line-height: 1.2; }
+    .footer-cta__btn { display: inline-block; border: 1.5px solid var(--white); border-radius: 50px; padding: 14px 36px; font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); white-space: nowrap; flex-shrink: 0; transition: background 0.25s, color 0.25s; }
+    .footer-cta__btn:hover { background: var(--white); color: var(--salmon-bg); }
+    .footer-main { padding: 60px 80px 48px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 64px; }
+    .footer-brand__logo { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); display: block; margin-bottom: 14px; }
+    .footer-brand__tagline { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 32px; max-width: 240px; }
+    .footer-socials { display: flex; gap: 12px; }
+    .footer-social { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: background 0.25s, border-color 0.25s, transform 0.2s; }
+    .footer-social:hover { background: rgba(255,255,255,0.15); border-color: var(--white); transform: translateY(-2px); }
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+    .footer-col__label { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 22px; }
+    .footer-col__list li + li { margin-top: 11px; }
+    .footer-col__list a { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13.5px; color: rgba(255,255,255,0.82); display: inline-block; transition: color 0.2s, padding-left 0.2s; }
+    .footer-col__list a:hover { color: var(--white); padding-left: 4px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding: 20px 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-bottom__copy { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); }
+    .footer-bottom__legal { display: flex; gap: 24px; }
+    .footer-bottom__legal a { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+    .footer-bottom__legal a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .condition-hero { grid-template-columns: 1fr; padding: 120px 32px 0; gap: 0; }
+      .condition-hero__left { padding-bottom: 48px; }
+      .condition-hero__right { border-left: none; border-top: 1px solid rgba(207,123,114,0.25); padding: 44px 32px 52px; }
+      .redefining { grid-template-columns: 1fr; padding: 64px 32px; gap: 48px; }
+      .span-cards { grid-template-columns: 1fr 1fr; }
+      .hallmarks { padding: 64px 32px; }
+      .hallmarks-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .optimize-section { padding: 64px 32px; }
+      .optimize-section__header { flex-direction: column; align-items: flex-start; }
+      .optimize-section__subtitle { text-align: left; }
+      .optimize-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .not-vanity { padding: 64px 32px; }
+      .not-vanity__inner { grid-template-columns: 1fr; gap: 40px; }
+      .our-approach { padding: 64px 32px; }
+      .our-approach__header { flex-direction: column; align-items: flex-start; }
+      .our-approach__subtitle { text-align: left; }
+      .approach-steps { grid-template-columns: 1fr 1fr; }
+      .testing-section { padding: 20px 24px; }
+      .testing-frame { grid-template-columns: 1fr; padding: 44px 32px; gap: 40px; }
+      .testing-grid { grid-template-columns: 1fr; }
+      .condition-faq { padding: 64px 32px; }
+      .condition-cta { grid-template-columns: 1fr; padding: 64px 32px; gap: 32px; }
+      .footer-cta { padding: 44px 32px; flex-direction: column; align-items: flex-start; gap: 22px; }
+      .footer-main { padding: 48px 32px 40px; grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-bottom { padding: 18px 32px; flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+    @media (max-width: 600px) {
+      .hallmarks-grid { grid-template-columns: 1fr; }
+      .optimize-grid { grid-template-columns: 1fr; }
+      .approach-steps { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/home" class="nav-logo">Pearl Precision Wellness</a>
+    <div class="nav-links">
+      <a href="/about" class="nav-link">About</a>
+      <a href="/services" class="nav-link">Services</a>
+      <a href="/tools" class="nav-link">Tools</a>
+      <a href="/products" class="nav-link">Products</a>
+      <a href="/faq" class="nav-link">FAQ</a>
+      <a href="/contact" class="nav-link">Contact</a>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile" id="mobileNav">
+    <a href="/about" class="nav-link">About</a>
+    <a href="/services" class="nav-link">Services</a>
+    <a href="/tools" class="nav-link">Tools</a>
+    <a href="/products" class="nav-link">Products</a>
+    <a href="/faq" class="nav-link">FAQ</a>
+    <a href="/contact" class="nav-link">Contact</a>
+    <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
+  </div>
+
+  <!-- HERO — Dark background, goal-oriented framing -->
+  <section class="condition-hero">
+    <div class="condition-hero__left">
+      <p class="condition-hero__breadcrumb">
+        <a href="index.html#our-focus">Our Focus</a>
+        <span>›</span>
+        Anti-aging &amp; Longevity
+      </p>
+      <h1 class="condition-hero__title">Anti-aging &amp;<br>Regenerative<br>Medicine</h1>
+      <p class="condition-hero__lead">Aging is not a passive process — it's a collection of measurable biological mechanisms that can be investigated, slowed, and in many cases partially reversed. The question isn't whether you'll age. It's how well, and for how long.</p>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="btn-coral">Book a Discovery Call</a>
+    </div>
+    <div class="condition-hero__right">
+      <p class="condition-hero__right-label">What our patients are working toward</p>
+      <p class="condition-hero__right-heading">"I want to feel as good at 60 as I did at 40 — and actually understand what's driving how I age."</p>
+      <ul class="goal-list">
+        <li><span class="goal-dot"></span>Sustained energy and cognitive sharpness with age</li>
+        <li><span class="goal-dot"></span>Healthy body composition without extreme restriction</li>
+        <li><span class="goal-dot"></span>Resilient skin, hair, and connective tissue</li>
+        <li><span class="goal-dot"></span>Strong metabolic and cardiovascular function</li>
+        <li><span class="goal-dot"></span>Preserved hormonal health and libido</li>
+        <li><span class="goal-dot"></span>Reduced inflammatory burden and disease risk</li>
+        <li><span class="goal-dot"></span>Bone density and musculoskeletal resilience</li>
+        <li><span class="goal-dot"></span>Optimized sleep quality and recovery</li>
+        <li><span class="goal-dot"></span>Clarity on personal biomarkers and biological age</li>
+        <li><span class="goal-dot"></span>A proactive strategy — not reactive disease management</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- REDEFINING AGING -->
+  <section class="redefining">
+    <div>
+      <p class="redefining__label">A different way of thinking</p>
+      <h2 class="redefining__title">Healthspan,<br>Not Just Lifespan</h2>
+      <div class="redefining__accent"></div>
+      <div class="redefining__body">
+        <p>Conventional medicine is extraordinarily good at extending lifespan — keeping people alive through acute illness, surgery, and disease management. What it's less equipped to optimize is <strong>healthspan</strong>: the years spent feeling vital, cognitively sharp, physically capable, and fully engaged in life.</p>
+        <p>The research on aging biology has advanced dramatically over the past decade. We now understand that aging is not a uniform, inevitable decline — it's driven by specific, measurable biological processes: cellular senescence, mitochondrial dysfunction, telomere attrition, chronic inflammation, epigenetic drift, and metabolic dysregulation. Each of these can be assessed. Many can be meaningfully influenced.</p>
+        <p>Our approach to anti-aging medicine is rooted in the science of longevity — not cosmetic interventions or unsubstantiated supplements. We measure what's actually happening in your cells, identify where your biology is aging faster than it should, and build targeted protocols to address it with precision.</p>
+      </div>
+    </div>
+    <div>
+      <div class="span-cards">
+        <div class="span-card">
+          <div class="span-card__number">79</div>
+          <div class="span-card__label">Average Lifespan</div>
+          <p class="span-card__desc">How long most people live — the metric conventional medicine has optimized for decades.</p>
+        </div>
+        <div class="span-card dark">
+          <div class="span-card__number">63</div>
+          <div class="span-card__label">Average Healthspan</div>
+          <p class="span-card__desc">How long people live in good health — a 16-year gap filled with managed decline.</p>
+        </div>
+        <div class="span-card dark">
+          <div class="span-card__number">~20%</div>
+          <div class="span-card__label">Genetic Contribution</div>
+          <p class="span-card__desc">Genetics account for roughly 20% of longevity outcomes. The rest is biology you can influence.</p>
+        </div>
+        <div class="span-card">
+          <div class="span-card__number">80%</div>
+          <div class="span-card__label">Modifiable Factors</div>
+          <p class="span-card__desc">Lifestyle, environment, metabolic health, hormones, and inflammation — all addressable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HALLMARKS OF AGING -->
+  <section class="hallmarks">
+    <div class="hallmarks__header">
+      <p class="hallmarks__label">The science of aging</p>
+      <h2 class="hallmarks__title">The Hallmarks<br>of Aging</h2>
+      <p class="hallmarks__sub">Modern aging biology has identified specific cellular and molecular mechanisms that drive biological aging — distinct from chronological age. Each is measurable, and each is a potential target for intervention.</p>
+    </div>
+    <div class="hallmarks-grid">
+
+      <div class="hallmark-card">
+        <div class="hallmark-card__icon">✦</div>
+        <h3 class="hallmark-card__name">Mitochondrial Dysfunction</h3>
+        <p class="hallmark-card__desc">Declining mitochondrial efficiency reduces cellular energy production, increases oxidative stress, and accelerates tissue aging — particularly in high-energy organs like the brain, heart, and muscles.</p>
+      </div>
+
+      <div class="hallmark-card">
+        <div class="hallmark-card__icon">✦</div>
+        <h3 class="hallmark-card__name">Chronic Inflammation</h3>
+        <p class="hallmark-card__desc">"Inflammaging" — low-grade, persistent systemic inflammation — is the common thread underlying virtually every age-related disease, from cardiovascular disease to neurodegeneration and cancer.</p>
+      </div>
+
+      <div class="hallmark-card">
+        <div class="hallmark-card__icon">✦</div>
+        <h3 class="hallmark-card__name">Cellular Senescence</h3>
+        <p class="hallmark-card__desc">Aging cells that stop dividing but refuse to die — accumulating in tissues and secreting inflammatory signals (the SASP) that damage surrounding healthy cells and accelerate organ aging.</p>
+      </div>
+
+      <div class="hallmark-card">
+        <div class="hallmark-card__icon">✦</div>
+        <h3 class="hallmark-card__name">Telomere Attrition</h3>
+        <p class="hallmark-card__desc">Telomeres — the protective caps on chromosomes — shorten with each cell division and with chronic stress, poor sleep, and metabolic dysfunction. Short telomeres are a marker of accelerated biological aging.</p>
+      </div>
+
+      <div class="hallmark-card">
+        <div class="hallmark-card__icon">✦</div>
+        <h3 class="hallmark-card__name">Epigenetic Drift</h3>
+        <p class="hallmark-card__desc">Epigenetic patterns that regulate gene expression shift with age, stress, and environment — turning on pro-aging genes and silencing protective ones. Epigenetic clocks now allow us to measure biological age directly.</p>
+      </div>
+
+      <div class="hallmark-card">
+        <div class="hallmark-card__icon">✦</div>
+        <h3 class="hallmark-card__name">Metabolic Dysregulation</h3>
+        <p class="hallmark-card__desc">Declining insulin sensitivity, impaired glucose metabolism, accumulating visceral fat, and disrupted mTOR and AMPK signaling — hallmarks that accelerate aging across nearly every organ system.</p>
+      </div>
+
+      <div class="hallmark-card">
+        <div class="hallmark-card__icon">✦</div>
+        <h3 class="hallmark-card__name">Hormonal Decline</h3>
+        <p class="hallmark-card__desc">Declining sex hormones, growth hormone, DHEA, and melatonin with age affect body composition, bone density, cognition, cardiovascular risk, and overall vitality — each measurable and optimizable.</p>
+      </div>
+
+      <div class="hallmark-card">
+        <div class="hallmark-card__icon">✦</div>
+        <h3 class="hallmark-card__name">Gut Microbiome Aging</h3>
+        <p class="hallmark-card__desc">The gut microbiome loses diversity and shifts toward pro-inflammatory species with age — contributing to systemic inflammation, immune dysregulation, and accelerated aging across multiple systems.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT WE OPTIMIZE -->
+  <section class="optimize-section">
+    <div class="optimize-section__header">
+      <div>
+        <p class="optimize-section__label">Our focus areas</p>
+        <h2 class="optimize-section__title">What We<br>Optimize</h2>
+      </div>
+      <p class="optimize-section__subtitle">Six interconnected domains that together determine how you age — and how well you feel doing it.</p>
+    </div>
+    <div class="optimize-grid">
+
+      <div class="optimize-card">
+        <div class="optimize-card__ghost">01</div>
+        <h3 class="optimize-card__title">Metabolic Health</h3>
+        <div class="optimize-card__accent"></div>
+        <p class="optimize-card__desc">Insulin sensitivity, blood sugar regulation, lipid optimization, and visceral fat reduction — the metabolic foundation that determines rate of biological aging more than almost any other variable.</p>
+        <p class="optimize-card__examples">Fasting insulin · HbA1c · Lipid particle sizing · Body composition · HOMA-IR</p>
+      </div>
+
+      <div class="optimize-card">
+        <div class="optimize-card__ghost">02</div>
+        <h3 class="optimize-card__title">Hormonal Optimization</h3>
+        <div class="optimize-card__accent"></div>
+        <p class="optimize-card__desc">Preserving and optimizing sex hormones, adrenal function, thyroid health, and anabolic hormone signaling — the key drivers of body composition, bone density, cognition, and vitality through midlife and beyond.</p>
+        <p class="optimize-card__examples">Testosterone · Estrogen · DHEA · Cortisol · IGF-1 · Thyroid</p>
+      </div>
+
+      <div class="optimize-card">
+        <div class="optimize-card__ghost">03</div>
+        <h3 class="optimize-card__title">Inflammation &amp; Immune Aging</h3>
+        <div class="optimize-card__accent"></div>
+        <p class="optimize-card__desc">Measuring and systematically reducing the chronic low-grade inflammation that drives nearly every age-related disease — through nutrition, gut health, stress physiology, and targeted anti-inflammatory support.</p>
+        <p class="optimize-card__examples">hs-CRP · IL-6 · Homocysteine · Omega-3 index · GI-MAP</p>
+      </div>
+
+      <div class="optimize-card">
+        <div class="optimize-card__ghost">04</div>
+        <h3 class="optimize-card__title">Cellular Energy &amp; Mitochondria</h3>
+        <div class="optimize-card__accent"></div>
+        <p class="optimize-card__desc">Supporting mitochondrial biogenesis, NAD+ metabolism, and oxidative phosphorylation — the cellular machinery that determines energy, cognitive performance, and how efficiently your cells age.</p>
+        <p class="optimize-card__examples">CoQ10 · NAD+ precursors · Organic acids · Antioxidant status</p>
+      </div>
+
+      <div class="optimize-card">
+        <div class="optimize-card__ghost">05</div>
+        <h3 class="optimize-card__title">Brain &amp; Cognitive Longevity</h3>
+        <div class="optimize-card__accent"></div>
+        <p class="optimize-card__desc">Protecting cognitive function, memory, processing speed, and neuroplasticity — addressing the metabolic, vascular, inflammatory, and nutritional drivers of cognitive decline before they become irreversible.</p>
+        <p class="optimize-card__examples">ApoE genotype · Homocysteine · Omega-3 · BDNF · Blood sugar</p>
+      </div>
+
+      <div class="optimize-card">
+        <div class="optimize-card__ghost">06</div>
+        <h3 class="optimize-card__title">Skin, Hair &amp; Structural Aging</h3>
+        <div class="optimize-card__accent"></div>
+        <p class="optimize-card__desc">Collagen production, skin elasticity, hair cycle support, and connective tissue integrity — all driven internally by hormones, nutrition, oxidative stress, and gut health rather than topical interventions alone.</p>
+        <p class="optimize-card__examples">Collagen cofactors · Hormones · Micronutrients · GI health</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NOT JUST VANITY -->
+  <section class="not-vanity">
+    <div class="not-vanity__inner">
+      <div>
+        <p class="not-vanity__label">Why this matters</p>
+        <h2 class="not-vanity__title">This Is Not About Looking Younger</h2>
+        <div class="not-vanity__body">
+          <p>The longevity medicine space is crowded with promises — peptides, supplements, and IV drips marketed as anti-aging solutions without the diagnostic foundation to know whether any given intervention is actually needed.</p>
+          <p>Our approach starts with measurement: understanding where your biology currently stands, what's aging fastest, and what the highest-leverage interventions are for your specific physiology. We don't layer protocols on top of unknowns. We build protocols from your data.</p>
+          <p>The goal isn't a number on a scale or a wrinkle cream that works. It's sustained cognitive sharpness, physical capability, metabolic resilience, and the kind of energy that makes the next decade feel as vital as the last.</p>
+        </div>
+      </div>
+      <div>
+        <p class="not-vanity__quote">"We're not trying to turn back the clock. We're trying to make sure the clock you have runs as well as possible, for as long as possible."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="our-approach">
+    <div class="our-approach__header">
+      <div>
+        <p class="our-approach__label">How we work</p>
+        <h2 class="our-approach__title">Our Approach to<br>Longevity Medicine</h2>
+      </div>
+      <p class="our-approach__subtitle">Data-first, protocol-second — always built on your biology, not on trends.</p>
+    </div>
+    <div class="approach-steps">
+      <div class="approach-step">
+        <div class="approach-step__number">01</div>
+        <h3 class="approach-step__title">Baseline Assessment</h3>
+        <div class="approach-step__accent"></div>
+        <p class="approach-step__body">A comprehensive intake covering your health history, family history, current symptoms, lifestyle factors, and goals — paired with a review of any prior labs or testing to build a complete picture before ordering anything new.</p>
+      </div>
+      <div class="approach-step">
+        <div class="approach-step__number">02</div>
+        <h3 class="approach-step__title">Deep Biomarker Testing</h3>
+        <div class="approach-step__accent"></div>
+        <p class="approach-step__body">A targeted panel spanning metabolic, hormonal, inflammatory, cardiovascular, nutritional, and cellular health markers — selected to map the specific aging pathways most relevant to your presentation and goals.</p>
+      </div>
+      <div class="approach-step">
+        <div class="approach-step__number">03</div>
+        <h3 class="approach-step__title">Precision Protocol</h3>
+        <div class="approach-step__accent"></div>
+        <p class="approach-step__body">A stepwise, prioritized protocol addressing your highest-leverage targets first — whether metabolic rebalancing, hormonal optimization, inflammation reduction, gut restoration, or targeted nutraceutical support.</p>
+      </div>
+      <div class="approach-step">
+        <div class="approach-step__number">04</div>
+        <h3 class="approach-step__title">Longitudinal Tracking</h3>
+        <div class="approach-step__accent"></div>
+        <p class="approach-step__body">Longevity is a long game. We establish baseline biomarkers, track trends over time, and evolve your protocol as your physiology changes — building a data-rich picture of your biological aging trajectory.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTING -->
+  <section class="testing-section">
+    <div class="testing-frame">
+      <div>
+        <p class="testing-section__label">What we test</p>
+        <h2 class="testing-section__title">Longevity Biomarker Panel</h2>
+        <p class="testing-section__body">A longevity panel goes significantly deeper than a standard annual physical. We measure the biomarkers that predict how you'll age — not just whether you're sick today.</p>
+        <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="btn-outline-coral">Discuss Your Panel</a>
+      </div>
+      <div class="testing-grid">
+        <div class="test-item">
+          <p class="test-item__name">Advanced Cardiometabolic Panel</p>
+          <p class="test-item__desc">ApoB, Lp(a), LDL particle size and number, HDL function, triglycerides, fasting insulin, HbA1c, homocysteine — the cardiovascular markers that actually predict risk</p>
+        </div>
+        <div class="test-item">
+          <p class="test-item__name">Comprehensive Hormone Panel</p>
+          <p class="test-item__desc">Testosterone (total &amp; free), estradiol, DHEA-S, cortisol rhythm, thyroid, IGF-1 — the hormonal drivers of body composition, bone density, energy, and cognitive aging</p>
+        </div>
+        <div class="test-item">
+          <p class="test-item__name">Inflammatory Biomarkers</p>
+          <p class="test-item__desc">hs-CRP, IL-6, TNF-alpha, oxidized LDL, omega-3 index, ferritin — mapping the inflammatory burden driving accelerated biological aging</p>
+        </div>
+        <div class="test-item">
+          <p class="test-item__name">Cellular &amp; Mitochondrial Health</p>
+          <p class="test-item__desc">Organic acids, CoQ10, NAD+ metabolites, glutathione, antioxidant capacity — assessing cellular energy production and oxidative stress burden</p>
+        </div>
+        <div class="test-item">
+          <p class="test-item__name">Micronutrient &amp; Nutritional Status</p>
+          <p class="test-item__desc">Vitamin D, magnesium, zinc, B12, folate, vitamin K2, omega-3 — the nutritional cofactors essential to virtually every longevity pathway</p>
+        </div>
+        <div class="test-item">
+          <p class="test-item__name">Biological Age Assessment</p>
+          <p class="test-item__desc">Epigenetic age testing (methylation clocks) and telomere length analysis — providing a direct measure of biological vs. chronological age as a baseline and tracking metric</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="condition-faq">
+    <p class="condition-faq__label">Common questions</p>
+    <h2 class="condition-faq__title">Longevity &amp; Anti-aging FAQ</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">I'm in my 40s and feel fine. Is it too early to think about longevity medicine?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">The 40s are actually the ideal time to start — precisely because you feel fine. Biological aging processes like insulin resistance, hormonal decline, mitochondrial dysfunction, and chronic inflammation accumulate silently for years before producing obvious symptoms. Establishing baselines now, identifying where your biology is trending, and intervening early produces dramatically better outcomes than waiting for disease to present. Longevity medicine is most powerful as a proactive discipline, not a reactive one.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">How is this different from just eating well and exercising?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">Nutrition and exercise are foundational — and we build every protocol around them. The difference is precision and personalization. Comprehensive biomarker testing reveals whether your diet is actually producing the metabolic outcomes you're working toward, whether your inflammatory burden is declining, whether your hormones are supporting or undermining your efforts, and which specific nutritional gaps or biological dysfunctions are limiting your results. Two people following identical health protocols can have dramatically different biological outcomes based on their individual physiology.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">What is biological age and can it actually be reversed?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">Biological age is a measure of how old your cells actually are — as opposed to how many years you've lived. It's assessed through epigenetic methylation patterns (DNA methylation clocks like the Horvath or DunedinPACE clocks) and telomere length. Research is now showing that targeted lifestyle and medical interventions can meaningfully reduce biological age — with well-designed studies demonstrating 1–3 year reductions in epigenetic age over 8–12 week intervention periods. It's one of the most exciting frontiers in medicine right now, and it gives us a quantifiable measure of whether our interventions are actually working at the cellular level.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Is this just expensive supplements with no evidence behind them?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">Our longevity protocols are built on peer-reviewed evidence, not trends. We don't recommend interventions without a clinical rationale grounded in your specific biomarkers. That said, we do work with certain nutraceuticals that have strong mechanistic and clinical evidence — NMN/NR for NAD+ support, urolithin A for mitochondrial health, berberine for metabolic optimization, omega-3s, and targeted antioxidants among others. Every recommendation we make comes with a reason, and that reason comes from your data.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Do you work with patients who are already working with other physicians?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">Absolutely — and this is very common in longevity medicine. Many of our patients have a primary care physician, cardiologist, or other specialist they continue to work with. Our role is complementary: we go deeper into the optimization layer that most conventional appointments don't have the time or tools to address. We review your existing medications and labs, avoid duplication, and communicate clearly so your care team has full visibility into what we're doing and why.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="condition-cta">
+    <h2 class="condition-cta__title">Invest in the decades ahead.</h2>
+    <div>
+      <p class="condition-cta__body">Start with a free discovery call. We'll talk through your health history, your goals for the next decade, and what a personalized longevity assessment would look like for you specifically.</p>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="btn-white">Book a Free Discovery Call</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-cta">
+      <p class="footer-cta__text">Ready to feel better<br>from the inside out?</p>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="footer-cta__btn">Book a Free Consultation</a>
+    </div>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/home" class="footer-brand__logo">Pearl Precision Wellness</a>
+        <p class="footer-brand__tagline">Functional medicine for skin, hormones, and whole-body health.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/pearlprecisionwellness/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/pearl-precision-wellness/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.986V9h3.103v1.561h.044c.432-.82 1.487-1.686 3.061-1.686 3.271 0 3.873 2.153 3.873 4.952v6.625zM5.337 7.433a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zm1.552 13.019H3.785V9h3.104v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__label">Navigate</p>
+        <ul class="footer-col__list">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/tools">Tools</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__label">We Address</p>
+        <ul class="footer-col__list">
+          <li><a href="/hormonal-health">Hormonal Health</a></li>
+          <li><a href="/skin-hair-loss">Skin &amp; Hair Loss</a></li>
+          <li><a href="/gut-health">Gut Health</a></li>
+          <li><a href="/thyroid">Thyroid</a></li>
+          <li><a href="/inflammation">Inflammation</a></li>
+          <li><a href="/anti-aging">Anti-aging</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom__copy">© 2026 Pearl Precision Wellness. All Rights Reserved.</p>
+      <div class="footer-bottom__legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>
