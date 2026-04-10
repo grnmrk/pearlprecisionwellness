@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmetic Dermatology — Pearl Precision Wellness</title>
+  <meta name="description" content="Clinical aesthetics informed by functional medicine. Medical-grade cosmetic treatments for skin quality, rejuvenation, and structural refinement. Pearl Precision Wellness, Denver CO." />
+  <link rel="icon" type="image/png" href="ppw-logo-icon.png" />
+  <link rel="apple-touch-icon" href="ppw-logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --coral:      #CF7B72;
+      --coral-dark: #C8756C;
+      --salmon-bg:  #D07B73;
+      --cream:      #FAF0E6;
+      --white:      #FFFFFF;
+      --black:      #1A1A1A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Raleway', sans-serif; color: var(--black); background: var(--white); overflow-x: hidden; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+    ul   { list-style: none; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--cream); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 80px; border-bottom: 1px solid rgba(207,123,114,0.15); }
+    .nav-logo { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral-dark); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral-dark); position: relative; transition: color 0.2s; }
+    .nav-link::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--coral); transform: scaleX(0); transition: transform 0.25s ease; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .nav-cta { border: 1.5px solid var(--coral); border-radius: 50px; padding: 10px 24px; font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); transition: background 0.25s, color 0.25s; }
+    .nav-cta:hover { background: var(--coral); color: var(--white); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--coral); }
+    .nav-mobile { display: none; position: fixed; top: 80px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid rgba(207,123,114,0.18); padding: 24px 32px 32px; z-index: 99; flex-direction: column; gap: 18px; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile .nav-link { font-size: 14px; padding: 6px 0; border-bottom: 1px solid rgba(207,123,114,0.12); }
+    .nav-mobile .nav-cta { align-self: flex-start; margin-top: 4px; }
+
+    /* ── HERO ── */
+    .cosm-hero {
+      background: var(--cream);
+      padding: 140px 80px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 80px;
+      border-bottom: 2px solid var(--coral);
+      min-height: 90vh;
+    }
+    .cosm-hero__left { padding-bottom: 80px; }
+    .cosm-hero__breadcrumb { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--coral); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .cosm-hero__breadcrumb span { opacity: 0.45; }
+    .cosm-hero__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; }
+    .cosm-hero__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(48px, 6.5vw, 88px); text-transform: uppercase; color: var(--black); line-height: 0.88; letter-spacing: 0.01em; margin-bottom: 32px; }
+    .cosm-hero__lead { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.8; color: rgba(26,26,26,0.7); max-width: 480px; margin-bottom: 16px; }
+    .cosm-hero__sub { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.8; color: rgba(26,26,26,0.55); max-width: 460px; margin-bottom: 44px; font-style: italic; }
+    .cosm-hero__btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-coral { display: inline-block; background: var(--coral); border-radius: 50px; padding: 16px 40px; font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); transition: opacity 0.25s, transform 0.2s; }
+    .btn-coral:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-outline-coral { display: inline-block; border: 1.5px solid var(--coral); border-radius: 50px; padding: 16px 40px; font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--coral); transition: background 0.25s, color 0.25s; }
+    .btn-outline-coral:hover { background: var(--coral); color: var(--white); }
+    .cosm-hero__right { align-self: stretch; position: relative; }
+    .cosm-hero__right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .cosm-hero__right-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.65) 0%, transparent 60%);
+      padding: 40px 40px 44px;
+    }
+    .cosm-hero__right-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 12px;
+    }
+    .cosm-hero__right-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--white);
+      line-height: 1.35;
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy {
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      border-bottom: 1px solid rgba(207,123,114,0.15);
+    }
+    .philosophy__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; }
+    .philosophy__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4vw, 54px); text-transform: uppercase; color: var(--black); line-height: 0.95; letter-spacing: 0.01em; }
+    .philosophy__accent { width: 40px; height: 2px; background: var(--coral); margin: 24px 0 32px; }
+    .philosophy__body p { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.9; color: rgba(26,26,26,0.75); }
+    .philosophy__body p + p { margin-top: 20px; }
+    .philosophy__body strong { font-weight: 500; color: var(--black); }
+    .philosophy__pillars { display: flex; flex-direction: column; gap: 2px; }
+    .philosophy__pillar {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 24px 28px;
+      background: var(--cream);
+      border-left: 3px solid rgba(207,123,114,0.25);
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .philosophy__pillar:hover { border-color: var(--coral); background: var(--white); }
+    .philosophy__pillar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 28px;
+      color: var(--coral);
+      opacity: 0.4;
+      line-height: 1;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .philosophy__pillar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 17px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .philosophy__pillar-desc {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: rgba(26,26,26,0.58);
+    }
+
+    /* ── THE DIFFERENCE ── */
+    .difference {
+      background: var(--black);
+      padding: 90px 80px;
+    }
+    .difference__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .difference__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; }
+    .difference__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(30px, 3.5vw, 48px); text-transform: uppercase; color: var(--white); line-height: 1; letter-spacing: 0.02em; margin-bottom: 28px; }
+    .difference__body { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.9; color: rgba(255,255,255,0.65); }
+    .difference__body p + p { margin-top: 16px; }
+    .difference__quote { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(22px, 2.8vw, 32px); color: var(--white); line-height: 1.4; border-left: 2px solid var(--coral); padding-left: 28px; }
+
+    /* ── TREATMENT MENU ── */
+    .treatments {
+      padding: 100px 80px;
+      background: var(--white);
+    }
+    .treatments__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 64px;
+      gap: 40px;
+    }
+    .treatments__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .treatments__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; color: var(--black); line-height: 0.92; letter-spacing: 0.01em; }
+    .treatments__note { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.7; color: rgba(26,26,26,0.5); max-width: 300px; text-align: right; font-style: italic; }
+
+    /* Category */
+    .treatment-category { margin-bottom: 56px; }
+    .treatment-category:last-child { margin-bottom: 0; }
+    .treatment-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--coral);
+    }
+    .treatment-cat-label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(26,26,26,0.4);
+    }
+    .treatment-cat-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(22px, 2.8vw, 32px);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--black);
+    }
+    .treatment-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .treatment-card {
+      border: 1.5px solid rgba(207,123,114,0.2);
+      padding: 32px 28px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, background 0.25s;
+      cursor: default;
+    }
+    .treatment-card:hover {
+      border-color: var(--coral);
+      box-shadow: 0 8px 32px rgba(207,123,114,0.1);
+      background: var(--cream);
+    }
+    .treatment-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--coral);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .treatment-card:hover::before { transform: scaleX(1); }
+    .treatment-card__name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 19px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--black);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .treatment-card__tag {
+      display: inline-block;
+      background: rgba(207,123,114,0.1);
+      border-radius: 50px;
+      padding: 3px 12px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 16px;
+    }
+    .treatment-card__desc {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(26,26,26,0.65);
+      margin-bottom: 16px;
+    }
+    .treatment-card__ideal {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: rgba(26,26,26,0.45);
+      border-top: 1px solid rgba(207,123,114,0.15);
+      padding-top: 14px;
+    }
+    .treatment-card__ideal strong {
+      font-weight: 500;
+      color: var(--coral-dark);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ── FUNCTIONAL ADVANTAGE ── */
+    .functional-advantage {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+    .functional-advantage__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; text-align: center; }
+    .functional-advantage__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4.5vw, 56px); text-transform: uppercase; color: var(--black); line-height: 0.92; margin-bottom: 16px; text-align: center; }
+    .functional-advantage__sub { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.75; color: rgba(26,26,26,0.6); max-width: 600px; margin: 0 auto 60px; text-align: center; }
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--coral);
+      margin-bottom: 60px;
+    }
+    .advantage-item {
+      background: var(--cream);
+      padding: 40px 28px;
+      text-align: center;
+      transition: background 0.25s;
+    }
+    .advantage-item:hover { background: var(--white); }
+    .advantage-item__icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 52px;
+      line-height: 1;
+      color: var(--coral);
+      opacity: 0.3;
+      margin-bottom: 16px;
+    }
+    .advantage-item__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--black);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .advantage-item__desc {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 12.5px;
+      line-height: 1.75;
+      color: rgba(26,26,26,0.6);
+    }
+
+    /* Skin quality foundations */
+    .foundations {
+      background: var(--white);
+      border: 2px solid var(--coral);
+      padding: 60px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .foundations__heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(26px, 3vw, 38px);
+      text-transform: uppercase;
+      color: var(--black);
+      line-height: 1;
+    }
+    .foundations__sub {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(26,26,26,0.55);
+      margin-top: 12px;
+    }
+    .foundations__items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .foundation-item {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(207,123,114,0.15);
+    }
+    .foundation-item__name {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--coral-dark);
+      margin-bottom: 6px;
+    }
+    .foundation-item__desc {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: rgba(26,26,26,0.6);
+    }
+
+    /* ── CONSULT PROCESS ── */
+    .consult-process {
+      padding: 100px 80px;
+      background: var(--white);
+    }
+    .consult-process__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .consult-process__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4.5vw, 56px); text-transform: uppercase; color: var(--black); line-height: 0.92; margin-bottom: 60px; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--coral);
+    }
+    .process-step {
+      background: var(--white);
+      padding: 44px 32px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.25s;
+    }
+    .process-step:hover { background: var(--cream); }
+    .process-step__number { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 80px; line-height: 1; color: var(--coral); opacity: 0.1; position: absolute; top: 12px; right: 20px; letter-spacing: -0.04em; user-select: none; }
+    .process-step__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--black); margin-bottom: 16px; line-height: 1.2; position: relative; }
+    .process-step__accent { width: 28px; height: 2px; background: var(--coral); margin-bottom: 16px; }
+    .process-step__body { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.8; color: rgba(26,26,26,0.65); position: relative; }
+
+    /* ── WHAT PATIENTS NOTICE ── */
+    .results-section {
+      background: var(--salmon-bg);
+      padding: 90px 80px;
+    }
+    .results-section__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 14px; text-align: center; }
+    .results-section__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4.5vw, 52px); text-transform: uppercase; color: var(--white); line-height: 0.92; margin-bottom: 60px; text-align: center; }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(255,255,255,0.15);
+    }
+    .result-item {
+      background: var(--salmon-bg);
+      padding: 40px 36px;
+      transition: background 0.25s;
+    }
+    .result-item:hover { background: rgba(255,255,255,0.08); }
+    .result-item__timing {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 14px;
+    }
+    .result-item__heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .result-item__list li {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.75);
+      padding-left: 16px;
+      position: relative;
+    }
+    .result-item__list li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,0.35); font-size: 10px; top: 5px; }
+
+    /* ── FAQ ── */
+    .condition-faq { padding: 100px 80px; background: var(--cream); }
+    .condition-faq__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .condition-faq__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4.5vw, 56px); text-transform: uppercase; color: var(--black); line-height: 0.92; margin-bottom: 56px; }
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid rgba(207,123,114,0.2); }
+    .faq-item:first-child { border-top: 1px solid rgba(207,123,114,0.2); }
+    .faq-btn { width: 100%; background: none; border: none; padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; text-align: left; }
+    .faq-q { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 14.5px; color: var(--black); line-height: 1.5; }
+    .faq-icon { width: 26px; height: 26px; border: 1px solid var(--coral); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--coral); transition: background 0.2s, transform 0.3s; }
+    .faq-icon svg { width: 12px; height: 12px; }
+    .faq-item.open .faq-icon { background: var(--coral); color: var(--white); transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 22px; }
+    .faq-a { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.85; color: rgba(26,26,26,0.7); }
+
+    /* ── BOTTOM CTA ── */
+    .condition-cta { background: var(--black); padding: 90px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .condition-cta__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(40px, 5.5vw, 72px); text-transform: uppercase; color: var(--white); line-height: 0.92; letter-spacing: 0.01em; }
+    .condition-cta__body { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.65); margin-bottom: 36px; }
+    .btn-coral-solid { display: inline-block; background: var(--coral); border-radius: 50px; padding: 16px 40px; font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); transition: opacity 0.25s; }
+    .btn-coral-solid:hover { opacity: 0.88; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--salmon-bg); }
+    .footer-cta { border-top: 1px solid rgba(255,255,255,0.15); border-bottom: 1px solid rgba(255,255,255,0.15); padding: 64px 80px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .footer-cta__text { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(22px, 2.8vw, 36px); color: var(--white); line-height: 1.2; }
+    .footer-cta__btn { display: inline-block; border: 1.5px solid var(--white); border-radius: 50px; padding: 14px 36px; font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); white-space: nowrap; flex-shrink: 0; transition: background 0.25s, color 0.25s; }
+    .footer-cta__btn:hover { background: var(--white); color: var(--salmon-bg); }
+    .footer-main { padding: 60px 80px 48px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 64px; }
+    .footer-brand__logo { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); display: block; margin-bottom: 14px; }
+    .footer-brand__tagline { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 32px; max-width: 240px; }
+    .footer-socials { display: flex; gap: 12px; }
+    .footer-social { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: background 0.25s, border-color 0.25s, transform 0.2s; }
+    .footer-social:hover { background: rgba(255,255,255,0.15); border-color: var(--white); transform: translateY(-2px); }
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+    .footer-col__label { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 22px; }
+    .footer-col__list li + li { margin-top: 11px; }
+    .footer-col__list a { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13.5px; color: rgba(255,255,255,0.82); display: inline-block; transition: color 0.2s, padding-left 0.2s; }
+    .footer-col__list a:hover { color: var(--white); padding-left: 4px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding: 20px 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-bottom__copy { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); }
+    .footer-bottom__legal { display: flex; gap: 24px; }
+    .footer-bottom__legal a { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+    .footer-bottom__legal a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .cosm-hero { grid-template-columns: 1fr; padding: 120px 32px 0; min-height: auto; gap: 0; }
+      .cosm-hero__left { padding-bottom: 48px; }
+      .cosm-hero__right { height: 360px; }
+      .cosm-hero__btns { flex-direction: column; align-items: flex-start; }
+      .philosophy { grid-template-columns: 1fr; padding: 64px 32px; gap: 48px; }
+      .difference { padding: 64px 32px; }
+      .difference__inner { grid-template-columns: 1fr; gap: 40px; }
+      .treatments { padding: 64px 32px; }
+      .treatments__header { flex-direction: column; align-items: flex-start; }
+      .treatments__note { text-align: left; }
+      .treatment-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .functional-advantage { padding: 64px 32px; }
+      .advantage-grid { grid-template-columns: 1fr 1fr; }
+      .foundations { grid-template-columns: 1fr; padding: 40px 32px; }
+      .foundations__items { grid-template-columns: 1fr; }
+      .consult-process { padding: 64px 32px; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .results-section { padding: 64px 32px; }
+      .results-grid { grid-template-columns: 1fr; }
+      .condition-faq { padding: 64px 32px; }
+      .condition-cta { grid-template-columns: 1fr; padding: 64px 32px; gap: 32px; }
+      .footer-cta { padding: 44px 32px; flex-direction: column; align-items: flex-start; gap: 22px; }
+      .footer-main { padding: 48px 32px 40px; grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-bottom { padding: 18px 32px; flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+    @media (max-width: 600px) {
+      .treatment-cards { grid-template-columns: 1fr; }
+      .advantage-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/home" class="nav-logo">Pearl Precision Wellness</a>
+    <div class="nav-links">
+      <a href="/about" class="nav-link">About</a>
+      <a href="/services" class="nav-link">Services</a>
+      <a href="cosmetics" class="nav-link active" style="color:var(--coral);">Cosmetics</a>
+      <a href="/faq" class="nav-link">FAQ</a>
+      <a href="/contact" class="nav-link">Contact</a>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile" id="mobileNav">
+    <a href="/about" class="nav-link">About</a>
+    <a href="/services" class="nav-link">Services</a>
+    <a href="/cosmetics" class="nav-link">Cosmetics</a>
+    <a href="/faq" class="nav-link">FAQ</a>
+    <a href="/contact" class="nav-link">Contact</a>
+    <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="cosm-hero">
+    <div class="cosm-hero__left">
+      <p class="cosm-hero__breadcrumb">
+        <a href="/home" style="color:var(--coral);">Pearl Precision Wellness</a>
+        <span>›</span>
+        Cosmetics
+      </p>
+      <p class="cosm-hero__eyebrow">Clinical Aesthetics</p>
+      <h1 class="cosm-hero__title">Cosmetic<br>Dermatology</h1>
+      <p class="cosm-hero__lead">Medical-grade aesthetic treatments grounded in dermatology expertise and informed by functional medicine. We don't just treat the surface — we understand what's underneath it.</p>
+      <p class="cosm-hero__sub">Skin that's been optimized internally heals faster, holds results longer, and responds better to every treatment we perform.</p>
+      <div class="cosm-hero__btns">
+        <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="btn-coral">Book a Cosmetic Consult</a>
+        <a href="#treatments" class="btn-outline-coral">View Treatments</a>
+      </div>
+    </div>
+    <div class="cosm-hero__right">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/68fc373770cbcd56d7ec487b/4e7d59eb-1af0-4592-acca-4a6e4899f4cf/_KHT5246-5-2.JPEG"
+        alt="Clinical aesthetics consultation"
+        onerror="this.src='https://placehold.co/720x800/FAF0E6/CF7B72?text='"
+      />
+      <div class="cosm-hero__right-overlay">
+        <div class="cosm-hero__right-tag">Dermatology · Functional Medicine</div>
+        <p class="cosm-hero__right-caption">Aesthetics informed by a deep understanding of how skin actually works — from the inside out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy">
+    <div class="philosophy__pillars">
+      <div class="philosophy__pillar">
+        <div class="philosophy__pillar-num">01</div>
+        <div>
+          <p class="philosophy__pillar-title">Clinically Grounded</p>
+          <p class="philosophy__pillar-desc">Every treatment is selected and performed with a clinical foundation in dermatology — not as a menu item, but as a precision tool chosen for your specific skin and goals.</p>
+        </div>
+      </div>
+      <div class="philosophy__pillar">
+        <div class="philosophy__pillar-num">02</div>
+        <div>
+          <p class="philosophy__pillar-title">Internally Informed</p>
+          <p class="philosophy__pillar-desc">We know what your gut, hormones, and inflammation levels are doing — and we factor that into how we approach your aesthetic care. This is context most aesthetics providers never have.</p>
+        </div>
+      </div>
+      <div class="philosophy__pillar">
+        <div class="philosophy__pillar-num">03</div>
+        <div>
+          <p class="philosophy__pillar-title">Results-Focused</p>
+          <p class="philosophy__pillar-desc">We're not here to sell you a treatment package. We're here to produce real, lasting results — which sometimes means telling you what not to do as much as what to do.</p>
+        </div>
+      </div>
+      <div class="philosophy__pillar">
+        <div class="philosophy__pillar-num">04</div>
+        <div>
+          <p class="philosophy__pillar-title">Understated by Design</p>
+          <p class="philosophy__pillar-desc">Our aesthetic philosophy is natural precision — enhancing what's already there, not replacing it. Refreshed, not done. Confident, not obvious.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="philosophy__label">Our aesthetic philosophy</p>
+      <h2 class="philosophy__title">Cosmetics That Work<br>With Your Biology</h2>
+      <div class="philosophy__accent"></div>
+      <div class="philosophy__body">
+        <p>Most aesthetic practices operate on a simple premise: you come in, you pick a treatment, you leave. Results are measured in weeks and repeat visits are scheduled accordingly.</p>
+        <p>We operate differently. Our clinical background in dermatology means we understand skin at a structural and physiological level — not just what a treatment does on the surface, but <strong>why skin responds the way it does</strong> and how to get it to respond better.</p>
+        <p>Patients who have done functional medicine work alongside cosmetic treatments consistently see superior outcomes. When inflammation is lower, when hormones are balanced, when the gut-skin axis is functioning correctly — skin texture improves faster, collagen builds more robustly, and treatments hold longer. <strong>Internal optimization is the multiplier.</strong></p>
+        <p>You don't need to be a functional medicine patient to receive cosmetic care here. But if you are, we'll use that knowledge in everything we do.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE DIFFERENCE -->
+  <section class="difference">
+    <div class="difference__inner">
+      <div>
+        <p class="difference__label">What sets us apart</p>
+        <h2 class="difference__title">Dermatology Expertise. Functional Medicine Context.</h2>
+        <div class="difference__body">
+          <p>A provider with dermatology training approaches a cosmetic treatment differently than an aesthetician or general injector. We understand the anatomy at a level that informs every placement decision, every peel selection, every treatment interval.</p>
+          <p>And because we also understand what's happening systemically — whether your skin is inflamed at the cellular level, whether your hormones are driving sebum production, whether your thyroid is affecting collagen synthesis — we can sequence treatments intelligently and set accurate expectations based on your actual biology.</p>
+          <p>This is a combination that's rare in clinical aesthetics. We think it makes a meaningful difference in what you experience and the results you achieve.</p>
+        </div>
+      </div>
+      <div>
+        <p class="difference__quote">"Cosmetic treatments are most powerful when they're the finishing layer — not the foundation. We build the foundation first, then refine what's on top."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENT MENU -->
+  <section class="treatments" id="treatments">
+    <div class="treatments__header">
+      <div>
+        <p class="treatments__label">What we offer</p>
+        <h2 class="treatments__title">Treatment Menu</h2>
+      </div>
+      <p class="treatments__note">All treatments are performed by or under the supervision of a board-certified PA-C with dermatology training. Pricing and availability discussed at consultation.</p>
+    </div>
+
+    <!-- Category 1: Skin Quality & Rejuvenation -->
+    <div class="treatment-category">
+      <div class="treatment-cat-header">
+        <p class="treatment-cat-label">Category 01</p>
+        <h3 class="treatment-cat-name">Skin Quality &amp; Rejuvenation</h3>
+      </div>
+      <div class="treatment-cards">
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Medical-Grade Chemical Peels</h4>
+          <span class="treatment-card__tag">Skin Renewal</span>
+          <p class="treatment-card__desc">Physician-formulated chemical exfoliation addressing texture, tone, pigmentation, fine lines, and active acne. Peel depth and chemistry are selected based on your skin type, Fitzpatrick classification, and goals — not a one-size menu.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Uneven skin tone, dullness, sun damage, mild acne, texture irregularities, melasma
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Microneedling</h4>
+          <span class="treatment-card__tag">Collagen Induction</span>
+          <p class="treatment-card__desc">Controlled micro-injury to stimulate collagen and elastin remodeling. Precision depth settings address scarring, pore size, texture, fine lines, and overall skin quality. Can be combined with PRP/PRF, hyaluronic acid, or growth factors.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Acne scarring, enlarged pores, fine lines, lax skin, overall skin quality improvement
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">PRP / PRF Therapy</h4>
+          <span class="treatment-card__tag">Regenerative</span>
+          <p class="treatment-card__desc">Platelet-rich plasma and platelet-rich fibrin concentrate your body's own growth factors to accelerate healing, stimulate collagen, and promote regeneration. Used topically with microneedling or injected for hair restoration and skin rejuvenation.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Hair loss (scalp PRP), deep skin rejuvenation, scar remodeling, skin laxity
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Medical-Grade Facials</h4>
+          <span class="treatment-card__tag">Maintenance</span>
+          <p class="treatment-card__desc">Clinical-level facial treatments using medical-grade products and protocols — not a spa facial. Designed for active acne management, barrier repair, hydration optimization, and maintenance between more intensive treatments.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Ongoing skin health maintenance, active acne, compromised barrier, sensitive or reactive skin
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">LED Light Therapy</h4>
+          <span class="treatment-card__tag">Non-Invasive</span>
+          <p class="treatment-card__desc">Targeted wavelength light therapy stimulating cellular repair, reducing inflammation, and killing acne-causing bacteria without heat or downtime. Red light supports collagen synthesis; blue light targets P. acnes; near-infrared supports deeper tissue healing.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Active acne, post-procedure recovery, anti-aging support, rosacea calming, sensitized skin
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Exosome Therapy</h4>
+          <span class="treatment-card__tag">Advanced Regenerative</span>
+          <p class="treatment-card__desc">Next-generation regenerative treatment using cell-signaling molecules to accelerate skin repair, reduce inflammation, and stimulate collagen production — delivering results that go beyond what traditional growth factors achieve alone.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Post-procedure healing, advanced skin rejuvenation, inflammation-driven skin conditions, hair restoration
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Category 2: Injectables & Structural -->
+    <div class="treatment-category">
+      <div class="treatment-cat-header">
+        <p class="treatment-cat-label">Category 02</p>
+        <h3 class="treatment-cat-name">Injectables &amp; Structural Refinement</h3>
+      </div>
+      <div class="treatment-cards">
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Neuromodulators</h4>
+          <span class="treatment-card__tag">Botox · Dysport · Xeomin</span>
+          <p class="treatment-card__desc">Precise muscle relaxation for dynamic lines — forehead, glabellar (11s), crow's feet, brow lift, lip flip, masseter slimming, hyperhidrosis, and more. Our philosophy is natural movement preservation, not frozen expression. Less is often more.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Dynamic wrinkles, preventive treatment (mid-20s onward), jaw clenching, TMJ, excessive sweating
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Dermal Fillers</h4>
+          <span class="treatment-card__tag">Hyaluronic Acid · Structural Volume</span>
+          <p class="treatment-card__desc">Hyaluronic acid filler for volume restoration, structural support, and contour refinement — lips, cheeks, jawline, chin, temples, tear troughs, and nasolabial folds. Placed conservatively with anatomical precision. Reversible with hyaluronidase.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Volume loss, lip enhancement, facial contour refinement, hollowing under eyes, asymmetry correction
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Collagen Stimulators</h4>
+          <span class="treatment-card__tag">Sculptra · Radiesse</span>
+          <p class="treatment-card__desc">Biostimulatory injectables that trigger your body's own collagen production — providing gradual, natural-looking volume restoration that develops over weeks and lasts significantly longer than HA fillers. Ideal for facial rejuvenation and skin quality improvement.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Significant volume loss, facial rejuvenation, hand rejuvenation, patients seeking longer-lasting natural results
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Kybella</h4>
+          <span class="treatment-card__tag">Fat Dissolution</span>
+          <p class="treatment-card__desc">FDA-approved deoxycholic acid injection that permanently destroys submental fat cells beneath the chin — eliminating the "double chin" without surgery. Results develop gradually over multiple sessions as the body processes treated fat.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Submental fullness (double chin), patients seeking a non-surgical alternative to liposuction
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Scalp PRP for Hair Loss</h4>
+          <span class="treatment-card__tag">Hair Restoration</span>
+          <p class="treatment-card__desc">Platelet-rich plasma injected directly into the scalp to stimulate dormant follicles, increase hair density, and slow progressive hair loss. Most effective when combined with internal root-cause work addressing the underlying hormonal or nutritional drivers.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Androgenic alopecia, telogen effluvium, thinning in women, early hair loss — best paired with functional medicine evaluation
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <h4 class="treatment-card__name">Combination Protocols</h4>
+          <span class="treatment-card__tag">Curated Treatment Plans</span>
+          <p class="treatment-card__desc">The most transformative outcomes come from intelligently sequenced combination approaches — layering regenerative, resurfacing, and injectable treatments across a planned timeline. We build individualized protocols, not one-off appointments.</p>
+          <div class="treatment-card__ideal">
+            <strong>Best for</strong>
+            Patients ready to commit to comprehensive skin transformation with a structured, progressive approach
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNCTIONAL ADVANTAGE -->
+  <section class="functional-advantage">
+    <p class="functional-advantage__label">The internal advantage</p>
+    <h2 class="functional-advantage__title">Why Internal Health<br>Amplifies Every Treatment</h2>
+    <p class="functional-advantage__sub">Cosmetic treatments work with your biology. When that biology is optimized — inflammation controlled, hormones balanced, gut functioning correctly — the outcomes are measurably better.</p>
+
+    <div class="advantage-grid">
+      <div class="advantage-item">
+        <div class="advantage-item__icon">◎</div>
+        <h3 class="advantage-item__title">Faster Healing</h3>
+        <p class="advantage-item__desc">Lower systemic inflammation means faster post-treatment recovery, less redness, and quicker return to results after microneedling, peels, and injectables.</p>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-item__icon">◎</div>
+        <h3 class="advantage-item__title">Better Collagen Response</h3>
+        <p class="advantage-item__desc">Collagen synthesis requires adequate vitamin C, zinc, copper, and amino acids. Nutritional deficiencies — often identified through functional testing — directly limit how well your skin responds to collagen-stimulating treatments.</p>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-item__icon">◎</div>
+        <h3 class="advantage-item__title">Longer-Lasting Results</h3>
+        <p class="advantage-item__desc">Hormonal imbalances accelerate collagen degradation. Gut-driven inflammation promotes skin breakdown. Addressing these internally extends how long every treatment holds.</p>
+      </div>
+      <div class="advantage-item">
+        <div class="advantage-item__icon">◎</div>
+        <h3 class="advantage-item__title">Fewer Complications</h3>
+        <p class="advantage-item__desc">Immune dysregulation, active gut inflammation, and hormonal volatility can increase adverse responses to aesthetic treatments. Stabilizing physiology internally reduces risk and improves predictability.</p>
+      </div>
+    </div>
+
+    <div class="foundations">
+      <div>
+        <h3 class="foundations__heading">Skin Quality Foundations</h3>
+        <p class="foundations__sub">The internal work that makes every treatment perform better and last longer — whether you're a functional medicine patient or not.</p>
+      </div>
+      <div class="foundations__items">
+        <div class="foundation-item">
+          <p class="foundation-item__name">Collagen Nutritional Support</p>
+          <p class="foundation-item__desc">Vitamin C, zinc, copper, and amino acid adequacy — the raw materials for collagen production that no injectable can substitute for.</p>
+        </div>
+        <div class="foundation-item">
+          <p class="foundation-item__name">Inflammation Control</p>
+          <p class="foundation-item__desc">Systemic inflammation degrades collagen, worsens pigmentation, and slows wound healing. Lowering inflammatory burden amplifies every treatment performed.</p>
+        </div>
+        <div class="foundation-item">
+          <p class="foundation-item__name">Hormonal Stability</p>
+          <p class="foundation-item__desc">Estrogen supports collagen synthesis; androgens drive sebum and acne; cortisol degrades skin integrity. Hormone balance is skin care.</p>
+        </div>
+        <div class="foundation-item">
+          <p class="foundation-item__name">UV Protection Protocol</p>
+          <p class="foundation-item__desc">Broad-spectrum SPF 50+ daily, antioxidant serum, and lifestyle sun management — the single highest-return habit in any skin quality protocol.</p>
+        </div>
+        <div class="foundation-item">
+          <p class="foundation-item__name">Gut-Skin Optimization</p>
+          <p class="foundation-item__desc">Microbiome balance and intestinal barrier integrity directly influence skin inflammation, barrier function, and how skin heals after procedures.</p>
+        </div>
+        <div class="foundation-item">
+          <p class="foundation-item__name">Medical-Grade Topicals</p>
+          <p class="foundation-item__desc">Prescription-grade retinoids, growth factors, and barrier-supportive actives that create the skin environment treatments build on — not from a spa shelf.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULT PROCESS -->
+  <section class="consult-process">
+    <p class="consult-process__label">How it works</p>
+    <h2 class="consult-process__title">The Cosmetic Consultation Process</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step__number">01</div>
+        <h3 class="process-step__title">Discovery Consult</h3>
+        <div class="process-step__accent"></div>
+        <p class="process-step__body">We begin with a thorough skin assessment and conversation — your goals, concerns, skin history, prior treatments, what's worked, and what hasn't. No pressure, no package upselling. Just an honest evaluation of what your skin needs.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">02</div>
+        <h3 class="process-step__title">Individualized Plan</h3>
+        <div class="process-step__accent"></div>
+        <p class="process-step__body">Based on your assessment, we build a sequenced treatment plan — not a menu selection. We'll tell you what will move the needle most for your specific goals, what order makes clinical sense, and realistic timelines for what you'll see and when.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">03</div>
+        <h3 class="process-step__title">Treatment &amp; Care</h3>
+        <div class="process-step__accent"></div>
+        <p class="process-step__body">Treatments are performed with clinical precision in a medical setting. Post-care instructions are specific and clear — we walk you through exactly what to expect, what to avoid, and how to optimize your healing and results at home.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">04</div>
+        <h3 class="process-step__title">Ongoing Refinement</h3>
+        <div class="process-step__accent"></div>
+        <p class="process-step__body">We track your results and adjust the plan as your skin changes and goals evolve. Aesthetic medicine is not a one-time event — it's an ongoing relationship with your skin. We're here for the long arc, not the single appointment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT PATIENTS NOTICE -->
+  <section class="results-section">
+    <p class="results-section__label">What to expect</p>
+    <h2 class="results-section__title">What Patients Notice</h2>
+    <div class="results-grid">
+      <div class="result-item">
+        <p class="result-item__timing">Weeks 2 – 4</p>
+        <h3 class="result-item__heading">Early Changes</h3>
+        <ul class="result-item__list">
+          <li>Improved skin texture and smoother surface</li>
+          <li>Reduced redness and visible inflammation</li>
+          <li>Softening of fine lines post-neuromodulator</li>
+          <li>Initial glow from chemical peels or microneedling</li>
+          <li>Pore appearance reduction</li>
+        </ul>
+      </div>
+      <div class="result-item">
+        <p class="result-item__timing">Months 2 – 4</p>
+        <h3 class="result-item__heading">Building Results</h3>
+        <ul class="result-item__list">
+          <li>Visible collagen remodeling and skin firmness</li>
+          <li>Progressive acne scar improvement</li>
+          <li>Fuller, more youthful contour from fillers</li>
+          <li>Hair density increase from scalp PRP</li>
+          <li>Sustained clarity and evenness of tone</li>
+        </ul>
+      </div>
+      <div class="result-item">
+        <p class="result-item__timing">Months 6 – 12+</p>
+        <h3 class="result-item__heading">Long-Term Transformation</h3>
+        <ul class="result-item__list">
+          <li>Structural skin quality improvement that holds</li>
+          <li>Significantly reduced treatment frequency needed</li>
+          <li>Natural-looking, refreshed appearance without obvious "work"</li>
+          <li>Skin that continues to improve with maintenance</li>
+          <li>Confidence in how you look — not just how you feel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="condition-faq">
+    <p class="condition-faq__label">Common questions</p>
+    <h2 class="condition-faq__title">Cosmetics FAQ</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Do I need to be a functional medicine patient to receive cosmetic treatments?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">No — cosmetic treatments are available to all patients, whether or not you're engaged in functional medicine work. That said, patients who are working on their internal health alongside cosmetics consistently see better results, and we'll always make relevant connections if we see something systemically that may be affecting your skin. The two approaches work well together, and we're happy to discuss both during your consultation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">How is this different from a med spa?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">Several things. Our provider has a clinical background in dermatology — understanding skin disease, skin anatomy, and skin physiology at a depth that goes beyond aesthetics training. We approach cosmetic care as medical care, not as a service menu. We don't operate on volume or package sales. And because of our functional medicine lens, we understand your skin as a reflection of your systemic health — which changes how we select treatments, set expectations, and think about long-term outcomes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Are cosmetic treatments safe to receive alongside my functional medicine protocols?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">Generally yes — and for current patients, we already know your health picture, which makes coordination seamless. Some nutraceuticals (high-dose fish oil, vitamin E, certain botanicals) can affect bleeding time and may need to be paused before injectable treatments. Some skin-active protocols (medical-grade retinoids, AHA/BHA) may need to be adjusted ahead of chemical peels or microneedling. We review all of this at your cosmetic consultation — nothing is assumed, and nothing falls through the cracks.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">What's the right starting point if I've never had cosmetic treatments before?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">Start with a consultation. We'll assess your skin, understand your goals, and make a specific recommendation — not a default treatment. For most first-time patients, we prioritize skin quality work first (peels, microneedling, medical-grade topicals) before moving into injectables, which layer on top of a healthy skin foundation. The sequencing matters, and getting it right from the start produces significantly better long-term outcomes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Do you offer a natural or conservative injectable approach?</span>
+          <div class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-a">Yes — this is our default approach. Our aesthetic philosophy centers on natural enhancement and movement preservation. With neuromodulators, we aim for softening, not paralysis. With fillers, we prioritize restoration of what's been lost over the addition of volume that wasn't there. We'll never pressure you toward more than you came in for, and we're always honest when we think less is more. The goal is that you look like yourself — just more rested, more refined.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="condition-cta">
+    <h2 class="condition-cta__title">Ready to invest in your skin?</h2>
+    <div>
+      <p class="condition-cta__body">Book a cosmetic consultation and let's talk about what your skin needs — honestly, precisely, and without pressure. We'll build a plan that makes sense for where you are and where you want to be.</p>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="btn-coral-solid">Book a Cosmetic Consult</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-cta">
+      <p class="footer-cta__text">Ready to feel better<br>from the inside out?</p>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="footer-cta__btn">Book a Free Consultation</a>
+    </div>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/home" class="footer-brand__logo">Pearl Precision Wellness</a>
+        <p class="footer-brand__tagline">Functional medicine for skin, hormones, and whole-body health.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/pearlprecisionwellness/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/pearl-precision-wellness/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.986V9h3.103v1.561h.044c.432-.82 1.487-1.686 3.061-1.686 3.271 0 3.873 2.153 3.873 4.952v6.625zM5.337 7.433a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zm1.552 13.019H3.785V9h3.104v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__label">Navigate</p>
+        <ul class="footer-col__list">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/cosmetics">Cosmetics</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__label">Treatments</p>
+        <ul class="footer-col__list">
+          <li><a href="/cosmetics/chemical-peels">Chemical Peels</a></li>
+          <li><a href="/cosmetics/microneedling">Microneedling</a></li>
+          <li><a href="/cosmetics/prp-prf">PRP / PRF</a></li>
+          <li><a href="/cosmetics/neuromodulators">Neuromodulators</a></li>
+          <li><a href="/cosmetics/dermal-fillers">Dermal Fillers</a></li>
+          <li><a href="/cosmetics/scalp-prp">Scalp PRP</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom__copy">© 2026 Pearl Precision Wellness. All Rights Reserved.</p>
+      <div class="footer-bottom__legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>
