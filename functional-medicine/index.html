@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Functional Medicine — Pearl Precision Wellness</title>
+  <meta name="description" content="Functional medicine investigates why symptoms happen, not just how to suppress them. Learn how we address gut health, hormones, detox, nervous system, sleep, and skin at the root." />
+  <link rel="icon" type="image/png" href="ppw-logo-icon.png" />
+  <link rel="apple-touch-icon" href="ppw-logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --coral:      #CF7B72;
+      --coral-dark: #C8756C;
+      --salmon-bg:  #D07B73;
+      --cream:      #FAF0E6;
+      --white:      #FFFFFF;
+      --black:      #1A1A1A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Raleway', sans-serif; color: var(--black); background: var(--white); overflow-x: hidden; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+    ul   { list-style: none; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--cream); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 80px; border-bottom: 1px solid rgba(207,123,114,0.15); }
+    .nav-logo { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral-dark); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral-dark); position: relative; transition: color 0.2s; }
+    .nav-link::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--coral); transform: scaleX(0); transition: transform 0.25s ease; }
+    .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+    .nav-cta { border: 1.5px solid var(--coral); border-radius: 50px; padding: 10px 24px; font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); transition: background 0.25s, color 0.25s; }
+    .nav-cta:hover { background: var(--coral); color: var(--white); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--coral); }
+    .nav-mobile { display: none; position: fixed; top: 80px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid rgba(207,123,114,0.18); padding: 24px 32px 32px; z-index: 99; flex-direction: column; gap: 18px; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile .nav-link { font-size: 14px; padding: 6px 0; border-bottom: 1px solid rgba(207,123,114,0.12); }
+    .nav-mobile .nav-cta { align-self: flex-start; margin-top: 4px; }
+
+    /* HERO */
+    .fm-hero {
+      background: var(--cream);
+      padding: 160px 80px 100px;
+      border-bottom: 2px solid var(--coral);
+    }
+    .fm-hero__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--coral); margin-bottom: 20px; }
+    .fm-hero__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(52px, 8vw, 108px); text-transform: uppercase; color: var(--black); line-height: 0.87; letter-spacing: 0.01em; margin-bottom: 48px; max-width: 900px; }
+    .fm-hero__lead { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 17px; line-height: 1.85; color: rgba(26,26,26,0.7); max-width: 680px; margin-bottom: 48px; }
+    .fm-hero__lead strong { font-weight: 500; color: var(--black); }
+    .btn-coral { display: inline-block; background: var(--coral); border-radius: 50px; padding: 16px 40px; font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); transition: opacity 0.25s, transform 0.2s; }
+    .btn-coral:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ICEBERG */
+    .iceberg {
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      border-bottom: 1px solid rgba(207,123,114,0.15);
+    }
+    .iceberg__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .iceberg__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(32px, 4vw, 52px); text-transform: uppercase; color: var(--black); line-height: 0.95; }
+    .iceberg__accent { width: 40px; height: 2px; background: var(--coral); margin: 22px 0 28px; }
+    .iceberg__body p { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.9; color: rgba(26,26,26,0.75); }
+    .iceberg__body p + p { margin-top: 18px; }
+    .iceberg__body strong { font-weight: 500; color: var(--black); }
+
+    /* Iceberg SVG visual */
+    .iceberg__visual {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .iceberg-svg-wrap { width: 100%; max-width: 440px; }
+
+    /* QUOTE BREAK */
+    .quote-break {
+      background: var(--black);
+      padding: 80px;
+      text-align: center;
+    }
+    .quote-break__text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(24px, 3.5vw, 42px);
+      color: var(--white);
+      line-height: 1.4;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .quote-break__text em { font-style: normal; color: var(--coral); }
+
+    /* GUT HEALTH PILLAR */
+    .gut-pillar {
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      border-bottom: 1px solid rgba(207,123,114,0.15);
+    }
+    .gut-pillar__badge {
+      display: inline-block;
+      background: var(--coral);
+      color: var(--white);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      margin-bottom: 20px;
+    }
+    .gut-pillar__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .gut-pillar__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(36px, 4.5vw, 58px); text-transform: uppercase; color: var(--black); line-height: 0.92; }
+    .gut-pillar__accent { width: 40px; height: 2px; background: var(--coral); margin: 22px 0 28px; }
+    .gut-pillar__body p { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.9; color: rgba(26,26,26,0.75); }
+    .gut-pillar__body p + p { margin-top: 18px; }
+    .gut-pillar__body strong { font-weight: 500; color: var(--black); }
+    .gut-connections {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-top: 12px;
+    }
+    .gut-connection {
+      border-left: 3px solid rgba(207,123,114,0.2);
+      padding: 20px 24px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .gut-connection:hover { border-color: var(--coral); background: var(--cream); }
+    .gut-connection__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 17px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--black); margin-bottom: 6px; }
+    .gut-connection__desc { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.65; color: rgba(26,26,26,0.6); }
+
+    /* PILLARS GRID */
+    .pillars {
+      padding: 100px 80px;
+      background: var(--cream);
+    }
+    .pillars__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .pillars__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4.5vw, 56px); text-transform: uppercase; color: var(--black); line-height: 0.92; margin-bottom: 60px; }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .pillar-card {
+      background: var(--white);
+      border: 1.5px solid rgba(207,123,114,0.2);
+      padding: 36px 30px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .pillar-card:hover { border-color: var(--coral); box-shadow: 0 8px 32px rgba(207,123,114,0.1); }
+    .pillar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--coral); transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease; }
+    .pillar-card:hover::before { transform: scaleX(1); }
+    .pillar-card__name { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 22px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--black); margin-bottom: 14px; line-height: 1.1; }
+    .pillar-card__desc { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13.5px; line-height: 1.8; color: rgba(26,26,26,0.65); }
+    .pillar-card__desc strong { font-weight: 500; color: var(--black); }
+
+    /* WHY IT WORKS */
+    .why-works {
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .why-works__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+    .why-works__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4vw, 52px); text-transform: uppercase; color: var(--black); line-height: 0.95; margin-bottom: 32px; }
+    .why-works__body p { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.9; color: rgba(26,26,26,0.75); }
+    .why-works__body p + p { margin-top: 18px; }
+    .why-works__body strong { font-weight: 500; color: var(--black); }
+    .why-reasons { display: flex; flex-direction: column; gap: 2px; }
+    .why-reason {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(207,123,114,0.15);
+      align-items: start;
+    }
+    .why-reason:first-child { border-top: 1px solid rgba(207,123,114,0.15); }
+    .why-reason__num { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 32px; line-height: 1; color: var(--coral); opacity: 0.35; padding-top: 2px; }
+    .why-reason__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 18px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--black); margin-bottom: 6px; }
+    .why-reason__desc { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.7; color: rgba(26,26,26,0.6); }
+
+    /* CTA */
+    .fm-cta {
+      background: var(--salmon-bg);
+      padding: 90px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .fm-cta__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(40px, 5.5vw, 68px); text-transform: uppercase; color: var(--white); line-height: 0.92; }
+    .fm-cta__body { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+    .btn-white { display: inline-block; background: var(--white); border-radius: 50px; padding: 16px 40px; font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--salmon-bg); transition: opacity 0.25s; }
+    .btn-white:hover { opacity: 0.88; }
+
+    /* FOOTER */
+    .site-footer { background: var(--salmon-bg); }
+    .footer-cta { border-top: 1px solid rgba(255,255,255,0.15); border-bottom: 1px solid rgba(255,255,255,0.15); padding: 64px 80px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .footer-cta__text { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(22px, 2.8vw, 36px); color: var(--white); line-height: 1.2; }
+    .footer-cta__btn { display: inline-block; border: 1.5px solid var(--white); border-radius: 50px; padding: 14px 36px; font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); white-space: nowrap; flex-shrink: 0; transition: background 0.25s, color 0.25s; }
+    .footer-cta__btn:hover { background: var(--white); color: var(--salmon-bg); }
+    .footer-main { padding: 60px 80px 48px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 64px; }
+    .footer-brand__logo { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); display: block; margin-bottom: 14px; }
+    .footer-brand__tagline { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 32px; max-width: 240px; }
+    .footer-socials { display: flex; gap: 12px; }
+    .footer-social { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: background 0.25s, border-color 0.25s, transform 0.2s; }
+    .footer-social:hover { background: rgba(255,255,255,0.15); border-color: var(--white); transform: translateY(-2px); }
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+    .footer-col__label { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 22px; }
+    .footer-col__list li + li { margin-top: 11px; }
+    .footer-col__list a { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13.5px; color: rgba(255,255,255,0.82); display: inline-block; transition: color 0.2s, padding-left 0.2s; }
+    .footer-col__list a:hover { color: var(--white); padding-left: 4px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding: 20px 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-bottom__copy { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); }
+    .footer-bottom__legal { display: flex; gap: 24px; }
+    .footer-bottom__legal a { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+    .footer-bottom__legal a:hover { color: rgba(255,255,255,0.8); }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .fm-hero { padding: 120px 32px 72px; }
+      .iceberg { grid-template-columns: 1fr; padding: 64px 32px; gap: 48px; }
+      .quote-break { padding: 64px 32px; }
+      .gut-pillar { grid-template-columns: 1fr; padding: 64px 32px; gap: 48px; }
+      .pillars { padding: 64px 32px; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .why-works { grid-template-columns: 1fr; padding: 64px 32px; gap: 48px; }
+      .fm-cta { grid-template-columns: 1fr; padding: 64px 32px; gap: 32px; }
+      .footer-cta { padding: 44px 32px; flex-direction: column; align-items: flex-start; gap: 22px; }
+      .footer-main { padding: 48px 32px 40px; grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-bottom { padding: 18px 32px; flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+    @media (max-width: 600px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/home" class="nav-logo">Pearl Precision Wellness</a>
+    <div class="nav-links">
+      <a href="/about" class="nav-link">About</a>
+      <a href="/functional-medicine" class="nav-link active">Functional Medicine</a>
+      <a href="/cosmetics" class="nav-link">Cosmetics</a>
+      <a href="/faq" class="nav-link">FAQ</a>
+      <a href="/contact" class="nav-link">Contact</a>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile" id="mobileNav">
+    <a href="/about" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Functional Medicine</a>
+    <a href="cosmetics.html" class="nav-link">Cosmetics</a>
+    <a href="/faq" class="nav-link">FAQ</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="fm-hero">
+    <p class="fm-hero__eyebrow">A Different Kind of Care</p>
+    <h1 class="fm-hero__title">What Is Functional<br>Medicine?</h1>
+    <p class="fm-hero__lead">Functional medicine is the practice of asking <strong>why</strong> instead of just what. It investigates the root causes of chronic symptoms rather than managing them with medication. It treats you as a whole system rather than a collection of separate complaints. And it starts from the premise that your body, given the right conditions, knows how to heal.</p>
+    <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="btn-coral">Book a Free Discovery Call</a>
+  </section>
+
+  <!-- THE ICEBERG -->
+  <section class="iceberg">
+    <div>
+      <p class="iceberg__label">The problem with conventional care</p>
+      <h2 class="iceberg__title">Western Medicine<br>Treats the Tip<br>of the Iceberg</h2>
+      <div class="iceberg__accent"></div>
+      <div class="iceberg__body">
+        <p>Conventional medicine is exceptional at acute care. Infections, injuries, emergencies, structural disease — this is where it excels, and it saves lives. But for chronic, systemic conditions, it runs into a fundamental limitation: it's built around identifying disease and prescribing a treatment to suppress it.</p>
+        <p>The symptom is treated. The question of why the symptom appeared is rarely asked. A headache becomes a prescription. Fatigue becomes a referral. Hormonal imbalance becomes birth control. Acid reflux becomes a PPI. The underlying mechanism goes uninvestigated, and patients often return months later with the same complaint or a new one that grew from the same root.</p>
+        <p><strong>Below the surface is where chronic illness actually lives.</strong> Gut dysfunction, hormonal dysregulation, chronic inflammation, nutritional depletion, disrupted sleep, accumulated toxic burden, nervous system overload. These are the drivers. Addressing only the visible symptom leaves all of this intact.</p>
+      </div>
+    </div>
+
+    <!-- Iceberg SVG -->
+    <div class="iceberg__visual">
+      <div class="iceberg-svg-wrap">
+        <svg viewBox="0 0 440 560" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+          <!-- Water line -->
+          <line x1="0" y1="175" x2="440" y2="175" stroke="#CF7B72" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
+          <text x="340" y="168" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" letter-spacing="2" fill="#CF7B72" opacity="0.6" text-anchor="middle">SURFACE</text>
+
+          <!-- Tip above water -->
+          <polygon points="220,20 280,175 160,175" fill="#CF7B72" opacity="0.25"/>
+          <polygon points="220,20 280,175 160,175" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
+
+          <!-- Above water label -->
+          <text x="220" y="108" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="13" letter-spacing="1.5" fill="#C8756C" text-anchor="middle" text-transform="uppercase">SYMPTOMS</text>
+          <text x="220" y="126" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" fill="#C8756C" opacity="0.7" text-anchor="middle">Treated by</text>
+          <text x="220" y="140" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" fill="#C8756C" opacity="0.7" text-anchor="middle">conventional medicine</text>
+
+          <!-- Big mass below water -->
+          <polygon points="160,175 90,540 350,540 280,175" fill="#CF7B72" opacity="0.08"/>
+          <polygon points="160,175 90,540 350,540 280,175" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
+
+          <!-- Below water labels -->
+          <text x="220" y="215" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">GUT DYSFUNCTION</text>
+          <text x="220" y="256" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">HORMONAL IMBALANCE</text>
+          <text x="220" y="297" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">CHRONIC INFLAMMATION</text>
+          <text x="220" y="338" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">NERVOUS SYSTEM BURDEN</text>
+          <text x="220" y="379" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">NUTRIENT DEPLETION</text>
+          <text x="220" y="420" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">TOXIC BURDEN</text>
+          <text x="220" y="461" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">SLEEP DISRUPTION</text>
+          <text x="220" y="502" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">METABOLIC DYSREGULATION</text>
+
+          <!-- Below water label -->
+          <text x="358" y="228" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="1.5" fill="#CF7B72" opacity="0.6">ROOT</text>
+          <text x="358" y="241" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="1.5" fill="#CF7B72" opacity="0.6">CAUSES</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-break">
+    <p class="quote-break__text">"The body is not a collection of separate parts. Everything is connected. When you treat one system in isolation, you miss the conversation happening everywhere else."</p>
+  </section>
+
+  <!-- GUT HEALTH PILLAR -->
+  <section class="gut-pillar">
+    <div>
+      <div class="gut-pillar__badge">The Foundation</div>
+      <p class="gut-pillar__label">Where it all begins</p>
+      <h2 class="gut-pillar__title">Gut Health Is<br>the Root of<br>Almost Everything</h2>
+      <div class="gut-pillar__accent"></div>
+      <div class="gut-pillar__body">
+        <p>If there is one place to begin understanding how the body works, it is the gut. The gastrointestinal system contains roughly 70% of the body's immune tissue, produces over 90% of the body's serotonin, houses trillions of microorganisms that regulate metabolism and inflammation, and maintains a one-cell-thick barrier between your inner environment and the outside world.</p>
+        <p>When that barrier is compromised, the consequences are systemic. Bacteria, undigested food particles, and inflammatory compounds enter the bloodstream and trigger a chronic, low-grade immune response that can show up as skin conditions, hormonal disruption, brain fog, autoimmunity, fatigue, and mood disorders. This is intestinal permeability. It is measurable and it is addressable.</p>
+        <p><strong>Gut health is not a wellness trend.</strong> It is the physiological foundation that most other systems depend on. When the gut is dysregulated, almost nothing else can be fully optimized. When it is restored, patients routinely report improvements across multiple areas of health they did not expect to change.</p>
+      </div>
+    </div>
+    <div class="gut-connections">
+      <p style="font-family:'Raleway',sans-serif; font-weight:300; font-size:10px; letter-spacing:0.26em; text-transform:uppercase; color:rgba(26,26,26,0.4); margin-bottom:16px;">How gut dysfunction shows up everywhere</p>
+      <div class="gut-connection">
+        <p class="gut-connection__title">Gut and Skin</p>
+        <p class="gut-connection__desc">Microbiome imbalance and intestinal permeability drive the systemic inflammation that surfaces as acne, rosacea, eczema, and psoriasis. Treating the skin without treating the gut is treating the messenger.</p>
+      </div>
+      <div class="gut-connection">
+        <p class="gut-connection__title">Gut and Hormones</p>
+        <p class="gut-connection__desc">A specific collection of gut bacteria called the estrobolome directly regulates how estrogen is metabolized and recirculated. When the microbiome is disrupted, hormone balance follows.</p>
+      </div>
+      <div class="gut-connection">
+        <p class="gut-connection__title">Gut and Brain</p>
+        <p class="gut-connection__desc">The gut and brain communicate constantly through the vagus nerve. Dysbiosis is one of the most clinically significant and under-recognized drivers of anxiety, depression, and cognitive decline.</p>
+      </div>
+      <div class="gut-connection">
+        <p class="gut-connection__title">Gut and Immunity</p>
+        <p class="gut-connection__desc">With the majority of immune tissue lining the gut, chronic barrier dysfunction is a primary driver of autoimmune conditions, food reactivity, and immune dysregulation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER PILLARS -->
+  <section class="pillars">
+    <p class="pillars__label">The full picture</p>
+    <h2 class="pillars__title">The Other Pillars We Address</h2>
+    <div class="pillars-grid">
+
+      <div class="pillar-card">
+        <h3 class="pillar-card__name">Hormonal Health</h3>
+        <p class="pillar-card__desc">Hormones govern your energy, mood, weight, skin, hair, libido, and cycles. When the signaling is disrupted, the effects are felt everywhere. We investigate the full cascade rather than chasing a single number on a lab report. <strong>Most hormonal dysfunction is rooted in gut health, nutrition, and chronic stress before it is ever a hormonal problem in isolation.</strong></p>
+      </div>
+
+      <div class="pillar-card">
+        <h3 class="pillar-card__name">Detoxification</h3>
+        <p class="pillar-card__desc">Your liver, kidneys, lymphatic system, and gut are constantly filtering what enters your body. When that filtering is overwhelmed or impaired, inflammatory compounds accumulate and drive chronic symptoms. <strong>Supporting detoxification pathways reduces the physiological burden that underlies many hard-to-explain conditions.</strong></p>
+      </div>
+
+      <div class="pillar-card">
+        <h3 class="pillar-card__name">Nervous System Health</h3>
+        <p class="pillar-card__desc">Chronic stress is not just psychological. It dysregulates cortisol, suppresses thyroid function, depletes sex hormones, impairs gut motility, and disrupts immune regulation. <strong>The nervous system is a physiological driver of almost every chronic health pattern we see.</strong> Calming it is often the most important intervention in a protocol.</p>
+      </div>
+
+      <div class="pillar-card">
+        <h3 class="pillar-card__name">Sleep</h3>
+        <p class="pillar-card__desc">Sleep is when the body repairs tissue, consolidates memory, clears metabolic waste from the brain, and resets cortisol for the next day. Poor sleep degrades every other system over time. <strong>It is not separate from hormone health, gut health, or metabolic health. It is the foundation all of them depend on.</strong></p>
+      </div>
+
+      <div class="pillar-card">
+        <h3 class="pillar-card__name">Exercise and Movement</h3>
+        <p class="pillar-card__desc">Movement is medicine in the most literal sense. It improves insulin sensitivity, reduces inflammation, supports lymphatic flow, regulates mood through neurotransmitter activity, and slows cellular aging. <strong>The right movement prescription is specific to where you are, not a generic recommendation.</strong> Too much, the wrong kind, or at the wrong time can be as harmful as too little.</p>
+      </div>
+
+      <div class="pillar-card">
+        <h3 class="pillar-card__name">Skin Health</h3>
+        <p class="pillar-card__desc">Skin is the body's most visible organ and one of its most informative. Hair loss, acne, rosacea, eczema, and premature aging are rarely just skin problems. They are symptoms of internal dysregulation made visible. <strong>Our clinical background in dermatology combined with functional medicine gives us a perspective that few practices can offer: we understand both the surface and what is driving it.</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY IT WORKS -->
+  <section class="why-works">
+    <div>
+      <p class="why-works__label">The science behind it</p>
+      <h2 class="why-works__title">Why Functional<br>Medicine Works</h2>
+      <div class="why-works__body">
+        <p>Functional medicine works because it operates in alignment with how the body actually functions. The human body is not a machine made of separate parts. It is a deeply interconnected biological system where hormones talk to gut bacteria, gut bacteria influence brain chemistry, brain chemistry affects sleep, and sleep governs immune function.</p>
+        <p>When you address root causes rather than downstream symptoms, the benefits are rarely confined to one area. Patients who come in for bloating often find their skin clears. Patients who come in for fatigue often find their mood stabilizes. This is not a coincidence. It is what happens when the underlying biology is supported correctly.</p>
+        <p>This does not mean functional medicine replaces conventional care. For acute illness, structural disease, and emergencies, conventional medicine is irreplaceable. What functional medicine offers is the investigation that happens when conventional testing returns normal and symptoms persist. It fills the gap that most patients fall into and cannot find their way out of.</p>
+      </div>
+    </div>
+    <div class="why-reasons">
+      <div class="why-reason">
+        <div class="why-reason__num">01</div>
+        <div>
+          <p class="why-reason__title">It Asks Why, Not Just What</p>
+          <p class="why-reason__desc">Every symptom has a mechanism behind it. We investigate that mechanism rather than prescribing around it. This is a fundamentally different starting point that produces different outcomes.</p>
+        </div>
+      </div>
+      <div class="why-reason">
+        <div class="why-reason__num">02</div>
+        <div>
+          <p class="why-reason__title">It Treats You as a System</p>
+          <p class="why-reason__desc">No single organ or hormone or symptom exists in isolation. Care that accounts for the whole system produces results that siloed organ-by-organ approaches cannot.</p>
+        </div>
+      </div>
+      <div class="why-reason">
+        <div class="why-reason__num">03</div>
+        <div>
+          <p class="why-reason__title">It Uses the Right Data</p>
+          <p class="why-reason__desc">Standard labs are designed to detect disease. Functional testing is designed to assess optimal function. These are different questions and they require different tools to answer.</p>
+        </div>
+      </div>
+      <div class="why-reason">
+        <div class="why-reason__num">04</div>
+        <div>
+          <p class="why-reason__title">It Produces Durable Change</p>
+          <p class="why-reason__desc">When root causes are addressed, the improvement tends to hold. Symptoms managed with medication often return when the medication stops. Symptoms resolved at the root often do not.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fm-cta">
+    <h2 class="fm-cta__title">Find out what's actually driving your symptoms.</h2>
+    <div>
+      <p class="fm-cta__body">A free discovery call is the best place to start. We will talk through your health history, what you have already tried, and whether functional medicine is the right fit for what you are experiencing.</p>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="btn-white">Book a Free Discovery Call</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-cta">
+      <p class="footer-cta__text">Ready to feel better<br>from the inside out?</p>
+      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="footer-cta__btn">Book a Free Consultation</a>
+    </div>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/home" class="footer-brand__logo">Pearl Precision Wellness</a>
+        <p class="footer-brand__tagline">Functional medicine for skin, hormones, and whole-body health.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/pearlprecisionwellness/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/pearl-precision-wellness/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.986V9h3.103v1.561h.044c.432-.82 1.487-1.686 3.061-1.686 3.271 0 3.873 2.153 3.873 4.952v6.625zM5.337 7.433a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zm1.552 13.019H3.785V9h3.104v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__label">Navigate</p>
+        <ul class="footer-col__list">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/functional-medicine">Functional Medicine</a></li>
+          <li><a href="/cosmetics">Cosmetics</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__label">We Address</p>
+        <ul class="footer-col__list">
+          <li><a href="/hormonal-health">Hormonal Health</a></li>
+          <li><a href="/skin-hair-loss">Skin &amp; Hair Loss</a></li>
+          <li><a href="/gut-health">Gut Health</a></li>
+          <li><a href="/thyroid">Thyroid</a></li>
+          <li><a href="/inflammation">Inflammation</a></li>
+          <li><a href="/anti-aging">Anti-aging</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom__copy">© 2026 Pearl Precision Wellness. All Rights Reserved.</p>
+      <div class="footer-bottom__legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
