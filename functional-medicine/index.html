@@ -259,15 +259,15 @@
 <body>
 
   <!-- NAV -->
-  <nav>
+    <nav>
     <a href="/home" class="nav-logo">Pearl Precision Wellness</a>
     <div class="nav-links">
       <a href="/about" class="nav-link">About</a>
-      <a href="/functional-medicine" class="nav-link active">Functional Medicine</a>
-      <a href="/cosmetics" class="nav-link">Cosmetics</a>
-      <a href="/clients" class="nav-link">Clients</a>
+      <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+      <a href="/products" class="nav-link">Products</a>
+      <a href="/patients" class="nav-link">Patients</a>
       <a href="/contact" class="nav-link">Contact</a>
-      <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
+      <a href="/contact" class="nav-cta">Free Consultation</a>
     </div>
     <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -275,18 +275,18 @@
   </nav>
   <div class="nav-mobile" id="mobileNav">
     <a href="/about" class="nav-link">About</a>
-    <a href="services.html" class="nav-link">Functional Medicine</a>
-    <a href="cosmetics.html" class="nav-link">Cosmetics</a>
-    <a href="/clients" class="nav-link">Clients</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-    <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
+    <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+    <a href="/products" class="nav-link">Products</a>
+    <a href="/patients" class="nav-link">Patients</a>
+    <a href="/contact" class="nav-link">Contact</a>
+    <a href="/contact" class="nav-cta">Free Consultation</a>
   </div>
 
   <!-- HERO -->
   <section class="fm-hero">
     <p class="fm-hero__eyebrow">A Different Kind of Care</p>
     <h1 class="fm-hero__title">What Is Functional<br>Medicine?</h1>
-    <p class="fm-hero__lead">Functional medicine is the practice of asking <strong>why</strong> instead of just what. It investigates the root causes of chronic symptoms rather than managing them with medication. It treats you as a whole system rather than a collection of separate complaints. And it starts from the premise that your body, given the right conditions, knows how to heal.</p>
+    <p class="fm-hero__lead">Functional medicine investigates <strong>why</strong> symptoms are happening, not just how to suppress them. It looks at the body as a connected system and uses that understanding to find and address what is driving the pattern.</p>
     <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="btn-coral">Book a Free Discovery Call</a>
   </section>
 
@@ -297,55 +297,54 @@
       <h2 class="iceberg__title">Western Medicine<br>Treats the Tip<br>of the Iceberg</h2>
       <div class="iceberg__accent"></div>
       <div class="iceberg__body">
-        <p>Conventional medicine is exceptional at acute care. Infections, injuries, emergencies, structural disease, which is where it excels, and it saves lives. But for chronic, systemic conditions, it runs into a fundamental limitation: it's built around identifying disease and prescribing a treatment to suppress it.</p>
-        <p>The symptom is treated. The question of why the symptom appeared is rarely asked. A headache becomes a prescription. Fatigue becomes a referral. Hormonal imbalance becomes birth control. Acid reflux becomes a PPI. The underlying mechanism goes uninvestigated, and patients often return months later with the same complaint or a new one that grew from the same root.</p>
-        <p><strong>Below the surface is where chronic illness actually lives.</strong> Gut dysfunction, hormonal dysregulation, chronic inflammation, nutritional depletion, disrupted sleep, accumulated toxic burden, nervous system overload. These are the drivers. Addressing only the visible symptom leaves all of this intact.</p>
+        <p>Conventional medicine is exceptional at acute care: infections, injuries, emergencies, and structural disease. For chronic, systemic conditions it runs into a structural limitation. It is built around identifying disease and prescribing a treatment to suppress it.</p>
+        <p>The symptom is treated. The question of why the symptom appeared is rarely asked. A headache becomes a prescription. Fatigue becomes a referral. Hormonal imbalance becomes birth control. The underlying mechanism goes uninvestigated, and the pattern often returns.</p>
+        <p><strong>Below the surface is where chronic illness lives.</strong> Gut dysfunction, hormonal dysregulation, chronic inflammation, nutritional depletion, disrupted sleep, toxic burden, nervous system overload. Addressing only the visible symptom leaves all of this intact.</p>
       </div>
     </div>
 
-<!-- Iceberg SVG -->
-<div class="iceberg__visual">
-  <div class="iceberg-svg-wrap">
-    <svg viewBox="0 0 480 580" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+    <!-- Iceberg SVG -->
+    <div class="iceberg__visual">
+      <div class="iceberg-svg-wrap">
+        <svg viewBox="0 0 440 560" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+          <!-- Water line -->
+          <line x1="0" y1="175" x2="440" y2="175" stroke="#CF7B72" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
+          <text x="340" y="168" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" letter-spacing="2" fill="#CF7B72" opacity="0.6" text-anchor="middle">SURFACE</text>
 
-      <!-- Tip above water — wider base gives text room -->
-      <polygon points="240,20 326,158 154,158" fill="#CF7B72" opacity="0.22"/>
-      <polygon points="240,20 326,158 154,158" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
+          <!-- Tip above water -->
+          <polygon points="220,20 280,175 160,175" fill="#CF7B72" opacity="0.25"/>
+          <polygon points="220,20 280,175 160,175" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
 
-      <!-- Text sits low in the tip where the shape is wide enough to hold it -->
-     <text x="240" y="114" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="2.5" fill="#C8756C" text-anchor="middle">SYMPTOMS</text>
-     <text x="240" y="129" font-family="'Raleway', sans-serif" font-weight="300" font-size="8.5" letter-spacing="0.5" fill="#C8756C" opacity="0.65" text-anchor="middle">Treated by</text>
-     <text x="240" y="142" font-family="'Raleway', sans-serif" font-weight="300" font-size="8.5" letter-spacing="0.5" fill="#C8756C" opacity="0.65" text-anchor="middle">conventional medicine</text>
-      <!-- Water line -->
-      <line x1="20" y1="158" x2="460" y2="158" stroke="#CF7B72" stroke-width="1" stroke-dasharray="5 4" opacity="0.4"/>
-      <text x="440" y="153" font-family="'Raleway', sans-serif" font-weight="300" font-size="8.5" letter-spacing="2" fill="#CF7B72" opacity="0.5" text-anchor="end">SURFACE</text>
+          <!-- Above water label -->
+          <text x="220" y="108" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="13" letter-spacing="1.5" fill="#C8756C" text-anchor="middle" text-transform="uppercase">SYMPTOMS</text>
+          <text x="220" y="126" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" fill="#C8756C" opacity="0.7" text-anchor="middle">Treated by</text>
+          <text x="220" y="140" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" fill="#C8756C" opacity="0.7" text-anchor="middle">conventional medicine</text>
 
-      <!-- Wide body below water — matched to new tip base -->
-      <polygon points="154,158 44,562 436,562 326,158" fill="#CF7B72" opacity="0.07"/>
-      <polygon points="154,158 44,562 436,562 326,158" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
+          <!-- Big mass below water -->
+          <polygon points="160,175 90,540 350,540 280,175" fill="#CF7B72" opacity="0.08"/>
+          <polygon points="160,175 90,540 350,540 280,175" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
 
-      <!-- 8 root cause labels — evenly spaced -->
-      <text x="240" y="202" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">GUT DYSFUNCTION</text>
-      <text x="240" y="248" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">HORMONAL IMBALANCE</text>
-      <text x="240" y="294" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">CHRONIC INFLAMMATION</text>
-      <text x="240" y="340" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">NERVOUS SYSTEM BURDEN</text>
-      <text x="240" y="386" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">NUTRIENT DEPLETION</text>
-      <text x="240" y="432" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">TOXIC BURDEN</text>
-      <text x="240" y="478" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">SLEEP DISRUPTION</text>
-      <text x="240" y="524" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="2" fill="#1A1A1A" text-anchor="middle">METABOLIC DYSREGULATION</text>
+          <!-- Below water labels -->
+          <text x="220" y="215" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">GUT DYSFUNCTION</text>
+          <text x="220" y="256" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">HORMONAL IMBALANCE</text>
+          <text x="220" y="297" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">CHRONIC INFLAMMATION</text>
+          <text x="220" y="338" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">NERVOUS SYSTEM BURDEN</text>
+          <text x="220" y="379" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">NUTRIENT DEPLETION</text>
+          <text x="220" y="420" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">TOXIC BURDEN</text>
+          <text x="220" y="461" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">SLEEP DISRUPTION</text>
+          <text x="220" y="502" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">METABOLIC DYSREGULATION</text>
 
-      <!-- Root causes label -->
-      <text x="444" y="208" font-family="'Raleway', sans-serif" font-weight="300" font-size="8.5" letter-spacing="2" fill="#CF7B72" opacity="0.55" text-anchor="end">ROOT</text>
-      <text x="444" y="222" font-family="'Raleway', sans-serif" font-weight="300" font-size="8.5" letter-spacing="2" fill="#CF7B72" opacity="0.55" text-anchor="end">CAUSES</text>
-
-    </svg>
-  </div>
-</div>
+          <!-- Below water label -->
+          <text x="358" y="228" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="1.5" fill="#CF7B72" opacity="0.6">ROOT</text>
+          <text x="358" y="241" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="1.5" fill="#CF7B72" opacity="0.6">CAUSES</text>
+        </svg>
+      </div>
+    </div>
   </section>
 
   <!-- QUOTE -->
   <section class="quote-break">
-    <p class="quote-break__text">"The body is not a collection of separate parts. Everything is connected. When you treat one system in isolation, you miss the conversation happening everywhere else."</p>
+    <p class="quote-break__text">The body is not a collection of separate parts. Every system influences the others. <em>That is where the investigation begins.</em></p>
   </section>
 
   <!-- GUT HEALTH PILLAR -->
@@ -356,28 +355,28 @@
       <h2 class="gut-pillar__title">Gut Health Is<br>the Root of<br>Almost Everything</h2>
       <div class="gut-pillar__accent"></div>
       <div class="gut-pillar__body">
-        <p>If there is one place to begin understanding how the body works, it is the gut. The gastrointestinal system contains roughly 70% of the body's immune tissue, produces over 90% of the body's serotonin, houses trillions of microorganisms that regulate metabolism and inflammation, and maintains a one-cell-thick barrier between your inner environment and the outside world.</p>
-        <p>When that barrier is compromised, the consequences are systemic. Bacteria, undigested food particles, and inflammatory compounds enter the bloodstream and trigger a chronic, low-grade immune response that can show up as skin conditions, hormonal disruption, brain fog, autoimmunity, fatigue, and mood disorders. This is intestinal permeability. It is measurable and it is addressable.</p>
-        <p><strong>Gut health is not a wellness trend.</strong> It is the physiological foundation that most other systems depend on. When the gut is dysregulated, almost nothing else can be fully optimized. When it is restored, patients routinely report improvements across multiple areas of health they did not expect to change.</p>
+        <p>The gastrointestinal system houses roughly 70% of the body's immune tissue, produces over 90% of its serotonin, and maintains a barrier between the internal environment and everything outside it. The microbiome living within it directly regulates metabolism, inflammation, hormone balance, and brain chemistry.</p>
+        <p>When intestinal barrier integrity is compromised, bacteria, undigested particles, and inflammatory compounds enter circulation and activate a chronic immune response. This is intestinal permeability. It is measurable, addressable, and connected to a wide range of conditions that appear unrelated on the surface.</p>
+        <p><strong>Gut function is the physiological foundation most other systems depend on.</strong> It is where we typically begin.</p>
       </div>
     </div>
     <div class="gut-connections">
       <p style="font-family:'Raleway',sans-serif; font-weight:300; font-size:10px; letter-spacing:0.26em; text-transform:uppercase; color:rgba(26,26,26,0.4); margin-bottom:16px;">How gut dysfunction shows up everywhere</p>
       <div class="gut-connection">
         <p class="gut-connection__title">Gut and Skin</p>
-        <p class="gut-connection__desc">Microbiome imbalance and intestinal permeability drive the systemic inflammation that surfaces as acne, rosacea, eczema, and psoriasis. Treating the skin without treating the gut is treating the messenger.</p>
+        <p class="gut-connection__desc">Microbiome imbalance and intestinal permeability generate systemic inflammation that surfaces as acne, rosacea, eczema, and psoriasis. The skin is reflecting an internal environment.</p>
       </div>
       <div class="gut-connection">
         <p class="gut-connection__title">Gut and Hormones</p>
-        <p class="gut-connection__desc">A specific collection of gut bacteria called the estrobolome directly regulates how estrogen is metabolized and recirculated. When the microbiome is disrupted, hormone balance follows.</p>
+        <p class="gut-connection__desc">The estrobolome, a collection of gut bacteria, directly regulates estrogen metabolism and recirculation. Microbiome disruption alters hormone balance through this mechanism.</p>
       </div>
       <div class="gut-connection">
         <p class="gut-connection__title">Gut and Brain</p>
-        <p class="gut-connection__desc">The gut and brain communicate constantly through the vagus nerve. Dysbiosis is one of the most clinically significant and under-recognized drivers of anxiety, depression, and cognitive decline.</p>
+        <p class="gut-connection__desc">The gut and brain communicate bidirectionally through the vagus nerve. Dysbiosis is a clinically significant and frequently overlooked contributor to anxiety, depression, and cognitive symptoms.</p>
       </div>
       <div class="gut-connection">
         <p class="gut-connection__title">Gut and Immunity</p>
-        <p class="gut-connection__desc">With the majority of immune tissue lining the gut, chronic barrier dysfunction is a primary driver of autoimmune conditions, food reactivity, and immune dysregulation.</p>
+        <p class="gut-connection__desc">The majority of the body's immune tissue lines the gut. Chronic barrier dysfunction is a primary driver of autoimmune conditions, food reactivity, and immune dysregulation.</p>
       </div>
     </div>
   </section>
@@ -390,32 +389,32 @@
 
       <div class="pillar-card">
         <h3 class="pillar-card__name">Hormonal Health</h3>
-        <p class="pillar-card__desc">Hormones govern your energy, mood, weight, skin, hair, libido, and cycles. When the signaling is disrupted, the effects are felt everywhere. We investigate the full cascade rather than chasing a single number on a lab report. <strong>Most hormonal dysfunction is rooted in gut health, nutrition, and chronic stress before it is ever a hormonal problem in isolation.</strong></p>
+        <p class="pillar-card__desc">Hormones regulate energy, mood, weight, skin, hair, libido, and cycles. We investigate the full hormonal cascade rather than treating a single number in isolation. <strong>Most hormonal dysfunction originates in gut health, nutrition, and stress physiology before it becomes a hormonal problem.</strong></p>
       </div>
 
       <div class="pillar-card">
         <h3 class="pillar-card__name">Detoxification</h3>
-        <p class="pillar-card__desc">Your liver, kidneys, lymphatic system, and gut are constantly filtering what enters your body. When that filtering is overwhelmed or impaired, inflammatory compounds accumulate and drive chronic symptoms. <strong>Supporting detoxification pathways reduces the physiological burden that underlies many hard-to-explain conditions.</strong></p>
+        <p class="pillar-card__desc">The liver, kidneys, lymphatic system, and gut continuously filter what enters the body. When these pathways are impaired, inflammatory compounds accumulate and contribute to chronic symptoms. <strong>Supporting detoxification reduces a physiological burden that drives many conditions that resist standard treatment.</strong></p>
       </div>
 
       <div class="pillar-card">
         <h3 class="pillar-card__name">Nervous System Health</h3>
-        <p class="pillar-card__desc">Chronic stress is not just psychological. It dysregulates cortisol, suppresses thyroid function, depletes sex hormones, impairs gut motility, and disrupts immune regulation. <strong>The nervous system is a physiological driver of almost every chronic health pattern we see.</strong> Calming it is often the most important intervention in a protocol.</p>
+        <p class="pillar-card__desc">Chronic stress dysregulates cortisol, suppresses thyroid function, depletes sex hormones, impairs gut motility, and disrupts immune regulation. <strong>The nervous system is a physiological driver in nearly every chronic health pattern.</strong> Addressing it is often the most consequential step in a protocol.</p>
       </div>
 
       <div class="pillar-card">
         <h3 class="pillar-card__name">Sleep</h3>
-        <p class="pillar-card__desc">Sleep is when the body repairs tissue, consolidates memory, clears metabolic waste from the brain, and resets cortisol for the next day. Poor sleep degrades every other system over time. <strong>It is not separate from hormone health, gut health, or metabolic health. It is the foundation all of them depend on.</strong></p>
+        <p class="pillar-card__desc">Sleep is when the body repairs tissue, clears metabolic waste from the brain, and resets cortisol. Poor sleep degrades every other system over time. <strong>Sleep is not separate from hormone health, gut health, or metabolic health. It is the foundation they all depend on.</strong></p>
       </div>
 
       <div class="pillar-card">
         <h3 class="pillar-card__name">Exercise and Movement</h3>
-        <p class="pillar-card__desc">Movement is medicine in the most literal sense. It improves insulin sensitivity, reduces inflammation, supports lymphatic flow, regulates mood through neurotransmitter activity, and slows cellular aging. <strong>The right movement prescription is specific to where you are, not a generic recommendation.</strong> Too much, the wrong kind, or at the wrong time can be as harmful as too little.</p>
+        <p class="pillar-card__desc">Movement improves insulin sensitivity, reduces inflammation, supports lymphatic flow, and regulates mood through neurotransmitter activity. <strong>The appropriate movement prescription depends on where the body is currently, not a generic standard.</strong> The wrong type or intensity can be counterproductive.</p>
       </div>
 
       <div class="pillar-card">
         <h3 class="pillar-card__name">Skin Health</h3>
-        <p class="pillar-card__desc">Skin is the body's most visible organ and one of its most informative. Hair loss, acne, rosacea, eczema, and premature aging are rarely just skin problems. They are symptoms of internal dysregulation made visible. <strong>Our clinical background in dermatology combined with functional medicine gives us a perspective that few practices can offer: we understand both the surface and what is driving it.</strong></p>
+        <p class="pillar-card__desc">Hair loss, acne, rosacea, eczema, and premature aging are symptoms of internal dysregulation, not isolated skin conditions. <strong>A clinical foundation in dermatology combined with functional medicine provides a perspective most practices cannot offer: we assess both the surface presentation and what is generating it.</strong></p>
       </div>
 
     </div>
@@ -427,9 +426,8 @@
       <p class="why-works__label">The science behind it</p>
       <h2 class="why-works__title">Why Functional<br>Medicine Works</h2>
       <div class="why-works__body">
-        <p>Functional medicine works because it operates in alignment with how the body actually functions. The human body is not a machine made of separate parts. It is a deeply interconnected biological system where hormones talk to gut bacteria, gut bacteria influence brain chemistry, brain chemistry affects sleep, and sleep governs immune function.</p>
-        <p>When you address root causes rather than downstream symptoms, the benefits are rarely confined to one area. Patients who come in for bloating often find their skin clears. Patients who come in for fatigue often find their mood stabilizes. This is not a coincidence. It is what happens when the underlying biology is supported correctly.</p>
-        <p>This does not mean functional medicine replaces conventional care. For acute illness, structural disease, and emergencies, conventional medicine is irreplaceable. What functional medicine offers is the investigation that happens when conventional testing returns normal and symptoms persist. It fills the gap that most patients fall into and cannot find their way out of.</p>
+        <p>The human body is a connected biological system. Hormones influence gut bacteria. Gut bacteria shape brain chemistry. Brain chemistry affects sleep. Sleep governs immune function. A problem in one area generates problems in others. Testing and treating in isolation misses this entirely.</p>
+        <p>Functional medicine does not replace conventional care. For acute illness, structural disease, and emergencies, conventional medicine is irreplaceable. What functional medicine provides is the investigation that becomes relevant when standard testing returns normal and symptoms persist.</p>
       </div>
     </div>
     <div class="why-reasons">
@@ -466,9 +464,9 @@
 
   <!-- CTA -->
   <section class="fm-cta">
-    <h2 class="fm-cta__title">Find out what's actually driving your symptoms.</h2>
+    <h2 class="fm-cta__title">Find out what is driving your symptoms.</h2>
     <div>
-      <p class="fm-cta__body">A free discovery call is the best place to start. We will talk through your health history, what you have already tried, and whether functional medicine is the right fit for what you are experiencing.</p>
+      <p class="fm-cta__body">A free discovery call is a good starting point. We will review your history, look at what testing you have had, and talk through whether this approach makes sense for your situation.</p>
       <a href="https://my.practicebetter.io/#/698152fde53fa935e21e29b7/bookings?step=services" target="_blank" rel="noopener" class="btn-white">Book a Free Discovery Call</a>
     </div>
   </section>
@@ -481,7 +479,7 @@
     </div>
     <div class="footer-main">
       <div class="footer-brand">
-        <a href="/home" class="footer-brand__logo">Pearl Precision Wellness</a>
+        <a href="index.html" class="footer-brand__logo">Pearl Precision Wellness</a>
         <p class="footer-brand__tagline">Functional medicine for skin, hormones, and whole-body health.</p>
         <div class="footer-socials">
           <a href="https://www.instagram.com/pearlprecisionwellness/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
@@ -495,21 +493,21 @@
       <div class="footer-col">
         <p class="footer-col__label">Navigate</p>
         <ul class="footer-col__list">
-          <li><a href="/home">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="/about">About</a></li>
-          <li><a href="/functional-medicine">Functional Medicine</a></li>
-          <li><a href="/cosmetics">Cosmetics</a></li>
-          <li><a href="/clients">Clients</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="services.html">Functional Medicine</a></li>
+          <li><a href="cosmetics.html">Cosmetics</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <p class="footer-col__label">We Address</p>
         <ul class="footer-col__list">
-          <li><a href="/hormonal-health">Hormonal Health</a></li>
-          <li><a href="/skin-hair-loss">Skin &amp; Hair Loss</a></li>
-          <li><a href="/gut-health">Gut Health</a></li>
-          <li><a href="/thyroid">Thyroid</a></li>
+          <li><a href="hormonal-health.html">Hormonal Health</a></li>
+          <li><a href="skin-hair-loss.html">Skin &amp; Hair Loss</a></li>
+          <li><a href="gut-health.html">Gut Health</a></li>
+          <li><a href="thyroid.html">Thyroid</a></li>
           <li><a href="/inflammation">Inflammation</a></li>
           <li><a href="/anti-aging">Anti-aging</a></li>
         </ul>
@@ -518,8 +516,8 @@
     <div class="footer-bottom">
       <p class="footer-bottom__copy">© 2026 Pearl Precision Wellness. All Rights Reserved.</p>
       <div class="footer-bottom__legal">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
       </div>
     </div>
   </footer>
