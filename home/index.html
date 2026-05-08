@@ -1040,40 +1040,40 @@
     <h2 class="contact-heading">Contact</h2>
     <p class="contact-sub">Interested in working together? Fill out some info and we will be in touch shortly! We can't wait to hear from you!</p>
 
-    <form class="contact-form" onsubmit="return false;">
+    <form class="contact-form" action="https://formspree.io/f/mzdojgnn" method="POST">
       <div class="form-group">
         <label class="form-label">Name</label>
         <div class="form-row">
           <div>
             <label class="form-label" for="first-name">First Name <span class="req">(required)</span></label>
-            <input class="form-input" id="first-name" type="text" required placeholder="" />
+            <input class="form-input" id="first-name" name="first_name" type="text" required />
           </div>
           <div>
             <label class="form-label" for="last-name">Last Name <span class="req">(required)</span></label>
-            <input class="form-input" id="last-name" type="text" required placeholder="" />
+            <input class="form-input" id="last-name" name="last_name" type="text" required />
           </div>
         </div>
       </div>
       <div class="form-group">
         <label class="form-label" for="email">Email <span class="req">(required)</span></label>
-        <input class="form-input" id="email" type="email" required />
+        <input class="form-input" id="email" name="email" type="email" required />
         <div class="form-check" style="margin-top:10px;">
-          <input type="checkbox" id="newsletter" />
+          <input type="checkbox" id="newsletter" name="newsletter" value="yes" />
           <label for="newsletter">Sign up for news and updates</label>
         </div>
       </div>
       <div class="form-group">
         <label class="form-label" for="phone">Phone</label>
-        <input class="form-input" id="phone" type="tel" />
+        <input class="form-input" id="phone" name="phone" type="tel" />
       </div>
       <div class="form-group">
         <label class="form-label" for="message">Message <span class="req">(required)</span></label>
-        <textarea class="form-input form-textarea" id="message" rows="5" required></textarea>
+        <textarea class="form-input form-textarea" id="message" name="message" rows="5" required></textarea>
       </div>
       <button class="btn-submit" type="submit">Submit</button>
     </form>
   </section>
-
+  
   <!-- ═══════════════════════════
        FOOTER
   ═══════════════════════════ -->
