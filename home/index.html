@@ -304,29 +304,75 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(207,123,114,0.12);
     }
 
-    .service-title {
+    .pillar-card {
+      background: var(--white);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+    }
+    .pillar-card--soon { background: var(--cream); }
+
+    .pillar-badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+      align-self: flex-start;
+    }
+    .pillar-badge--now { background: var(--coral); color: var(--white); }
+    .pillar-badge--soon { border: 1px solid rgba(207,123,114,0.35); color: var(--coral-dark); }
+
+    .pillar-title {
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 15px;
+      font-size: clamp(22px, 2.5vw, 28px);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       color: var(--black);
-      line-height: 1.4;
-      margin-bottom: 20px;
-      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 14px;
     }
 
-    .service-body {
+    .pillar-body {
       font-family: var(--font-body);
       font-weight: 300;
       font-size: 13.5px;
       line-height: 1.8;
-      color: var(--black);
-      text-align: center;
+      color: rgba(26,26,26,0.65);
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .pillar-link {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--coral-dark);
+      border-bottom: 1px solid rgba(207,123,114,0.3);
+      align-self: flex-start;
+      padding-bottom: 2px;
+    }
+
+    .pillars-intro {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.85;
+      color: rgba(26,26,26,0.65);
+      max-width: 720px;
+      margin-bottom: 48px;
     }
 
     /* ══════════════════════════════
@@ -498,7 +544,7 @@
       position: relative;
     }
     .tool-card-details li::before {
-      content: '—';
+      content: '-';
       position: absolute;
       left: 0;
       color: var(--coral);
@@ -749,7 +795,7 @@
       .focus-right { height: 300px; }
 
       #our-services { padding: 20px 24px; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
 
       #provider { padding: 60px 32px; }
       .provider-inner { grid-template-columns: 1fr; }
@@ -786,10 +832,12 @@
     <div class="nav-links">
       <a href="/home/#our-focus" class="nav-link">About</a>
       <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
-      <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>      
+      <a href="/functional-dermatology" class="nav-link">Functional Dermatology</a>
+      <a href="/aesthetics" class="nav-link">Aesthetics</a>
+      <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
       <a href="/pricing" class="nav-link">Pricing</a>
       <a href="/contact" class="nav-link">Contact</a>
-      <a href="/contact" class="nav-cta">Free Consultation</a>
+      <a href="https://ehr.charmtracker.com/publicCal.sas?method=getCal&digest=f639f54db5244ba381b1d04dd4f7172a93b962d7d468865f7d5f5f5958383677c791341ca9a05ba4d17c6be59b73c8fdd2bec0af04f23226" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
     </div>
     <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -798,11 +846,12 @@
   <div class="nav-mobile" id="mobileNav">
     <a href="/home/#our-focus" class="nav-link">About</a>
     <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+    <a href="/functional-dermatology" class="nav-link">Functional Dermatology</a>
+    <a href="/aesthetics" class="nav-link">Aesthetics</a>
     <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
     <a href="/pricing" class="nav-link">Pricing</a>
-
     <a href="/contact" class="nav-link">Contact</a>
-    <a href="/contact" class="nav-cta">Free Consultation</a>
+    <a href="https://ehr.charmtracker.com/publicCal.sas?method=getCal&digest=f639f54db5244ba381b1d04dd4f7172a93b962d7d468865f7d5f5f5958383677c791341ca9a05ba4d17c6be59b73c8fdd2bec0af04f23226" target="_blank" rel="noopener" class="nav-cta">Free Consultation</a>
   </div>
 
   <!-- ═══════════════════════════
@@ -817,9 +866,9 @@
       />
     </div>
     <div class="hero-content">
-      <h1 class="hero-heading">Functional Medicine for Skin, Gut, Hormones, and Whole-Body Health</h1>
-      <p class="hero-sub">Pearl Precision Wellness blends conventional and functional medicine to uncover what your body is actually signaling and restore balance at the source.</p>
-      <p class="hero-body">Whether you're navigating hair loss, acne, hormone shifts, inflammation, or digestive issues, your care is personalized, data-driven, and designed to help you feel clear, confident, and better from the inside out.</p>
+      <h1 class="hero-heading">Functional Medicine, Dermatology, and Aesthetics Under One Roof</h1>
+      <p class="hero-sub">Pearl Precision Wellness offers functional medicine now, with functional dermatology and aesthetics launching in October 2026.</p>
+      <p class="hero-body">Megan Pattee, PA-C is one of the few providers with years of dermatology experience who integrates conventional dermatology with a root-cause perspective. Book a discovery call for functional medicine today, or join the waitlist for our October launch.</p>
       <a href="https://ehr.charmtracker.com/publicCal.sas?method=getCal&digest=f639f54db5244ba381b1d04dd4f7172a93b962d7d468865f7d5f5f5958383677c791341ca9a05ba4d17c6be59b73c8fdd2bec0af04f23226" target="_blank" rel="noopener" class="btn-outline">Book a<br>Discovery Call</a>
     </div>
   </section>
@@ -830,7 +879,7 @@
   <section id="brand-statement">
     <div class="brand-left">
       <div class="brand-display">Pearl<br>Precision<br>Wellness</div>
-      <p class="brand-subhead">Functional medicine looks at why symptoms are happening, not just how to suppress them.</p>
+      <p class="brand-subhead">Functional medicine looks at why symptoms are happening not just how to suppress them.</p>
       <p class="brand-body">
         You've tried the prescription.<br>
         You've changed the skincare.<br>
@@ -886,23 +935,26 @@
   <section id="our-services">
     <div class="services-frame">
       <h2 class="services-heading">Our Services</h2>
+      <p class="pillars-intro">Three pillars of care: functional medicine is available now. Functional dermatology and aesthetics are coming in October 2026.</p>
       <div class="services-grid">
-        <div class="service-item">
-          <h3 class="service-title">1. Comprehensive<br>Assessment</h3>
-          <p class="service-body">Comprehensive discovery consultation documenting detailed medical history, prior interventions, laboratory data, and more.</p>
-        </div>
-        <div class="service-item">
-          <h3 class="service-title">2. Advanced<br>Diagnostics</h3>
-          <p class="service-body">Targeted functional testing that goes beyond standard labs to uncover root causes and the physiologic drivers behind your symptoms.</p>
-        </div>
-        <div class="service-item">
-          <h3 class="service-title">3. Personalized<br>Protocol</h3>
-          <p class="service-body">Evidence-based, stepwise therapeutic protocol incorporating nutraceuticals, dietary intervention, mind-body modalities, and follow-up testing to measure progress.</p>
-        </div>
-        <div class="service-item">
-          <h3 class="service-title">4. On Going<br>Optimization</h3>
-          <p class="service-body">Our approach combines natural, research-driven treatments with mind-body work to support your whole self — building long-term wellness, not temporary symptom relief.</p>
-        </div>
+        <article class="pillar-card">
+          <span class="pillar-badge pillar-badge--now">Available Now</span>
+          <h3 class="pillar-title">Functional Medicine</h3>
+          <p class="pillar-body">Whole-body investigation for gut health, hormones, thyroid, inflammation, fatigue, and chronic symptoms. Root-cause care through advanced labs, personalized protocols, and ongoing support.</p>
+          <a href="/functional-medicine" class="pillar-link">Learn More</a>
+        </article>
+        <article class="pillar-card pillar-card--soon">
+          <span class="pillar-badge pillar-badge--soon">Coming October 2026</span>
+          <h3 class="pillar-title">Functional Dermatology</h3>
+          <p class="pillar-body">Conventional dermatology integrated with a functional medicine lens. Chronic skin conditions, medical dermatology visits, and skin health screenings from a provider with years of clinical dermatology experience.</p>
+          <a href="/functional-dermatology#waitlist" class="pillar-link">Join Waitlist</a>
+        </article>
+        <article class="pillar-card pillar-card--soon">
+          <span class="pillar-badge pillar-badge--soon">Coming October 2026</span>
+          <h3 class="pillar-title">Aesthetics</h3>
+          <p class="pillar-body">Medical-grade aesthetic treatments informed by dermatology and functional medicine. Cosmetic consultations and skin quality procedures designed with clinical depth.</p>
+          <a href="/aesthetics#waitlist" class="pillar-link">Join Waitlist</a>
+        </article>
       </div>
     </div>
   </section>
@@ -917,7 +969,7 @@
         <h2 class="provider-name">Megan Pattee, PA-C</h2>
         <p class="provider-title">Physician Assistant | Functional Medicine &amp; Dermatology</p>
         <div class="provider-bio">
-          <p>Megan is a board-certified Physician Assistant with a clinical foundation in dermatology and advanced training in functional medicine. Early in her dermatology career, she developed a deep appreciation for the visible manifestations of internal health, from hair loss and acne to inflammatory and autoimmune skin conditions.</p>
+          <p>Megan is a board-certified Physician Assistant with a clinical foundation in dermatology and advanced training in functional medicine. Early in her dermatology career, she developed a deep appreciation for the visible manifestations of internal health from hair loss and acne to inflammatory and autoimmune skin conditions.</p>
           <p>While she valued the effectiveness of conventional treatments, she found herself wanting deeper answers. She recognized that many patients were managing symptoms, yet still asking the same underlying question: Why is this happening? That question ultimately led her to pursue advanced training in functional medicine.</p>
           <p>Through this lens, Megan expanded her approach beyond symptom control to systems-based investigation, examining hormonal signaling, metabolic health, gut function, inflammation, stress physiology, and nutritional status as interconnected contributors to both internal and external health.</p>
           <p>Her care integrates evidence-based medicine with comprehensive functional assessment, allowing her to identify underlying drivers rather than simply suppressing symptoms. She develops personalized, data-informed treatment strategies designed for sustainable improvement and long-term health.</p>
@@ -1140,7 +1192,7 @@
           <li><a href="/home/index.html">Thyroid</a></li>
           <li><a href="/home/index.html">Inflammation</a></li>
           <li><a href="/home/index.html">Anti-aging</a></li>
-          <li><a href="/home/index.html">Cosmetics</a></li>
+          <li><a href="/home/index.html">Aesthetics</a></li>
         </ul>
       </div>
 
