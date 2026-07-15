@@ -59,19 +59,23 @@
 
     /* ICEBERG */
     .iceberg {
-      padding: 100px 80px;
+      padding: 96px 80px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 64px;
+      align-items: start;
       border-bottom: 1px solid rgba(207,123,114,0.15);
     }
-    .iceberg__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
-    .iceberg__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(32px, 4vw, 52px); text-transform: uppercase; color: var(--black); line-height: 0.95; }
-    .iceberg__accent { width: 40px; height: 2px; background: var(--coral); margin: 22px 0 28px; }
-    .iceberg__body p { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.9; color: rgba(26,26,26,0.75); }
-    .iceberg__body p + p { margin-top: 18px; }
-    .iceberg__body strong { font-weight: 500; color: var(--black); }
+    .iceberg__content {
+      max-width: 520px;
+      padding-top: 8px;
+    }
+    .iceberg__label { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; }
+    .iceberg__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(32px, 4vw, 48px); text-transform: uppercase; color: var(--black); line-height: 1.05; letter-spacing: 0.01em; }
+    .iceberg__accent { width: 40px; height: 2px; background: var(--coral); margin: 24px 0 28px; }
+    .iceberg__body { max-width: 480px; }
+    .iceberg__body p { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.8; color: rgba(26,26,26,0.72); }
+    .iceberg__body p + p { margin-top: 16px; }
 
     /* Iceberg SVG visual */
     .iceberg__visual {
@@ -79,8 +83,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-self: end;
+      width: 100%;
+      max-width: 420px;
+      margin-left: auto;
     }
-    .iceberg-svg-wrap { width: 100%; max-width: 440px; }
+    .iceberg-svg-wrap { width: 100%; }
 
     /* QUOTE BREAK */
     .quote-break {
@@ -239,7 +247,9 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .fm-hero { padding: 120px 32px 72px; }
-      .iceberg { grid-template-columns: 1fr; padding: 64px 32px; gap: 48px; }
+      .iceberg { grid-template-columns: 1fr; padding: 64px 32px; gap: 40px; }
+      .iceberg__content { max-width: none; padding-top: 0; }
+      .iceberg__visual { justify-self: center; margin-left: 0; max-width: 360px; }
       .quote-break { padding: 64px 32px; }
       .gut-pillar { grid-template-columns: 1fr; padding: 64px 32px; gap: 48px; }
       .pillars { padding: 64px 32px; }
@@ -296,7 +306,7 @@
 
   <!-- THE ICEBERG -->
   <section class="iceberg">
-    <div>
+    <div class="iceberg__content">
       <p class="iceberg__label">The problem with conventional care</p>
       <h2 class="iceberg__title">Western Medicine<br>Treats the Tip<br>of the Iceberg</h2>
       <div class="iceberg__accent"></div>
@@ -310,38 +320,37 @@
     <!-- Iceberg SVG -->
     <div class="iceberg__visual">
       <div class="iceberg-svg-wrap">
-        <svg viewBox="0 0 440 580" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
-  <!-- Water line -->
-  <line x1="0" y1="175" x2="440" y2="175" stroke="#CF7B72" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
-  <text x="340" y="168" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" letter-spacing="2" fill="#CF7B72" opacity="0.6" text-anchor="middle">SURFACE</text>
+        <svg viewBox="0 0 420 560" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;" aria-hidden="true">
+          <!-- Soft water band -->
+          <rect x="0" y="172" width="420" height="388" fill="#CF7B72" opacity="0.03"/>
+          <line x1="20" y1="172" x2="400" y2="172" stroke="#CF7B72" stroke-width="1.25" stroke-dasharray="5 4" opacity="0.45"/>
+          <text x="400" y="162" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="2" fill="#CF7B72" opacity="0.55" text-anchor="end">SURFACE</text>
 
-  <!-- Tip above water (small triangle, narrow at bottom, wide at top is CORRECT for iceberg tip) -->
-  <polygon points="220,20 310,175 130,175" fill="#CF7B72" opacity="0.25"/>
-  <polygon points="220,20 310,175 130,175" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
+          <!-- Tip above water: wider so labels sit fully inside the outline -->
+          <polygon points="210,14 328,172 92,172" fill="#CF7B72" opacity="0.22"/>
+          <polygon points="210,14 328,172 92,172" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
 
-  <!-- Above water label -->
-  <text x="220" y="100" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="13" letter-spacing="1.5" fill="#C8756C" text-anchor="middle">SYMPTOMS</text>
-  <text x="220" y="118" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" fill="#C8756C" opacity="0.7" text-anchor="middle">Treated by</text>
-  <text x="220" y="132" font-family="'Raleway', sans-serif" font-weight="300" font-size="10" fill="#C8756C" opacity="0.7" text-anchor="middle">conventional medicine</text>
+          <!-- Tip labels, placed where the triangle is wide enough to contain them -->
+          <text x="210" y="92" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="12" letter-spacing="1.2" fill="#C8756C" text-anchor="middle">SYMPTOMS</text>
+          <text x="210" y="116" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" fill="#C8756C" opacity="0.72" text-anchor="middle">Treated by</text>
+          <text x="210" y="132" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" fill="#C8756C" opacity="0.72" text-anchor="middle">conventional care</text>
 
-  <!-- Large mass below water (trapezoid, wide at top, narrow at bottom) -->
-  <polygon points="130,175 60,560 380,560 310,175" fill="#CF7B72" opacity="0.08"/>
-  <polygon points="130,175 60,560 380,560 310,175" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
+          <!-- Mass below water: aligned to tip base, flares wider toward the bottom -->
+          <polygon points="92,172 48,540 372,540 328,172" fill="#CF7B72" opacity="0.07"/>
+          <polygon points="92,172 48,540 372,540 328,172" fill="none" stroke="#CF7B72" stroke-width="1.5"/>
 
-  <!-- Below water labels, evenly spaced across 175 to 560 = 385px / 8 items = ~48px each -->
-  <text x="220" y="222" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">GUT DYSFUNCTION</text>
-  <text x="220" y="270" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">HORMONAL IMBALANCE</text>
-  <text x="220" y="318" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">CHRONIC INFLAMMATION</text>
-  <text x="220" y="366" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">NERVOUS SYSTEM BURDEN</text>
-  <text x="220" y="414" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">NUTRIENT DEPLETION</text>
-  <text x="220" y="462" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">TOXIC BURDEN</text>
-  <text x="220" y="510" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">SLEEP DISRUPTION</text>
-  <text x="220" y="548" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1.5" fill="#1A1A1A" text-anchor="middle">METABOLIC DYSREGULATION</text>
+          <text x="210" y="198" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="2" fill="#CF7B72" opacity="0.55" text-anchor="middle">ROOT CAUSES</text>
 
-  <!-- Root causes label -->
-  <text x="395" y="210" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="1.5" fill="#CF7B72" opacity="0.6">ROOT</text>
-  <text x="395" y="223" font-family="'Raleway', sans-serif" font-weight="300" font-size="9" letter-spacing="1.5" fill="#CF7B72" opacity="0.6">CAUSES</text>
-</svg>
+          <!-- Even vertical rhythm, contained within the lower outline -->
+          <text x="210" y="238" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1" fill="#1A1A1A" text-anchor="middle">GUT DYSFUNCTION</text>
+          <text x="210" y="276" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1" fill="#1A1A1A" text-anchor="middle">HORMONAL IMBALANCE</text>
+          <text x="210" y="314" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1" fill="#1A1A1A" text-anchor="middle">CHRONIC INFLAMMATION</text>
+          <text x="210" y="352" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1" fill="#1A1A1A" text-anchor="middle">NERVOUS SYSTEM BURDEN</text>
+          <text x="210" y="390" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1" fill="#1A1A1A" text-anchor="middle">NUTRIENT DEPLETION</text>
+          <text x="210" y="428" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1" fill="#1A1A1A" text-anchor="middle">TOXIC BURDEN</text>
+          <text x="210" y="466" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1" fill="#1A1A1A" text-anchor="middle">SLEEP DISRUPTION</text>
+          <text x="210" y="504" font-family="'Cormorant Garamond', serif" font-weight="600" font-size="11.5" letter-spacing="1" fill="#1A1A1A" text-anchor="middle">METABOLIC DYSREGULATION</text>
+        </svg>
       </div>
     </div>
   </section>
