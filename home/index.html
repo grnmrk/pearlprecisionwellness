@@ -63,13 +63,13 @@
       color: var(--coral-dark);
     }
 
-    .nav-links { display: flex; align-items: center; gap: 18px; }
+    .nav-links { display: flex; align-items: center; gap: 12px; }
 
     .nav-link {
       font-family: var(--font-body);
       font-weight: 300;
-      font-size: 11px;
-      letter-spacing: 0.08em;
+      font-size: 10px;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--coral-dark);
       position: relative;
@@ -303,7 +303,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2px;
       background: rgba(207,123,114,0.12);
     }
@@ -681,7 +681,7 @@
       color: rgba(255,255,255,0.7);
       line-height: 1.65;
       margin-bottom: 32px;
-      max-width: 240px;
+      max-width: 360px;
     }
 
     .footer-socials { display: flex; gap: 12px; }
@@ -755,6 +755,7 @@
     ══════════════════════════════ */
     @media (max-width: 1100px) {
       .tools-cards { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 900px) {
@@ -777,7 +778,7 @@
       .focus-right { height: 300px; }
 
       #our-services { padding: 20px 24px; }
-      .services-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
 
       #provider { padding: 60px 32px; }
       .provider-inner { grid-template-columns: 1fr; }
@@ -801,6 +802,7 @@
       .footer-cta { padding: 36px 24px; }
       .footer-bottom { padding: 16px 24px; }
     }
+  @media(max-width:1260px){.nav-links{display:none}.nav-hamburger{display:flex}}
   </style>
 </head>
 <body>
@@ -812,8 +814,9 @@
     <a href="/home" class="nav-logo">Pearl Precision Wellness</a>
     <div class="nav-links">
       <a href="/home/#our-focus" class="nav-link">About</a>
-      <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
       <a href="/functional-dermatology" class="nav-link">Functional Dermatology</a>
+      <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+      <a href="/medical-dermatology" class="nav-link">Medical Dermatology</a>
       <a href="/aesthetics" class="nav-link">Aesthetics</a>
       <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
       <a href="/pricing" class="nav-link">Pricing</a>
@@ -826,8 +829,9 @@
   </nav>
   <div class="nav-mobile" id="mobileNav">
     <a href="/home/#our-focus" class="nav-link">About</a>
-    <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
     <a href="/functional-dermatology" class="nav-link">Functional Dermatology</a>
+    <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+    <a href="/medical-dermatology" class="nav-link">Medical Dermatology</a>
     <a href="/aesthetics" class="nav-link">Aesthetics</a>
     <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
     <a href="/pricing" class="nav-link">Pricing</a>
@@ -918,19 +922,22 @@
   <section id="our-services">
     <div class="services-frame">
       <h2 class="services-heading">Our Services</h2>
-      <p class="pillars-intro">Three pillars of care: functional medicine is available now. Functional dermatology and aesthetics are coming in October 2026.</p>
+      <p class="pillars-intro">Functional dermatology, functional medicine, and medical dermatology. Aesthetics is coming in October 2026.</p>
       <div class="services-grid">
         <article class="pillar-card">
-          <span class="pillar-badge pillar-badge--now">Available Now</span>
+          <h3 class="pillar-title">Functional Dermatology</h3>
+          <p class="pillar-body">Longer visits that look at your skin alongside hormones, nutrition, gut health, stress, and other factors that may be contributing.</p>
+          <a href="/functional-dermatology" class="pillar-link">Learn More</a>
+        </article>
+        <article class="pillar-card">
           <h3 class="pillar-title">Functional Medicine</h3>
           <p class="pillar-body">Whole-body investigation for gut health, hormones, thyroid, inflammation, fatigue, and chronic symptoms. Root-cause care through advanced labs, personalized protocols, and ongoing support.</p>
           <a href="/functional-medicine" class="pillar-link">Learn More</a>
         </article>
-        <article class="pillar-card pillar-card--soon">
-          <span class="pillar-badge pillar-badge--soon">Coming October 2026</span>
-          <h3 class="pillar-title">Functional Dermatology</h3>
-          <p class="pillar-body">Conventional dermatology integrated with a functional medicine lens. Chronic skin conditions, medical dermatology visits, and skin health screenings from a provider with years of clinical dermatology experience.</p>
-          <a href="/functional-dermatology#waitlist" class="pillar-link">Join Waitlist</a>
+        <article class="pillar-card">
+          <h3 class="pillar-title">Medical Dermatology</h3>
+          <p class="pillar-body">Evidence-based care for acne, eczema, psoriasis, hair loss, spot checks, and other common skin concerns.</p>
+          <a href="/medical-dermatology" class="pillar-link">Learn More</a>
         </article>
         <article class="pillar-card pillar-card--soon">
           <span class="pillar-badge pillar-badge--soon">Coming October 2026</span>
@@ -1129,7 +1136,7 @@
       <!-- Brand + socials -->
       <div class="footer-brand">
         <a href="/home" class="footer-brand__logo">Pearl Precision Wellness</a>
-        <p class="footer-brand__tagline">Functional medicine for skin, hormones, and whole-body health.</p>
+        <p class="footer-brand__tagline">Functional Dermatology for Skin, Gut, Hormones, and Whole-Body Health</p>
         <div class="footer-socials">
 
           <!-- Instagram -->

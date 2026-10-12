@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Functional Dermatology, Pearl Precision Wellness</title>
-  <meta name="description" content="Functional dermatology combining years of clinical dermatology experience with a root-cause perspective. Launching October 2026. Join the waitlist at Pearl Precision Wellness, Centennial, CO." />
+  <meta name="description" content="Your skin tells a story. Functional dermatology looks at the whole picture, from hormones and nutrition to immune function, stress, and the gut. Pearl Precision Wellness, Centennial, CO." />
   <link rel="icon" type="image/png" href="/ppw-logo-icon.png" />
   <link rel="apple-touch-icon" href="/ppw-logo-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,8 +19,8 @@
     ul{list-style:none}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:80px;border-bottom:1px solid rgba(207,123,114,0.15)}
     .nav-logo{font-family:'Raleway',sans-serif;font-weight:400;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral-dark)}
-    .nav-links{display:flex;align-items:center;gap:18px}
-    .nav-link{font-family:'Raleway',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--coral-dark);position:relative;white-space:nowrap}
+    .nav-links{display:flex;align-items:center;gap:12px}
+    .nav-link{font-family:'Raleway',sans-serif;font-weight:300;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;color:var(--coral-dark);position:relative;white-space:nowrap}
     .nav-link::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--coral);transform:scaleX(0);transition:transform .25s}
     .nav-link:hover::after,.nav-link.active::after{transform:scaleX(1)}
     .nav-cta{border:1.5px solid var(--coral);border-radius:50px;padding:9px 18px;font-family:'Raleway',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);transition:background .25s,color .25s;white-space:nowrap;flex-shrink:0}
@@ -34,7 +34,12 @@
     .launch-hero__title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(44px,7vw,88px);text-transform:uppercase;line-height:0.9;margin-bottom:24px;max-width:800px}
     .launch-hero__lead{font-size:15px;line-height:1.85;color:rgba(26,26,26,0.68);max-width:620px;margin-bottom:16px;font-weight:300}
     .launch-hero__sub{font-size:14px;line-height:1.8;color:rgba(26,26,26,0.5);max-width:620px;font-weight:300}
-    .launch-main{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+    .story{background:var(--white);padding:80px}
+    .story__inner{max-width:760px}
+    .story p{font-size:15px;line-height:1.85;color:rgba(26,26,26,0.72);font-weight:300;margin-bottom:20px}
+    .story h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.5vw,40px);text-transform:uppercase;line-height:0.95;margin:48px 0 20px}
+    .story .launch-list{margin:4px 0 28px}
+    .visit-close{display:grid;grid-template-columns:1.4fr 0.8fr;align-items:start}
     .launch-content{padding:80px;background:var(--white)}
     .launch-content__label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;font-weight:300}
     .launch-content__title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.5vw,40px);text-transform:uppercase;line-height:0.95;margin-bottom:20px}
@@ -64,7 +69,7 @@
     .site-footer{background:var(--salmon-bg)}
     .footer-main{padding:60px 80px 48px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:64px}
     .footer-brand__logo{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);display:block;margin-bottom:14px}
-    .footer-brand__tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:32px;max-width:240px;font-weight:300}
+    .footer-brand__tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:32px;max-width:360px;font-weight:300}
     .footer-col__label{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:22px}
     .footer-col__list li+li{margin-top:11px}
     .footer-col__list a{font-size:13.5px;color:rgba(255,255,255,0.82);font-weight:300}
@@ -73,12 +78,15 @@
     .footer-bottom__legal{display:flex;gap:24px}
     @media(max-width:900px){
       nav{padding:0 24px}.nav-links{display:none}.nav-hamburger{display:flex}
-      .launch-hero{padding:120px 32px 56px}.launch-main{grid-template-columns:1fr}
+      .launch-hero,.story{padding:120px 32px 56px}
+      .story{padding-top:60px}
+      .visit-close{grid-template-columns:1fr}
       .launch-content,.waitlist-wrap,.pricing-preview{padding:60px 32px}
       .waitlist-wrap{border-left:none;border-top:1px solid rgba(207,123,114,0.12)}
       .footer-main{grid-template-columns:1fr;gap:32px;padding:48px 32px}
       .footer-bottom{padding:18px 32px;flex-direction:column;align-items:flex-start}
     }
+  @media(max-width:1260px){.nav-links{display:none}.nav-hamburger{display:flex}}
   </style>
 </head>
 <body>
@@ -86,8 +94,9 @@
     <a href="/home" class="nav-logo">Pearl Precision Wellness</a>
     <div class="nav-links">
       <a href="/home/#our-focus" class="nav-link">About</a>
-      <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
       <a href="/functional-dermatology" class="nav-link active">Functional Dermatology</a>
+      <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+      <a href="/medical-dermatology" class="nav-link">Medical Dermatology</a>
       <a href="/aesthetics" class="nav-link">Aesthetics</a>
       <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
       <a href="/pricing" class="nav-link">Pricing</a>
@@ -98,8 +107,9 @@
   </nav>
   <div class="nav-mobile" id="mobileNav">
     <a href="/home/#our-focus" class="nav-link">About</a>
-    <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
     <a href="/functional-dermatology" class="nav-link active">Functional Dermatology</a>
+    <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+    <a href="/medical-dermatology" class="nav-link">Medical Dermatology</a>
     <a href="/aesthetics" class="nav-link">Aesthetics</a>
     <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
     <a href="/pricing" class="nav-link">Pricing</a>
@@ -108,82 +118,59 @@
   </div>
 
   <section class="launch-hero">
-    <p class="launch-badge">Coming October 2026</p>
     <h1 class="launch-hero__title">Functional<br>Dermatology</h1>
-    <p class="launch-hero__lead">One of the few providers with years of dermatology experience who can integrate conventional dermatology with a root-cause perspective.</p>
-    <p class="launch-hero__sub">Functional dermatology is launching alongside our aesthetics services. Functional medicine consultations are available now.</p>
+    <p class="launch-hero__lead">Your skin tells a story. I want to understand the whole picture.</p>
   </section>
 
-  <div class="launch-main">
-    <div>
-      <div class="launch-content">
-        <p class="launch-content__label">Overview</p>
-        <h2 class="launch-content__title">Skin Care With<br>Root-Cause Depth</h2>
-        <p class="launch-content__body">Functional dermatology looks at chronic and complex skin conditions through both a clinical dermatology lens and a functional medicine framework. Visits address what is happening on the skin while also exploring nutrition, gut health, hormones, lifestyle, and other contributors.</p>
-        <ul class="launch-list">
-          <li>Acne, rosacea, eczema, and psoriasis</li>
-          <li>Hair loss and nail disorders</li>
-          <li>Recurrent rashes and hives</li>
-          <li>Skin spot checks and comprehensive screenings</li>
-          <li>Medical dermatology visits for traditional care</li>
-        </ul>
-      </div>
-      <div class="pricing-preview">
-        <h2 class="launch-content__title">Pricing</h2>
-        <p class="launch-content__body">Laboratory testing, biopsies, and pathology are billed separately when applicable.</p>
-        <div class="price-rows">
-          <div class="price-row">
-            <div><p class="price-row__name">Skin Spot Check</p><p class="price-row__meta">30 min</p></div>
-            <p class="price-row__fee">$175</p>
-          </div>
-          <div class="price-row">
-            <div><p class="price-row__name">Medical Dermatology Visit</p><p class="price-row__meta">30 min</p></div>
-            <p class="price-row__fee">$225</p>
-          </div>
-          <div class="price-row">
-            <div><p class="price-row__name">Functional Dermatology Initial</p><p class="price-row__meta">60 min</p></div>
-            <p class="price-row__fee">$395</p>
-          </div>
-          <div class="price-row">
-            <div><p class="price-row__name">Functional Dermatology Follow-Up</p><p class="price-row__meta">45 min</p></div>
-            <p class="price-row__fee">$225</p>
-          </div>
-          <div class="price-row">
-            <div><p class="price-row__name">Follow-Up Dermatology</p><p class="price-row__meta">20 to 30 min</p></div>
-            <p class="price-row__fee">$125-$150</p>
-          </div>
-        </div>
-        <p class="pricing-preview__note">Full pricing details will be published at launch. See our <a href="/pricing" style="color:var(--coral-dark);border-bottom:1px solid rgba(207,123,114,0.3);">pricing page</a> for current functional medicine pricing.</p>
-      </div>
-    </div>
+  <section class="story">
+    <div class="story__inner">
+      <p>After years of practicing medical and cosmetic dermatology, I've learned that what we see on the surface doesn't always tell us the whole story.</p>
+      <p>I've treated countless patients struggling with acne, rosacea, eczema, hair loss, and other chronic skin conditions. And while conventional treatments can be incredibly effective, I've always been curious about the why. Why do certain conditions keep coming back? Why do some patients respond beautifully to treatment while others continue to struggle? And could something else going on in the body be contributing?</p>
+      <p>Those questions are a big part of what led me to pursue additional training in functional medicine.</p>
+      <p>Our skin is connected to so many aspects of our health, from hormones and nutrition to immune function, metabolism, stress, and the gut. I believe these connections deserve attention, particularly when skin conditions are persistent, recurrent, or difficult to manage.</p>
 
-    <div class="waitlist-wrap" id="waitlist">
-      <h2 class="waitlist-wrap__title">Join the<br>Waitlist</h2>
-      <p class="waitlist-wrap__sub">Be the first to know when functional dermatology appointments open in October 2026.</p>
-      <form id="waitlistForm" action="https://formspree.io/f/xgojkzyy" method="POST">
-        <div class="form-group">
-          <label class="form-label" for="name">Full Name</label>
-          <input class="form-input" type="text" id="name" name="name" required />
+      <h2>A Closer Look at What's Going On Beneath the Surface</h2>
+      <p>My Functional Dermatology appointments are intentionally longer because these conversations take time.</p>
+      <p>I want to hear about your skin concerns, of course, but I also want to understand what's been going on with the rest of your health. We'll talk through your medical history, symptoms, nutrition, digestion, sleep, stress, hormonal health, and anything else that may be relevant.</p>
+      <p>When appropriate, I may recommend targeted laboratory testing to investigate potential nutritional deficiencies, hormonal or metabolic concerns, or other factors that could be contributing to your symptoms.</p>
+      <p>From there, we'll put together a plan. That may include prescription medications, evidence-based dermatologic treatments, nutrition and lifestyle changes, or carefully selected supplements when appropriate.</p>
+      <p>Ultimately, I want to help you understand your skin more deeply, identify meaningful contributing factors when possible, and work toward improvements that last.</p>
+
+      <h2>Who Might Benefit From Functional Dermatology?</h2>
+      <p>This approach may be especially helpful if you're dealing with:</p>
+      <ul class="launch-list">
+        <li>Persistent or recurrent acne</li>
+        <li>Rosacea and chronic facial redness</li>
+        <li>Eczema or other inflammatory skin conditions</li>
+        <li>Psoriasis</li>
+        <li>Hair thinning or hair loss</li>
+        <li>Chronic hives or unexplained itching</li>
+        <li>Skin concerns that haven't responded as expected to conventional treatment</li>
+      </ul>
+      <p>You don't need to have a complicated medical history or have tried every treatment available to benefit from this approach. Sometimes you're simply looking for someone who's willing to spend a little more time connecting the dots.</p>
+    </div>
+  </section>
+
+  <div class="visit-close">
+    <div class="pricing-preview">
+      <h2 class="launch-content__title">Pricing</h2>
+      <p class="launch-content__body">Laboratory testing is billed separately when applicable.</p>
+      <div class="price-rows">
+        <div class="price-row">
+          <div><p class="price-row__name">Functional Dermatology Initial</p><p class="price-row__meta">60 min</p></div>
+          <p class="price-row__fee">$395</p>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="email">Email</label>
-          <input class="form-input" type="email" id="email" name="email" required />
+        <div class="price-row">
+          <div><p class="price-row__name">Functional Dermatology Follow-Up</p><p class="price-row__meta">45 min</p></div>
+          <p class="price-row__fee">$225</p>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="phone">Phone (optional)</label>
-          <input class="form-input" type="tel" id="phone" name="phone" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="message">What brings you in? (optional)</label>
-          <textarea class="form-textarea" id="message" name="message" placeholder="Skin concerns, questions, or anything you'd like us to know."></textarea>
-        </div>
-        <input type="hidden" name="_subject" value="Functional Dermatology Waitlist" />
-        <button type="submit" class="form-submit">Join Waitlist</button>
-      </form>
-      <div class="form-success" id="formSuccess">
-        <p class="form-success__title">You're on the list</p>
-        <p class="form-success__body">Thank you for joining the waitlist. We will reach out when functional dermatology appointments open in October 2026.</p>
       </div>
+      <p class="pricing-preview__note">Skin spot checks and medical dermatology visits are listed on the <a href="/medical-dermatology" style="color:var(--coral-dark);border-bottom:1px solid rgba(207,123,114,0.3);">medical dermatology</a> page.</p>
+    </div>
+    <div class="waitlist-wrap">
+      <h2 class="waitlist-wrap__title">Book an<br>Appointment</h2>
+      <p class="waitlist-wrap__sub">Longer visits for skin concerns that may be connected to the rest of your health.</p>
+      <a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener" class="form-submit" style="display:block;text-align:center;">Book an Appointment</a>
     </div>
   </div>
 
@@ -191,24 +178,27 @@
     <div class="footer-main">
       <div class="footer-brand">
         <a href="/home" class="footer-brand__logo">Pearl Precision Wellness</a>
-        <p class="footer-brand__tagline">Functional medicine for skin, hormones, and whole-body health.</p>
+        <p class="footer-brand__tagline">Functional Dermatology for Skin, Gut, Hormones, and Whole-Body Health</p>
       </div>
       <div class="footer-col">
         <p class="footer-col__label">Navigate</p>
         <ul class="footer-col__list">
           <li><a href="/home">Home</a></li>
-          <li><a href="/functional-medicine">Functional Medicine</a></li>
           <li><a href="/functional-dermatology">Functional Dermatology</a></li>
+          <li><a href="/functional-medicine">Functional Medicine</a></li>
+          <li><a href="/medical-dermatology">Medical Dermatology</a></li>
           <li><a href="/aesthetics">Aesthetics</a></li>
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <p class="footer-col__label">Available Now</p>
+        <p class="footer-col__label">Services</p>
         <ul class="footer-col__list">
+          <li><a href="/functional-dermatology">Functional Dermatology</a></li>
           <li><a href="/functional-medicine">Functional Medicine</a></li>
-          <li><a href="/contact">Book an Appointment</a></li>
+          <li><a href="/medical-dermatology">Medical Dermatology</a></li>
+          <li><a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener">Book an Appointment</a></li>
         </ul>
       </div>
     </div>
@@ -220,13 +210,5 @@
       </div>
     </div>
   </footer>
-  <script>
-    document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-      if (res.ok) { form.style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; }
-    });
-  </script>
 </body>
 </html>

@@ -19,8 +19,8 @@
     ul{list-style:none}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:80px;border-bottom:1px solid rgba(207,123,114,0.15)}
     .nav-logo{font-family:'Raleway',sans-serif;font-weight:400;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral-dark)}
-    .nav-links{display:flex;align-items:center;gap:18px}
-    .nav-link{font-family:'Raleway',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--coral-dark);position:relative;white-space:nowrap}
+    .nav-links{display:flex;align-items:center;gap:12px}
+    .nav-link{font-family:'Raleway',sans-serif;font-weight:300;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;color:var(--coral-dark);position:relative;white-space:nowrap}
     .nav-link::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--coral);transform:scaleX(0);transition:transform .25s}
     .nav-link:hover::after,.nav-link.active::after{transform:scaleX(1)}
     .nav-cta{border:1.5px solid var(--coral);border-radius:50px;padding:9px 18px;font-family:'Raleway',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);transition:background .25s,color .25s;white-space:nowrap;flex-shrink:0}
@@ -65,7 +65,7 @@
     .site-footer{background:var(--black)}
     .footer-main{padding:60px 80px 48px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:64px}
     .footer-brand__logo{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);display:block;margin-bottom:14px}
-    .footer-brand__tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:32px;max-width:240px;font-weight:300}
+    .footer-brand__tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:32px;max-width:360px;font-weight:300}
     .footer-col__label{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:22px}
     .footer-col__list li+li{margin-top:11px}
     .footer-col__list a{font-size:13.5px;color:rgba(255,255,255,0.7);font-weight:300}
@@ -79,6 +79,7 @@
       .footer-main{grid-template-columns:1fr;gap:32px;padding:48px 32px}
       .footer-bottom{padding:18px 32px;flex-direction:column;align-items:flex-start}
     }
+  @media(max-width:1260px){.nav-links{display:none}.nav-hamburger{display:flex}}
   </style>
 </head>
 <body>
@@ -86,8 +87,9 @@
     <a href="/home" class="nav-logo">Pearl Precision Wellness</a>
     <div class="nav-links">
       <a href="/home/#our-focus" class="nav-link">About</a>
-      <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
       <a href="/functional-dermatology" class="nav-link">Functional Dermatology</a>
+      <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+      <a href="/medical-dermatology" class="nav-link">Medical Dermatology</a>
       <a href="/aesthetics" class="nav-link active">Aesthetics</a>
       <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
       <a href="/pricing" class="nav-link">Pricing</a>
@@ -98,8 +100,9 @@
   </nav>
   <div class="nav-mobile" id="mobileNav">
     <a href="/home/#our-focus" class="nav-link">About</a>
-    <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
     <a href="/functional-dermatology" class="nav-link">Functional Dermatology</a>
+    <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+    <a href="/medical-dermatology" class="nav-link">Medical Dermatology</a>
     <a href="/aesthetics" class="nav-link active">Aesthetics</a>
     <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
     <a href="/pricing" class="nav-link">Pricing</a>
@@ -111,7 +114,7 @@
     <p class="launch-badge">Coming October 2026</p>
     <h1 class="launch-hero__title">Aesthetics</h1>
     <p class="launch-hero__lead">Medical-grade aesthetic treatments grounded in dermatology expertise and informed by functional medicine.</p>
-    <p class="launch-hero__sub">Aesthetic services are launching in October 2026. Functional medicine is available now.</p>
+    <p class="launch-hero__sub">Aesthetic services are launching in October 2026.</p>
   </section>
 
   <div class="launch-main">
@@ -183,24 +186,27 @@
     <div class="footer-main">
       <div class="footer-brand">
         <a href="/home" class="footer-brand__logo">Pearl Precision Wellness</a>
-        <p class="footer-brand__tagline">Functional medicine for skin, hormones, and whole-body health.</p>
+        <p class="footer-brand__tagline">Functional Dermatology for Skin, Gut, Hormones, and Whole-Body Health</p>
       </div>
       <div class="footer-col">
         <p class="footer-col__label">Navigate</p>
         <ul class="footer-col__list">
           <li><a href="/home">Home</a></li>
-          <li><a href="/functional-medicine">Functional Medicine</a></li>
           <li><a href="/functional-dermatology">Functional Dermatology</a></li>
+          <li><a href="/functional-medicine">Functional Medicine</a></li>
+          <li><a href="/medical-dermatology">Medical Dermatology</a></li>
           <li><a href="/aesthetics">Aesthetics</a></li>
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <p class="footer-col__label">Available Now</p>
+        <p class="footer-col__label">Services</p>
         <ul class="footer-col__list">
+          <li><a href="/functional-dermatology">Functional Dermatology</a></li>
           <li><a href="/functional-medicine">Functional Medicine</a></li>
-          <li><a href="/contact">Book an Appointment</a></li>
+          <li><a href="/medical-dermatology">Medical Dermatology</a></li>
+          <li><a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener">Book an Appointment</a></li>
         </ul>
       </div>
     </div>

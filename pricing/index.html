@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pricing, Pearl Precision Wellness</title>
-  <meta name="description" content="Functional medicine pricing available now. Planned pricing for functional dermatology and aesthetics launching October 2026. Pearl Precision Wellness, Centennial, CO." />
+  <meta name="description" content="Functional medicine and functional dermatology pricing. Planned pricing for aesthetics launching October 2026. Pearl Precision Wellness, Centennial, CO." />
   <link rel="icon" type="image/png" href="/ppw-logo-icon.png" />
   <link rel="apple-touch-icon" href="/ppw-logo-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,8 +31,8 @@
     /* ── NAV ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--cream); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 80px; border-bottom: 1px solid rgba(207,123,114,0.15); }
     .nav-logo { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral-dark); }
-    .nav-links { display: flex; align-items: center; gap: 18px; }
-    .nav-link { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--coral-dark); position: relative; transition: color 0.2s; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 12px; }
+    .nav-link { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--coral-dark); position: relative; transition: color 0.2s; white-space: nowrap; }
     .nav-link::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--coral); transform: scaleX(0); transition: transform 0.25s ease; }
     .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
     .nav-cta { border: 1.5px solid var(--coral); border-radius: 50px; padding: 9px 18px; font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--coral); transition: background 0.25s, color 0.25s; white-space: nowrap; flex-shrink: 0; }
@@ -158,7 +158,7 @@
     .footer-cta__btn:hover { background: var(--white); color: var(--salmon-bg); }
     .footer-main { padding: 60px 80px 48px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 64px; }
     .footer-brand__logo { font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); display: block; margin-bottom: 14px; }
-    .footer-brand__tagline { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 32px; max-width: 240px; }
+    .footer-brand__tagline { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 32px; max-width: 360px; }
     .footer-socials { display: flex; gap: 12px; }
     .footer-social { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: background 0.25s, border-color 0.25s, transform 0.2s; }
     .footer-social:hover { background: rgba(255,255,255,0.15); border-color: var(--white); transform: translateY(-2px); }
@@ -193,6 +193,7 @@
     @media (max-width: 600px) {
       .footer-main { grid-template-columns: 1fr; gap: 32px; }
     }
+  @media(max-width:1260px){.nav-links{display:none}.nav-hamburger{display:flex}}
   </style>
 </head>
 <body>
@@ -202,8 +203,9 @@
     <a href="/home" class="nav-logo">Pearl Precision Wellness</a>
     <div class="nav-links">
       <a href="/home/#our-focus" class="nav-link">About</a>
-      <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
       <a href="/functional-dermatology" class="nav-link">Functional Dermatology</a>
+      <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+      <a href="/medical-dermatology" class="nav-link">Medical Dermatology</a>
       <a href="/aesthetics" class="nav-link">Aesthetics</a>
       <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
       <a href="/pricing" class="nav-link active">Pricing</a>
@@ -216,8 +218,9 @@
   </nav>
   <div class="nav-mobile" id="mobileNav">
     <a href="/home/#our-focus" class="nav-link">About</a>
-    <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
     <a href="/functional-dermatology" class="nav-link">Functional Dermatology</a>
+    <a href="/functional-medicine" class="nav-link">Functional Medicine</a>
+    <a href="/medical-dermatology" class="nav-link">Medical Dermatology</a>
     <a href="/aesthetics" class="nav-link">Aesthetics</a>
     <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
     <a href="/pricing" class="nav-link active">Pricing</a>
@@ -229,14 +232,156 @@
   <section class="pricing-hero">
     <p class="pricing-hero__eyebrow">Services &amp; Pricing</p>
     <h1 class="pricing-hero__title">Pricing</h1>
-    <p class="pricing-hero__lead">Functional medicine is available now. Functional dermatology and aesthetics, with the pricing below, are planned for October 2026.</p>
-    <p class="pricing-hero__note">Pearl Precision Wellness is a private-pay practice. We provide superbills for out-of-network reimbursement when applicable. Join the waitlist for October services or book a free discovery call for functional medicine.</p>
+    <p class="pricing-hero__lead">Visit pricing for functional dermatology, functional medicine, and medical dermatology. Aesthetics pricing is planned for October 2026.</p>
+    <p class="pricing-hero__note">Pearl Precision Wellness is a private-pay practice. We provide superbills for out-of-network reimbursement when applicable.</p>
   </section>
 
-  <!-- FUNCTIONAL MEDICINE (AVAILABLE NOW) -->
+  <!-- FUNCTIONAL DERMATOLOGY -->
+  <section class="pricing-section pricing-section--cream" id="functional-dermatology-pricing">
+    <div class="pricing-section__header">
+      <h2 class="pricing-section__title">Functional Dermatology</h2>
+      <p class="pricing-section__sub">Laboratory testing is billed separately when applicable.</p>
+    </div>
+
+    <div class="visit-table-wrap">
+      <table class="visit-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Duration</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="visit-table__name">Functional Dermatology Initial</span>
+              <span class="visit-table__desc">A longer visit to look at the skin concern alongside medical history, nutrition, digestion, sleep, stress, and hormonal health.</span>
+            </td>
+            <td><span class="visit-table__duration">60 min</span></td>
+            <td><span class="visit-table__price">$395</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="visit-table__name">Functional Dermatology Follow-Up</span>
+              <span class="visit-table__desc">Progress review and plan adjustments for functional dermatology care.</span>
+            </td>
+            <td><span class="visit-table__duration">45 min</span></td>
+            <td><span class="visit-table__price">$225</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- MEDICAL DERMATOLOGY -->
+  <section class="pricing-section" id="medical-dermatology-pricing">
+    <div class="pricing-section__header">
+      <h2 class="pricing-section__title">Medical Dermatology</h2>
+      <p class="pricing-section__sub">Biopsies and pathology are billed separately when applicable.</p>
+    </div>
+
+    <div class="visit-table-wrap">
+      <table class="visit-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Duration</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="visit-table__name">Skin Spot Check</span>
+              <span class="visit-table__desc">Focused review of spots and lesions of concern.</span>
+            </td>
+            <td><span class="visit-table__duration">30 min</span></td>
+            <td><span class="visit-table__price">$175</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="visit-table__name">Medical Dermatology Initial</span>
+              <span class="visit-table__desc">Traditional dermatology visit for a specific skin concern.</span>
+            </td>
+            <td><span class="visit-table__duration">30 min</span></td>
+            <td><span class="visit-table__price">$225</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="visit-table__name">Follow-Up Dermatology</span>
+              <span class="visit-table__desc">Follow-up for an existing dermatology concern.</span>
+            </td>
+            <td><span class="visit-table__duration">20 to 30 min</span></td>
+            <td><span class="visit-table__price">$125 to $150</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pricing-section__header" style="margin-top:48px;margin-bottom:24px;">
+      <p class="pricing-section__label">Procedures</p>
+      <h2 class="pricing-section__title" style="font-size:clamp(24px,3vw,36px);">In-Office Treatments</h2>
+    </div>
+
+    <div class="procedure-grid">
+      <div class="procedure-item">
+        <div>
+          <p class="procedure-item__name">Shave Biopsy</p>
+          <p class="procedure-item__desc">Separate pathology charge applies.</p>
+        </div>
+        <div><p class="procedure-item__price">$125</p></div>
+      </div>
+      <div class="procedure-item">
+        <div>
+          <p class="procedure-item__name">Punch Biopsy</p>
+          <p class="procedure-item__desc">Pathology billed separately.</p>
+        </div>
+        <div><p class="procedure-item__price">$225</p></div>
+      </div>
+      <div class="procedure-item">
+        <div>
+          <p class="procedure-item__name">Actinic Keratosis Treatment</p>
+          <p class="procedure-item__desc">Flat rate. Cryotherapy available.</p>
+        </div>
+        <div><p class="procedure-item__price">$150</p></div>
+      </div>
+      <div class="procedure-item">
+        <div>
+          <p class="procedure-item__name">Wart Treatment</p>
+          <p class="procedure-item__desc">1 wart: $95 · 2 to 5: $150 · 6 to 10: $225</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AESTHETICS -->
+  <section class="pricing-section pricing-section--cream" id="coming-soon">
+    <div class="pricing-section__header">
+      <p class="pricing-section__label">Coming October 2026</p>
+      <h2 class="pricing-section__title">Aesthetics</h2>
+      <p class="pricing-section__sub">Planned pricing at launch. Join the waitlist to be notified when appointments open.</p>
+    </div>
+
+    <div class="detail-blocks" style="grid-template-columns: 1fr;">
+      <article class="detail-block">
+        <p class="detail-block__body">Cosmetic consultations and aesthetic procedures informed by clinical dermatology. Injectables such as filler and Botox, plus regenerative treatments including PRP, Sculptra, microneedling, and laser, will be offered at launch.</p>
+        <ul class="detail-block__list">
+          <li>Cosmetic Consultation: $100 (applies toward treatment within 60 days)</li>
+          <li>Cosmetic Removal of Benign Skin Lesions: $175 to $400</li>
+          <li>Cosmetic Lesion Destruction: $150 to $400</li>
+          <li>Injectables including filler and Botox: pricing at launch</li>
+          <li>Regenerative treatments (PRP, Sculptra, microneedling, laser): pricing at launch</li>
+        </ul>
+        <p class="detail-block__note">Full treatment menu published at launch.</p>
+        <a href="/aesthetics#waitlist" class="pillar-link" style="display:inline-block;margin-top:16px;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral-dark);">Join Waitlist</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- FUNCTIONAL MEDICINE -->
   <section class="pricing-section" id="functional-medicine-pricing">
     <div class="pricing-section__header">
-      <p class="pricing-section__label">Available Now</p>
       <h2 class="pricing-section__title">Functional Medicine</h2>
       <p class="pricing-section__sub">Visit pricing for functional medicine. Laboratory testing is billed separately when applicable.</p>
     </div>
@@ -272,80 +417,6 @@
     </div>
   </section>
 
-  <!-- COMING OCTOBER 2026 -->
-  <section class="pricing-section pricing-section--cream" id="coming-soon">
-    <div class="pricing-section__header">
-      <p class="pricing-section__label">Coming October 2026</p>
-      <h2 class="pricing-section__title">Functional Dermatology<br>&amp; Aesthetics</h2>
-      <p class="pricing-section__sub">Planned pricing at launch. Join the waitlist to be notified when appointments open.</p>
-    </div>
-
-    <p class="detail-blocks__label">Pricing</p>
-    <div class="detail-blocks">
-      <article class="detail-block">
-        <h3 class="detail-block__title">Functional Dermatology</h3>
-        <p class="detail-block__body">Skin spot checks, medical dermatology, and root-cause functional dermatology visits.</p>
-        <ul class="detail-block__list">
-          <li>Skin Spot Check (30 min): $175</li>
-          <li>Medical Dermatology Initial (30 min): $225</li>
-          <li>Follow-Up Dermatology (20 to 30 min): $125 to $150</li>
-          <li>Functional Dermatology Initial (60 min): $395</li>
-          <li>Functional Dermatology Follow-Up (45 min): $225</li>
-        </ul>
-        <p class="detail-block__note">Procedures such as biopsies, wart treatment, and AK treatment priced separately.</p>
-        <a href="/functional-dermatology#waitlist" class="pillar-link" style="display:inline-block;margin-top:16px;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral-dark);">Join Waitlist</a>
-      </article>
-      <article class="detail-block">
-        <h3 class="detail-block__title">Aesthetics</h3>
-        <p class="detail-block__body">Cosmetic consultations and aesthetic procedures informed by clinical dermatology. Injectables such as filler and Botox, plus regenerative treatments including PRP, Sculptra, microneedling, and laser, will be offered at launch.</p>
-        <ul class="detail-block__list">
-          <li>Cosmetic Consultation: $100 (applies toward treatment within 60 days)</li>
-          <li>Cosmetic Removal of Benign Skin Lesions: $175 to $400</li>
-          <li>Cosmetic Lesion Destruction: $150 to $400</li>
-          <li>Injectables including filler and Botox: pricing at launch</li>
-          <li>Regenerative treatments (PRP, Sculptra, microneedling, laser): pricing at launch</li>
-        </ul>
-        <p class="detail-block__note">Full treatment menu published at launch.</p>
-        <a href="/aesthetics#waitlist" class="pillar-link" style="display:inline-block;margin-top:16px;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral-dark);">Join Waitlist</a>
-      </article>
-    </div>
-
-    <div class="pricing-section__header" style="margin-top:48px;margin-bottom:24px;">
-      <p class="pricing-section__label">Planned Procedures</p>
-      <h2 class="pricing-section__title" style="font-size:clamp(24px,3vw,36px);">In-Office Treatments</h2>
-    </div>
-
-    <div class="procedure-grid">
-      <div class="procedure-item">
-        <div>
-          <p class="procedure-item__name">Shave Biopsy</p>
-          <p class="procedure-item__desc">Separate pathology charge applies.</p>
-        </div>
-        <div><p class="procedure-item__price">$125</p></div>
-      </div>
-      <div class="procedure-item">
-        <div>
-          <p class="procedure-item__name">Punch Biopsy</p>
-          <p class="procedure-item__desc">Pathology billed separately.</p>
-        </div>
-        <div><p class="procedure-item__price">$225</p></div>
-      </div>
-      <div class="procedure-item">
-        <div>
-          <p class="procedure-item__name">Actinic Keratosis Treatment</p>
-          <p class="procedure-item__desc">Flat rate. Cryotherapy available.</p>
-        </div>
-        <div><p class="procedure-item__price">$150</p></div>
-      </div>
-      <div class="procedure-item">
-        <div>
-          <p class="procedure-item__name">Wart Treatment</p>
-          <p class="procedure-item__desc">1 wart: $95 · 2 to 5: $150 · 6 to 10: $225</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- PACKAGE -->
   <section class="pricing-section pricing-section--cream" id="packages">
     <div class="pricing-section__header">
@@ -376,10 +447,10 @@
 
   <!-- CTA -->
   <section class="pricing-cta">
-    <p class="pricing-cta__text">Functional medicine is available now. For dermatology and aesthetics launching in October 2026, join the waitlist or book a discovery call to get started with functional medicine.</p>
+    <p class="pricing-cta__text">Book an appointment, or join the aesthetics waitlist for October 2026.</p>
     <div class="pricing-cta__btns">
       <a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener" class="btn-coral">Book an Appointment</a>
-      <a href="/functional-dermatology#waitlist" class="btn-outline-white">Join Waitlist</a>
+      <a href="/aesthetics#waitlist" class="btn-outline-white">Join Waitlist</a>
     </div>
   </section>
 
@@ -392,7 +463,7 @@
     <div class="footer-main">
       <div class="footer-brand">
         <a href="/home" class="footer-brand__logo">Pearl Precision Wellness</a>
-        <p class="footer-brand__tagline">Functional medicine, functional dermatology, and aesthetics in Centennial.</p>
+        <p class="footer-brand__tagline">Functional Dermatology for Skin, Gut, Hormones, and Whole-Body Health</p>
         <div class="footer-socials">
           <a href="https://www.instagram.com/pearlprecisionwellness/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -407,8 +478,9 @@
         <ul class="footer-col__list">
           <li><a href="/home">Home</a></li>
           <li><a href="/home/#our-focus">About</a></li>
-          <li><a href="/functional-medicine">Functional Medicine</a></li>
           <li><a href="/functional-dermatology">Functional Dermatology</a></li>
+          <li><a href="/functional-medicine">Functional Medicine</a></li>
+          <li><a href="/medical-dermatology">Medical Dermatology</a></li>
           <li><a href="/aesthetics">Aesthetics</a></li>
           <li><a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener">Clients</a></li>
           <li><a href="/pricing">Pricing</a></li>
