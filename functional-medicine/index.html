@@ -204,6 +204,22 @@
     .why-reason__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 18px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--black); margin-bottom: 6px; }
     .why-reason__desc { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.7; color: rgba(26,26,26,0.6); }
 
+    /* PRICING */
+    .visit-close { display: grid; grid-template-columns: 1.4fr 0.8fr; align-items: start; border-top: 1px solid rgba(207,123,114,0.15); }
+    .pricing-preview { padding: 80px; background: var(--cream); }
+    .launch-content__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(28px, 3.5vw, 40px); text-transform: uppercase; line-height: 0.95; margin-bottom: 20px; }
+    .launch-content__body { font-size: 14px; line-height: 1.85; color: rgba(26,26,26,0.65); font-weight: 300; margin-bottom: 28px; }
+    .pricing-preview__note { font-size: 12px; color: rgba(26,26,26,0.45); font-style: italic; margin-top: 20px; font-weight: 300; }
+    .price-rows { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+    .price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 20px; background: var(--white); border: 1px solid rgba(207,123,114,0.12); gap: 20px; }
+    .price-row__name { font-family: 'Cormorant Garamond', serif; font-size: 17px; text-transform: uppercase; letter-spacing: 0.03em; }
+    .price-row__fee { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--coral-dark); white-space: nowrap; }
+    .waitlist-wrap { padding: 80px; border-left: 1px solid rgba(207,123,114,0.12); background: var(--white); }
+    .waitlist-wrap__title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(28px, 3vw, 36px); text-transform: uppercase; line-height: 0.95; margin-bottom: 12px; }
+    .waitlist-wrap__sub { font-size: 14px; line-height: 1.75; color: rgba(26,26,26,0.6); margin-bottom: 32px; font-weight: 300; }
+    .form-submit { width: 100%; background: var(--coral); border: none; border-radius: 50px; padding: 16px 32px; font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); cursor: pointer; margin-top: 8px; }
+    .form-submit:hover { opacity: 0.88; }
+
     /* CTA */
     .fm-cta {
       background: var(--salmon-bg);
@@ -255,6 +271,9 @@
       .pillars { padding: 64px 32px; }
       .pillars-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
       .why-works { grid-template-columns: 1fr; padding: 64px 32px; gap: 48px; }
+      .visit-close { grid-template-columns: 1fr; }
+      .pricing-preview, .waitlist-wrap { padding: 60px 32px; }
+      .waitlist-wrap { border-left: none; border-top: 1px solid rgba(207,123,114,0.12); }
       .fm-cta { grid-template-columns: 1fr; padding: 64px 32px; gap: 32px; }
       .footer-cta { padding: 44px 32px; flex-direction: column; align-items: flex-start; gap: 22px; }
       .footer-main { padding: 48px 32px 40px; grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -477,6 +496,29 @@
       </div>
     </div>
   </section>
+
+  <div class="visit-close">
+    <div class="pricing-preview">
+      <h2 class="launch-content__title">Pricing</h2>
+      <p class="launch-content__body">Laboratory testing is billed separately when applicable.</p>
+      <div class="price-rows">
+        <div class="price-row">
+          <div><p class="price-row__name">Functional Medicine Initial</p></div>
+          <p class="price-row__fee">$375</p>
+        </div>
+        <div class="price-row">
+          <div><p class="price-row__name">Functional Medicine Follow-Up</p></div>
+          <p class="price-row__fee">$225</p>
+        </div>
+      </div>
+      <p class="pricing-preview__note">The Functional Reset package is on the <a href="/pricing#packages" style="color:var(--coral-dark);border-bottom:1px solid rgba(207,123,114,0.3);">pricing page</a>.</p>
+    </div>
+    <div class="waitlist-wrap">
+      <h2 class="waitlist-wrap__title">Book an<br>Appointment</h2>
+      <p class="waitlist-wrap__sub">Whole-body visits for gut health, hormones, thyroid, inflammation, and chronic symptoms.</p>
+      <a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener" class="form-submit" style="display:block;text-align:center;">Book an Appointment</a>
+    </div>
+  </div>
 
   <!-- CTA -->
   <section class="fm-cta">
