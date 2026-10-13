@@ -55,6 +55,9 @@
     }
 
     .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-family: var(--font-body);
       font-weight: 400;
       font-size: 13px;
@@ -62,6 +65,7 @@
       text-transform: uppercase;
       color: var(--coral-dark);
     }
+    .nav-logo img { height: 36px; width: auto; display: block; }
 
     .nav-links { display: flex; align-items: center; gap: 12px; }
 
@@ -670,9 +674,10 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--white);
-      display: block;
+      display: flex; align-items: center; gap: 10px;
       margin-bottom: 14px;
     }
+    .footer-brand__logo img { height: 32px; width: auto; display: block; }
     .footer-brand__tagline {
       font-family: var(--font-display);
       font-weight: 300;
@@ -811,7 +816,7 @@
        NAVIGATION
   ═══════════════════════════ -->
   <nav>
-    <a href="/home" class="nav-logo">Pearl Precision Wellness</a>
+    <a href="/home" class="nav-logo"><img src="/ppw-mark.png" alt="" width="26" height="36">Pearl Precision Wellness</a>
     <div class="nav-links">
       <a href="/home/#our-focus" class="nav-link">About</a>
       <a href="/functional-dermatology" class="nav-link">Functional Dermatology</a>
@@ -1134,7 +1139,7 @@
 
       <!-- Brand + socials -->
       <div class="footer-brand">
-        <a href="/home" class="footer-brand__logo">Pearl Precision Wellness</a>
+        <a href="/home" class="footer-brand__logo"><img src="/ppw-mark-white.png" alt="" width="23" height="32">Pearl Precision Wellness</a>
         <p class="footer-brand__tagline">Functional Dermatology for Skin, Gut, Hormones, and Whole-Body Health</p>
         <div class="footer-socials">
 
