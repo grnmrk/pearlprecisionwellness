@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aesthetics, Pearl Precision Wellness</title>
-  <meta name="description" content="Cosmetic services offered through Belén Aesthetics. Book at belen.janeapp.com. Pearl Precision Wellness, Centennial, CO." />
+  <meta name="description" content="Cosmetic dermatology and aesthetic treatments. Pearl Precision Wellness, Centennial, CO." />
   <link rel="icon" type="image/png" href="/ppw-logo-icon.png" />
   <link rel="apple-touch-icon" href="/ppw-logo-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,13 +30,10 @@
     .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--coral)}
     .nav-mobile{display:none;position:fixed;top:80px;left:0;right:0;background:var(--cream);border-bottom:1px solid rgba(207,123,114,0.18);padding:24px 32px 32px;z-index:99;flex-direction:column;gap:18px}
     .nav-mobile.open{display:flex}
-    .launch-hero{background:var(--black);padding:140px 0 72px;border-bottom:2px solid var(--coral);color:var(--white);display:grid;grid-template-columns:1fr 1fr;align-items:center}
-    .launch-hero__copy{min-width:0;padding:0 48px 0 80px}
-    .launch-hero__mark-wrap{display:flex;justify-content:center;align-items:center}
-    .launch-hero__mark{width:240px;height:auto;display:block}
+    .launch-hero{background:var(--black);padding:140px 80px 72px;border-bottom:2px solid var(--coral);color:var(--white)}
     .launch-badge{display:inline-block;border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.85);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;padding:8px 18px;border-radius:50px;margin-bottom:24px}
-    .launch-hero__title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(44px,6vw,88px);text-transform:uppercase;line-height:0.9;margin-bottom:24px}
-    .launch-hero__lead{font-size:15px;line-height:1.85;color:rgba(255,255,255,0.75);max-width:34em;margin-bottom:16px;font-weight:300}
+    .launch-hero__title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(44px,7vw,88px);text-transform:uppercase;line-height:0.9;margin-bottom:24px;max-width:800px}
+    .launch-hero__lead{font-size:15px;line-height:1.85;color:rgba(255,255,255,0.75);max-width:620px;margin-bottom:16px;font-weight:300}
     .launch-hero__sub{font-size:14px;line-height:1.8;color:rgba(255,255,255,0.5);max-width:620px;font-weight:300}
     .launch-main{display:grid;grid-template-columns:1fr 1fr;align-items:start}
     .launch-content{padding:80px;background:var(--cream)}
@@ -85,10 +82,7 @@
     .footer-bottom__legal{display:flex;gap:24px}
     @media(max-width:900px){
       nav{padding:0 24px}.nav-links{display:none}.nav-hamburger{display:flex}
-      .launch-hero{padding:120px 32px 56px;grid-template-columns:1fr;justify-items:start;gap:36px}
-      .launch-hero__copy{padding:0}
-      .launch-hero__mark-wrap{justify-content:flex-start}
-      .launch-hero__mark{width:180px}
+      .launch-hero{padding:120px 32px 56px}
       .launch-main{grid-template-columns:1fr}
       .launch-content,.waitlist-wrap,.pricing-preview{padding:60px 32px}
       .footer-main{grid-template-columns:1fr;gap:32px;padding:48px 32px}
@@ -109,7 +103,7 @@
       <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
       <a href="/pricing" class="nav-link">Pricing</a>
       <a href="/contact" class="nav-link">Contact</a>
-      <a href="https://belen.janeapp.com/" target="_blank" rel="noopener" class="nav-cta">Book an Appointment</a>
+      <a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener" class="nav-cta">Book an Appointment</a>
     </div>
     <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
@@ -122,17 +116,12 @@
     <a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener" class="nav-link">Clients</a>
     <a href="/pricing" class="nav-link">Pricing</a>
     <a href="/contact" class="nav-link">Contact</a>
-    <a href="https://belen.janeapp.com/" target="_blank" rel="noopener" class="nav-cta">Book an Appointment</a>
+    <a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener" class="nav-cta">Book an Appointment</a>
   </div>
 
   <section class="launch-hero">
-    <div class="launch-hero__copy">
-      <h1 class="launch-hero__title">Aesthetics</h1>
-      <p class="launch-hero__lead">I'm excited to offer my cosmetic services through Belén Aesthetics, where I have the opportunity to work alongside an extremely talented team of providers and offer a wide range of advanced aesthetic treatments.</p>
-    </div>
-    <div class="launch-hero__mark-wrap">
-      <img class="launch-hero__mark" src="/belen-logo.png" alt="Belén Aesthetics" width="360" height="156">
-    </div>
+    <h1 class="launch-hero__title">Aesthetics</h1>
+    <p class="launch-hero__lead">I'm excited to offer cosmetic services with a wide range of advanced aesthetic treatments, focused on natural looking results.</p>
   </section>
 
   <div class="launch-main">
@@ -167,9 +156,9 @@
     </div>
 
     <div class="waitlist-wrap" id="book">
-      <h2 class="waitlist-wrap__title">Aesthetics<br>at Belén</h2>
-      <p class="waitlist-wrap__sub">All aesthetic services are provided through Belén Aesthetics. Appointments can be scheduled directly through the booking platform below.</p>
-      <a href="https://belen.janeapp.com/" target="_blank" rel="noopener" class="form-submit" style="display:block;text-align:center;">Book an Appointment</a>
+      <h2 class="waitlist-wrap__title">Book an<br>Appointment</h2>
+      <p class="waitlist-wrap__sub">Appointments can be scheduled directly through the booking platform below.</p>
+      <a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener" class="form-submit" style="display:block;text-align:center;">Book an Appointment</a>
     </div>
   </div>
 
@@ -198,7 +187,7 @@
           <li><a href="https://accounts.charmtracker.com/signin" target="_blank" rel="noopener">Clients</a></li>
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li><a href="https://belen.janeapp.com/" target="_blank" rel="noopener">Book an Appointment</a></li>
+          <li><a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener">Book an Appointment</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -207,7 +196,7 @@
           <li><a href="/functional-dermatology">Functional Dermatology</a></li>
           <li><a href="/functional-medicine">Functional Medicine</a></li>
           <li><a href="/medical-dermatology">Medical Dermatology</a></li>
-          <li><a href="https://belen.janeapp.com/" target="_blank" rel="noopener">Book an Appointment</a></li>
+          <li><a href="https://belen.janeapp.com/#/staff_member/12/bio" target="_blank" rel="noopener">Book an Appointment</a></li>
         </ul>
       </div>
     </div>
